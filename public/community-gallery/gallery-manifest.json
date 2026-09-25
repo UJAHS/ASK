@@ -1,0 +1,76 @@
+{
+  "project": "ASK Community Portal",
+  "assets": [
+    {
+      "file": "01-temple-idol-featured.jpeg",
+      "recommended": [
+        "homepage hero/featured heritage visual",
+        "gallery first/featured image"
+      ],
+      "reason": "Temple/deity image is the strongest heritage anchor."
+    },
+    {
+      "file": "02-community-worship.jpeg",
+      "recommended": [
+        "homepage Activities or Culture & Values"
+      ],
+      "reason": "Large community worship gathering."
+    },
+    {
+      "file": "03-cultural-satsang.jpeg",
+      "recommended": [
+        "homepage Culture & Values",
+        "gallery"
+      ],
+      "reason": "Small-group cultural/spiritual gathering."
+    },
+    {
+      "file": "04-community-leaders.jpeg",
+      "recommended": [
+        "gallery",
+        "community leadership/event section"
+      ],
+      "reason": "Community leadership/group photograph."
+    },
+    {
+      "file": "05-community-group.jpeg",
+      "recommended": [
+        "gallery",
+        "Community Activities"
+      ],
+      "reason": "Large community group photograph."
+    },
+    {
+      "file": "06-evening-community.jpeg",
+      "recommended": [
+        "gallery",
+        "community events"
+      ],
+      "reason": "Evening community gathering."
+    },
+    {
+      "file": "07-community-event.jpeg",
+      "recommended": [
+        "gallery",
+        "events/activities"
+      ],
+      "reason": "Community event photograph."
+    },
+    {
+      "file": "08-community-gathering.jpeg",
+      "recommended": [
+        "gallery",
+        "community activities"
+      ],
+      "reason": "Indoor community gathering."
+    },
+    {
+      "file": "09-community-women-gathering.jpeg",
+      "recommended": [
+        "gallery",
+        "community activities"
+      ],
+      "reason": "Community women's gathering."
+    }
+  ]
+}

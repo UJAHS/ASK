@@ -1,0 +1,3729 @@
+/* =========================================================
+   ASK COMMUNITY PORTAL
+   GLOBAL HERITAGE THEME
+   ========================================================= */
+
+:root {
+  --ask-maroon-deep: #430000;
+  --ask-maroon: #650000;
+  --ask-red: #A30505;
+  --ask-red-light: #E52B2B;
+  --ask-gold: #D9AD55;
+  --ask-gold-light: #F3D47A;
+  --ask-cream: #FFF9EE;
+  --ask-cream-dark: #F5EBD8;
+}
+
+/* =========================================================
+   GLOBAL BODY
+   ========================================================= */
+
+body {
+  background: #FFF9EE;
+  color: #430000;
+}
+
+.dark body {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(217,173,85,0.06),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(229,43,43,0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #430000 0%,
+      #650000 38%,
+      #8A0000 68%,
+      #A30505 100%
+    );
+  color: #FFF9EE;
+}
+
+/* =========================================================
+   PUBLIC PAGE WRAPPER
+   ========================================================= */
+
+.ask-public-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      180deg,
+      #FFF9EE 0%,
+      #FFF7EA 50%,
+      #F8EBD7 100%
+    );
+  color: #430000;
+}
+
+.dark .ask-public-page {
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      rgba(217,173,85,0.08),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 88% 22%,
+      rgba(229,43,43,0.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #430000 0%,
+      #650000 35%,
+      #8A0000 68%,
+      #A30505 100%
+    );
+  color: #FFF9EE;
+}
+
+/* =========================================================
+   GLOBAL HERITAGE SECTIONS
+   ========================================================= */
+
+.dark .ask-public-page section {
+  border-color: rgba(217,173,85,0.24);
+}
+
+.dark .ask-public-page section:nth-child(even) {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(229,43,43,0.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #520000 0%,
+      #700000 45%,
+      #A30505 100%
+    ) !important;
+}
+
+.dark .ask-public-page section:nth-child(odd) {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(217,173,85,0.06),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #430000 0%,
+      #650000 45%,
+      #8A0000 100%
+    ) !important;
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.dark .ask-public-page h1,
+.dark .ask-public-page h2,
+.dark .ask-public-page h3,
+.dark .ask-public-page h4 {
+  color: #FFF9EE !important;
+}
+
+.dark .ask-public-page p {
+  color: rgba(255,249,238,0.82) !important;
+}
+
+.dark .ask-public-page [class*="text-[#3b0710"],
+.dark .ask-public-page [class*="text-[#430000"],
+.dark .ask-public-page [class*="text-[#4A1820"],
+.dark .ask-public-page [class*="text-[#6f2735"],
+.dark .ask-public-page [class*="text-[#7b3442"] {
+  color: rgba(255,249,238,0.86) !important;
+}
+
+/* =========================================================
+   GOLD TEXT
+   ========================================================= */
+
+.ask-gold-text {
+  color: #D9AD55 !important;
+}
+
+.dark .ask-gold-text {
+  color: #F3D47A !important;
+}
+
+.ask-gold-heading {
+  background:
+    linear-gradient(
+      135deg,
+      #B27A16 0%,
+      #D9AD55 30%,
+      #F3D47A 55%,
+      #FFE8A3 72%,
+      #D9AD55 100%
+    );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+}
+
+/* =========================================================
+   HERITAGE DIVIDER
+   ========================================================= */
+
+.ask-heritage-divider {
+  height: 2px;
+  width: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #9A6815 18%,
+      #D9AD55 38%,
+      #F3D47A 50%,
+      #D9AD55 62%,
+      #9A6815 82%,
+      transparent
+    );
+}
+
+/* =========================================================
+   TRADITIONAL FRAME
+   ========================================================= */
+
+.ask-heritage-frame {
+  position: relative;
+  border: 1px solid rgba(154,104,21,0.40);
+}
+
+.dark .ask-heritage-frame {
+  border-color: rgba(243,212,122,0.36);
+}
+
+.ask-heritage-frame::before,
+.ask-heritage-frame::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.ask-heritage-frame::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid #D9AD55;
+  border-left: 2px solid #D9AD55;
+}
+
+.ask-heritage-frame::after {
+  right: 0;
+  bottom: 0;
+  border-right: 2px solid #D9AD55;
+  border-bottom: 2px solid #D9AD55;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.dark .ask-public-page .bg-white,
+.dark .ask-public-page .bg-white\/95,
+.dark .ask-public-page .bg-white\/90,
+.dark .ask-public-page .bg-white\/80 {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(163,5,5,0.72),
+      rgba(67,0,0,0.94)
+    ) !important;
+}
+
+.dark .ask-public-page [class*="border-red-"] {
+  border-color: rgba(217,173,85,0.30) !important;
+}
+
+.dark .ask-public-page [class*="shadow"] {
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.20),
+    0 0 0 1px rgba(217,173,85,0.05);
+}
+
+/* =========================================================
+   RED GRADIENT
+   ========================================================= */
+
+.ask-primary-gradient {
+  background:
+    radial-gradient(
+      circle at 12% 12%,
+      rgba(255,255,255,0.10),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 20%,
+      rgba(243,212,122,0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(229,43,43,0.30),
+      transparent 45%
+    ),
+    linear-gradient(
+      120deg,
+      #650000 0%,
+      #820000 24%,
+      #A30505 50%,
+      #C91414 76%,
+      #E52B2B 100%
+    );
+}
+
+/* =========================================================
+   GOLD BUTTON
+   ========================================================= */
+
+.ask-gold-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #B27A16 0%,
+      #D9AD55 38%,
+      #F3D47A 68%,
+      #FFE8A3 100%
+    );
+
+  color: #4A1700 !important;
+
+  border: 1px solid rgba(255,224,139,0.70);
+
+  box-shadow:
+    0 8px 25px rgba(217,173,85,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    filter 200ms ease;
+}
+
+.ask-gold-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 32px rgba(217,173,85,0.32),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+
+  filter: brightness(1.04);
+}
+
+/* =========================================================
+   RED BUTTON
+   ========================================================= */
+
+.ask-red-button {
+  background:
+    linear-gradient(
+      135deg,
+      #650000,
+      #A30505,
+      #E52B2B
+    );
+
+  color: #FFF9EE !important;
+
+  border: 1px solid rgba(243,212,122,0.35);
+
+  box-shadow:
+    0 10px 28px rgba(67,0,0,0.30);
+}
+
+.ask-red-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #820000,
+      #C91414,
+      #E52B2B
+    );
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.dark .ask-public-page input,
+.dark .ask-public-page textarea,
+.dark .ask-public-page select {
+  background: rgba(67,0,0,0.72) !important;
+  color: #FFF9EE !important;
+  border-color: rgba(217,173,85,0.30) !important;
+}
+
+.dark .ask-public-page input::placeholder,
+.dark .ask-public-page textarea::placeholder {
+  color: rgba(255,249,238,0.48) !important;
+}
+
+.dark .ask-public-page input:focus,
+.dark .ask-public-page textarea:focus,
+.dark .ask-public-page select:focus {
+  border-color: #D9AD55 !important;
+  box-shadow: 0 0 0 3px rgba(217,173,85,0.12);
+}
+
+/* =========================================================
+   BADGES / PILLS
+   ========================================================= */
+
+.dark .ask-public-page [class*="rounded-full"] {
+  border-color: rgba(217,173,85,0.30);
+}
+
+.dark .ask-public-page [class*="bg-red-950"] {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139,0,0,0.65),
+      rgba(67,0,0,0.88)
+    ) !important;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.dark .ask-public-page a {
+  color: #F3D47A;
+}
+
+.dark .ask-public-page a:hover {
+  color: #FFE8A3;
+}
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+.dark .ask-public-page img {
+  border-color: rgba(217,173,85,0.18);
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.dark .ask-public-page table {
+  color: #FFF9EE;
+}
+
+.dark .ask-public-page th {
+  background: #650000 !important;
+  color: #F3D47A !important;
+  border-color: rgba(217,173,85,0.28) !important;
+}
+
+.dark .ask-public-page td {
+  background: rgba(67,0,0,0.60) !important;
+  border-color: rgba(217,173,85,0.18) !important;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.dark ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #430000;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      #D9AD55,
+      #A30505
+    );
+  border-radius: 8px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #F3D47A,
+      #E52B2B
+    );
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .ask-public-page {
+    overflow-x: hidden;
+  }
+
+  .ask-public-page h1 {
+    line-height: 1.08;
+  }
+
+  .ask-public-page h2 {
+    line-height: 1.15;
+  }
+}
+/* =========================================================
+   ASK HERITAGE THEME - LIGHT MODE
+   Warm Indian heritage / ivory / antique gold
+   ========================================================= */
+
+/* Main light background */
+html:not(.dark) body {
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(243,212,122,0.22),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(217,173,85,0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #FFFDF5 0%,
+      #FFF8E7 35%,
+      #FFF2CE 68%,
+      #FFF9E9 100%
+    );
+
+  color: #5B3A12;
+}
+
+/* Entire public frontend */
+html:not(.dark) .ask-public-page {
+  background:
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(243,212,122,0.20),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 92% 18%,
+      rgba(217,173,85,0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #FFFDF7 0%,
+      #FFF9E9 28%,
+      #FFF2D1 58%,
+      #FFF8E5 82%,
+      #FFFDF7 100%
+    ) !important;
+
+  color: #5B3A12;
+}
+
+/* =========================================================
+   ALL LIGHT MODE SECTIONS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page section {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,253,247,0.98) 0%,
+      rgba(255,249,231,0.96) 42%,
+      rgba(255,241,207,0.94) 100%
+    ) !important;
+
+  color: #5B3A12;
+}
+
+/* Alternate sections - slightly different gold tone */
+html:not(.dark) .ask-public-page section:nth-child(even) {
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(217,173,85,0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #FFFDF7 0%,
+      #FFF8E6 45%,
+      #FCEBC2 100%
+    ) !important;
+}
+
+/* =========================================================
+   REMOVE LARGE RED / MAROON LIGHT MODE BACKGROUNDS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page [class*="bg-red-950"],
+html:not(.dark) .ask-public-page [class*="bg-red-900"],
+html:not(.dark) .ask-public-page [class*="bg-red-800"],
+html:not(.dark) .ask-public-page [class*="bg-red-700"],
+html:not(.dark) .ask-public-page [class*="bg-red-600"],
+html:not(.dark) .ask-public-page [class*="bg-[#430000"],
+html:not(.dark) .ask-public-page [class*="bg-[#43000"],
+html:not(.dark) .ask-public-page [class*="bg-[#650000"],
+html:not(.dark) .ask-public-page [class*="bg-[#8A0000"],
+html:not(.dark) .ask-public-page [class*="bg-[#A30505"] {
+  background:
+    linear-gradient(
+      135deg,
+      #FFFDF7 0%,
+      #FFF8E7 48%,
+      #FCEBC2 100%
+    ) !important;
+
+  color: #5B3A12 !important;
+}
+
+/* =========================================================
+   LIGHT MODE TEXT
+   ========================================================= */
+
+html:not(.dark) .ask-public-page h1,
+html:not(.dark) .ask-public-page h2,
+html:not(.dark) .ask-public-page h3,
+html:not(.dark) .ask-public-page h4 {
+  color: #5A3008 !important;
+}
+
+html:not(.dark) .ask-public-page p {
+  color: #73552C !important;
+}
+
+html:not(.dark) .ask-public-page span {
+  color: inherit;
+}
+
+/* Small labels */
+html:not(.dark) .ask-public-page .ask-gold-text {
+  color: #A36F16 !important;
+}
+
+/* =========================================================
+   LIGHT MODE HEADINGS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page h1,
+html:not(.dark) .ask-public-page h2 {
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Gold gradient heading */
+html:not(.dark) .ask-public-page .ask-gold-heading {
+  background:
+    linear-gradient(
+      135deg,
+      #8A5A08 0%,
+      #B47D1B 28%,
+      #D9AD55 52%,
+      #9A6815 78%,
+      #C28B25 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+}
+
+/* =========================================================
+   LIGHT MODE CARDS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page .bg-white,
+html:not(.dark) .ask-public-page .bg-white\/95,
+html:not(.dark) .ask-public-page .bg-white\/90,
+html:not(.dark) .ask-public-page .bg-white\/80 {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.96),
+      rgba(255,247,224,0.96)
+    ) !important;
+
+  border-color: rgba(181,133,35,0.20) !important;
+
+  box-shadow:
+    0 8px 28px rgba(128,88,20,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.85);
+}
+
+/* =========================================================
+   LIGHT MODE HERITAGE CARDS
+   ========================================================= */
+
+html:not(.dark) .ask-heritage-frame {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,253,247,0.96),
+      rgba(255,244,211,0.94)
+    );
+
+  border-color: rgba(180,130,35,0.38);
+}
+
+/* =========================================================
+   LIGHT MODE BUTTONS
+   ========================================================= */
+
+html:not(.dark) .ask-gold-button {
+  background:
+    linear-gradient(
+      135deg,
+      #B98220 0%,
+      #D9AD55 30%,
+      #F3D47A 62%,
+      #FFE9A7 100%
+    );
+
+  color: #542900 !important;
+
+  border-color: #C49435;
+
+  box-shadow:
+    0 7px 20px rgba(157,111,24,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.70);
+}
+
+/* =========================================================
+   LIGHT MODE RED BUTTON
+   Keep red only for important CTA buttons
+   ========================================================= */
+
+html:not(.dark) .ask-red-button {
+  background:
+    linear-gradient(
+      135deg,
+      #8E4E0C,
+      #B77716,
+      #D9AD55
+    ) !important;
+
+  color: #FFFDF5 !important;
+
+  border-color: rgba(142,78,12,0.35);
+
+  box-shadow:
+    0 8px 22px rgba(126,82,15,0.18);
+}
+
+/* =========================================================
+   LIGHT MODE GOLD DIVIDERS
+   ========================================================= */
+
+html:not(.dark) .ask-heritage-divider {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #C18B27 18%,
+      #D9AD55 35%,
+      #F3D47A 50%,
+      #D9AD55 65%,
+      #C18B27 82%,
+      transparent
+    );
+}
+
+/* =========================================================
+   LIGHT MODE BORDERS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page [class*="border-red-"] {
+  border-color: rgba(181,133,35,0.24) !important;
+}
+
+/* =========================================================
+   LIGHT MODE ICON BOXES
+   ========================================================= */
+
+html:not(.dark) .ask-public-page [class*="bg-red-50"],
+html:not(.dark) .ask-public-page [class*="bg-red-100"] {
+  background:
+    linear-gradient(
+      135deg,
+      #FFF8E7,
+      #F6E4B8
+    ) !important;
+
+  color: #9A6815 !important;
+
+  border-color: rgba(181,133,35,0.20);
+}
+
+/* =========================================================
+   LIGHT MODE INPUTS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page input,
+html:not(.dark) .ask-public-page textarea,
+html:not(.dark) .ask-public-page select {
+  background: rgba(255,253,247,0.92) !important;
+  color: #5B3A12 !important;
+  border-color: rgba(181,133,35,0.30) !important;
+}
+
+html:not(.dark) .ask-public-page input::placeholder,
+html:not(.dark) .ask-public-page textarea::placeholder {
+  color: rgba(91,58,18,0.48) !important;
+}
+
+html:not(.dark) .ask-public-page input:focus,
+html:not(.dark) .ask-public-page textarea:focus,
+html:not(.dark) .ask-public-page select:focus {
+  border-color: #C18B27 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(217,173,85,0.13);
+}
+
+/* =========================================================
+   LIGHT MODE LINKS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page a {
+  color: #875A0D;
+}
+
+html:not(.dark) .ask-public-page a:hover {
+  color: #B47D1B;
+}
+
+/* =========================================================
+   LIGHT MODE BADGES
+   ========================================================= */
+
+html:not(.dark) .ask-public-page [class*="rounded-full"] {
+  border-color: rgba(181,133,35,0.25);
+}
+
+/* =========================================================
+   LIGHT MODE TABLE
+   ========================================================= */
+
+html:not(.dark) .ask-public-page th {
+  background:
+    linear-gradient(
+      135deg,
+      #F5D889,
+      #D9AD55
+    ) !important;
+
+  color: #542900 !important;
+}
+
+html:not(.dark) .ask-public-page td {
+  background: rgba(255,253,247,0.82) !important;
+  color: #5B3A12 !important;
+  border-color: rgba(181,133,35,0.18) !important;
+}
+
+/* =========================================================
+   IMPORTANT:
+   NAVBAR IS ALLOWED TO REMAIN RED/MAROON
+   ========================================================= */
+
+html:not(.dark) .ask-public-navbar {
+  color: white;
+}
+
+/* =========================================================
+   LIGHT MODE DECORATIVE GOLD GLOW
+   ========================================================= */
+
+html:not(.dark) .ask-public-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(243,212,122,0.08),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(217,173,85,0.07),
+      transparent 22%
+    );
+}
+
+/* Keep actual content above decoration */
+html:not(.dark) .ask-public-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   ASK FINAL LIGHT HERITAGE OVERRIDE
+   Richer cream + golden yellow
+   Navbar remains deep red
+   ========================================================= */
+
+html:not(.dark) body {
+  background:
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(238,190,63,0.18),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 92% 18%,
+      rgba(218,166,42,0.14),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #FFF9E8 0%,
+      #FFF3CF 38%,
+      #FBE8B1 68%,
+      #FFF4D5 100%
+    ) !important;
+
+  color: #593509;
+}
+
+/* =========================================================
+   ENTIRE LIGHT PUBLIC WEBSITE
+   ========================================================= */
+
+html:not(.dark) .ask-public-page {
+  background:
+    radial-gradient(
+      circle at 7% 15%,
+      rgba(243,205,92,0.18),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 93% 25%,
+      rgba(215,163,35,0.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #FFF9E9 0%,
+      #FFF2CC 32%,
+      #F9E4AE 62%,
+      #FFF1C9 84%,
+      #FFF9E9 100%
+    ) !important;
+
+  color: #593509;
+}
+
+/* =========================================================
+   ALL SECTIONS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page section {
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(224,174,47,0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #FFF9E9 0%,
+      #FFF1CD 45%,
+      #F8E1A6 100%
+    ) !important;
+
+  color: #593509;
+}
+
+html:not(.dark) .ask-public-page section:nth-child(even) {
+  background:
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(239,193,57,0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #FFF7DF 0%,
+      #FCE9B8 50%,
+      #F5DB9A 100%
+    ) !important;
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page h1,
+html:not(.dark) .ask-public-page h2,
+html:not(.dark) .ask-public-page h3,
+html:not(.dark) .ask-public-page h4 {
+  color: #5A3208 !important;
+}
+
+html:not(.dark) .ask-public-page p {
+  color: #704C1B !important;
+}
+
+html:not(.dark) .ask-public-page .ask-gold-heading {
+  background:
+    linear-gradient(
+      135deg,
+      #8A5700 0%,
+      #B87908 28%,
+      #D6A52D 48%,
+      #F0C95B 66%,
+      #9C6505 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+}
+
+/* =========================================================
+   GOLDEN YELLOW CARDS / BOXES
+   ========================================================= */
+
+html:not(.dark) .ask-public-page .ask-heritage-card-dark,
+html:not(.dark) .ask-public-page .ask-heritage-frame {
+  background:
+    linear-gradient(
+      145deg,
+      #FFF2B8 0%,
+      #F7D96A 48%,
+      #E8B936 100%
+    ) !important;
+
+  border: 1px solid rgba(161,106,8,0.38) !important;
+
+  color: #5A3208 !important;
+
+  box-shadow:
+    0 10px 30px rgba(133,88,10,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.65);
+}
+
+/* Generic public cards */
+html:not(.dark) .ask-public-page article {
+  background:
+    linear-gradient(
+      145deg,
+      #FFF7D9 0%,
+      #F9E29A 55%,
+      #F0CA59 100%
+    );
+
+  border-color: rgba(167,111,9,0.24);
+
+  box-shadow:
+    0 8px 26px rgba(130,86,8,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   GOLDEN ICON BOXES
+   ========================================================= */
+
+html:not(.dark) .ask-public-page [class*="bg-red-50"],
+html:not(.dark) .ask-public-page [class*="bg-red-100"] {
+  background:
+    linear-gradient(
+      145deg,
+      #FFEFA6,
+      #F4D05A
+    ) !important;
+
+  color: #7B4A00 !important;
+
+  border: 1px solid rgba(169,112,8,0.22) !important;
+
+  box-shadow:
+    0 5px 16px rgba(145,96,8,0.12);
+}
+
+/* =========================================================
+   GOLD BUTTONS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page .ask-gold-button {
+  background:
+    linear-gradient(
+      135deg,
+      #C28A0A 0%,
+      #E0AF28 30%,
+      #F3CC55 58%,
+      #FFD96B 78%,
+      #E8B52F 100%
+    ) !important;
+
+  color: #4B2800 !important;
+
+  border: 1px solid #B27A08 !important;
+
+  box-shadow:
+    0 9px 25px rgba(145,96,5,0.24),
+    inset 0 1px 0 rgba(255,255,255,0.62);
+}
+
+html:not(.dark) .ask-public-page .ask-gold-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #D19A12,
+      #E8B935,
+      #FFD96B,
+      #F0C13C
+    ) !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 13px 30px rgba(145,96,5,0.30),
+    inset 0 1px 0 rgba(255,255,255,0.70);
+}
+
+/* =========================================================
+   ALL PUBLIC CTA BUTTONS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page button:not([aria-label*="menu"]) {
+  background:
+    linear-gradient(
+      135deg,
+      #C28A0A 0%,
+      #E1B12F 35%,
+      #F5D15F 65%,
+      #DFAE28 100%
+    );
+
+  color: #4B2800 !important;
+
+  border-color: rgba(161,106,8,0.40);
+
+  box-shadow:
+    0 7px 20px rgba(145,96,5,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.58);
+}
+
+html:not(.dark) .ask-public-page button:not([aria-label*="menu"]):hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   CTA LINKS THAT LOOK LIKE BUTTONS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page a[class*="rounded-lg"],
+html:not(.dark) .ask-public-page a[class*="rounded-xl"],
+html:not(.dark) .ask-public-page a[class*="rounded-full"] {
+  border-color: rgba(161,106,8,0.30);
+}
+
+/* =========================================================
+   GOLD BORDER SYSTEM
+   ========================================================= */
+
+html:not(.dark) .ask-public-page [class*="border-red-"] {
+  border-color: rgba(170,116,12,0.26) !important;
+}
+
+html:not(.dark) .ask-public-page .ask-gold-border {
+  border-color: rgba(174,119,11,0.42) !important;
+}
+
+/* =========================================================
+   GOLD DIVIDERS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page .ask-heritage-divider {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #B77A05 15%,
+      #D9A928 30%,
+      #F4D46A 50%,
+      #D9A928 70%,
+      #B77A05 85%,
+      transparent
+    ) !important;
+}
+
+/* =========================================================
+   GOLD ICONS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page svg {
+  color: inherit;
+}
+
+html:not(.dark) .ask-public-page [class*="text-red-"] {
+  color: #A56D05 !important;
+}
+
+/* =========================================================
+   INPUTS / SELECTS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page input,
+html:not(.dark) .ask-public-page textarea,
+html:not(.dark) .ask-public-page select {
+  background:
+    linear-gradient(
+      135deg,
+      #FFFDF5,
+      #FFF1C9
+    ) !important;
+
+  color: #593509 !important;
+
+  border-color: rgba(169,112,8,0.30) !important;
+}
+
+html:not(.dark) .ask-public-page input:focus,
+html:not(.dark) .ask-public-page textarea:focus,
+html:not(.dark) .ask-public-page select:focus {
+  border-color: #D2A126 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(218,169,43,0.15);
+}
+
+/* =========================================================
+   LIGHT NAVBAR - KEEP RED
+   ========================================================= */
+
+html:not(.dark) .ask-public-navbar {
+  background:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(255,255,255,0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 50%,
+      rgba(243,212,122,0.10),
+      transparent 28%
+    ),
+    linear-gradient(
+      105deg,
+      #650000 0%,
+      #820000 24%,
+      #A30505 52%,
+      #C91414 78%,
+      #E52B2B 100%
+    ) !important;
+
+  border-bottom-color: rgba(243,212,122,0.35) !important;
+
+  box-shadow:
+    0 8px 30px rgba(65,0,0,0.30),
+    inset 0 -1px 0 rgba(243,212,122,0.20);
+}
+
+/* =========================================================
+   GOLDEN DECORATIVE GLOW
+   ========================================================= */
+
+html:not(.dark) .ask-public-page::before {
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(247,211,87,0.10),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 88% 70%,
+      rgba(222,171,43,0.09),
+      transparent 24%
+    );
+}
+
+/* =========================================================
+   DARK MODE - KEEP EXISTING RED HERITAGE
+   ========================================================= */
+
+.dark .ask-public-page .ask-gold-button {
+  background:
+    linear-gradient(
+      135deg,
+      #B27A16,
+      #D9AD55,
+      #F3D47A,
+      #FFE8A3
+    ) !important;
+
+  color: #4A1700 !important;
+}
+
+.dark .ask-public-page article,
+.dark .ask-public-page .ask-heritage-card-dark {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(163,5,5,0.72),
+      rgba(67,0,0,0.94)
+    );
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  html:not(.dark) .ask-public-page section {
+    background:
+      linear-gradient(
+        145deg,
+        #FFF9E9,
+        #F9E5B1
+      ) !important;
+  }
+
+  html:not(.dark) .ask-public-page article {
+    background:
+      linear-gradient(
+        145deg,
+        #FFF3BC,
+        #EFC95A
+      );
+  }
+}
+
+/* =========================================================
+   FINAL CARD / BOX COLOR OVERRIDE
+   Light Mode - Golden Yellow Heritage
+   ========================================================= */
+
+/* All bordered rounded content boxes */
+html:not(.dark) .ask-public-page [class*="rounded-"][class*="border"] {
+  background:
+    linear-gradient(
+      145deg,
+      #FFF1A8 0%,
+      #F8D968 45%,
+      #EFC33D 100%
+    ) !important;
+
+  border-color: rgba(157,104,5,0.38) !important;
+
+  color: #5A3208 !important;
+
+  box-shadow:
+    0 8px 24px rgba(130,86,5,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+}
+
+/* Feature cards specifically */
+html:not(.dark) .ask-public-page [class*="grid"] > div[class*="rounded"] {
+  background:
+    linear-gradient(
+      145deg,
+      #FFF3B5 0%,
+      #F8DA6B 48%,
+      #EFC13A 100%
+    ) !important;
+
+  border: 1px solid rgba(157,104,5,0.40) !important;
+
+  color: #5A3208 !important;
+
+  box-shadow:
+    0 10px 28px rgba(130,86,5,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.60);
+}
+
+/* Any white/translucent card */
+html:not(.dark) .ask-public-page [class*="bg-white/"] {
+  background:
+    linear-gradient(
+      145deg,
+      #FFF3B5 0%,
+      #F8D96B 50%,
+      #EFC13A 100%
+    ) !important;
+
+  color: #5A3208 !important;
+}
+
+/* Any explicit white card */
+html:not(.dark) .ask-public-page [class~="bg-white"] {
+  background:
+    linear-gradient(
+      145deg,
+      #FFF3B5 0%,
+      #F8D96B 50%,
+      #EFC13A 100%
+    ) !important;
+
+  color: #5A3208 !important;
+}
+
+/* Card headings */
+html:not(.dark) .ask-public-page [class*="rounded-"][class*="border"] h3,
+html:not(.dark) .ask-public-page [class*="rounded-"][class*="border"] h4 {
+  color: #5A3208 !important;
+}
+
+/* Card paragraphs */
+html:not(.dark) .ask-public-page [class*="rounded-"][class*="border"] p {
+  color: #704A12 !important;
+}
+
+/* Card icons */
+html:not(.dark) .ask-public-page [class*="rounded-"][class*="border"] svg {
+  color: #805000 !important;
+}
+
+/* Golden icon containers inside cards */
+html:not(.dark) .ask-public-page [class*="rounded-"][class*="border"] [class*="bg-red-"],
+html:not(.dark) .ask-public-page [class*="rounded-"][class*="border"] [class*="bg-yellow-"],
+html:not(.dark) .ask-public-page [class*="rounded-"][class*="border"] [class*="bg-amber-"] {
+  background:
+    linear-gradient(
+      145deg,
+      #FFE98A,
+      #EFC13A
+    ) !important;
+
+  color: #704500 !important;
+
+  border-color: rgba(150,98,4,0.25) !important;
+}
+
+/* =========================================================
+   GOLDEN BUTTONS - STRONGER
+   ========================================================= */
+
+html:not(.dark) .ask-public-page a[class*="bg-"],
+html:not(.dark) .ask-public-page button[class*="bg-"] {
+  background:
+    linear-gradient(
+      135deg,
+      #C68A08 0%,
+      #E3B32E 32%,
+      #F5D35F 65%,
+      #DDAA20 100%
+    ) !important;
+
+  color: #4B2800 !important;
+
+  border-color: #B77B05 !important;
+
+  box-shadow:
+    0 8px 22px rgba(135,88,3,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.58);
+}
+
+/* Hover */
+html:not(.dark) .ask-public-page a[class*="bg-"]:hover,
+html:not(.dark) .ask-public-page button[class*="bg-"]:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #D49A0C,
+      #EAC044,
+      #FFD96A,
+      #E5B52B
+    ) !important;
+
+  color: #472600 !important;
+}
+
+/* =========================================================
+   HERO FEATURE BOXES
+   ========================================================= */
+
+html:not(.dark) .ask-public-page .grid > div {
+  position: relative;
+}
+
+html:not(.dark) .ask-public-page .grid > div[class*="rounded-"] {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,243,181,0.98) 0%,
+      rgba(248,217,107,0.96) 50%,
+      rgba(239,193,58,0.96) 100%
+    ) !important;
+
+  border: 1px solid rgba(157,104,5,0.38) !important;
+
+  box-shadow:
+    0 10px 30px rgba(130,86,5,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   GOLDEN BOX HOVER
+   ========================================================= */
+
+html:not(.dark) .ask-public-page .grid > div[class*="rounded-"]:hover {
+  background:
+    linear-gradient(
+      145deg,
+      #FFF5C4 0%,
+      #F9DD72 45%,
+      #EFC039 100%
+    ) !important;
+
+  border-color: rgba(157,104,5,0.55) !important;
+
+  box-shadow:
+    0 15px 34px rgba(130,86,5,0.23),
+    inset 0 1px 0 rgba(255,255,255,0.72);
+
+  transform: translateY(-2px);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    background 200ms ease;
+}
+
+/* =========================================================
+   LIGHT MODE - FINAL CTA / MEMBERSHIP SECTION
+   ========================================================= */
+
+/* Outer CTA section */
+html:not(.dark) .ask-public-page > section:last-of-type {
+  background:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(243,205,92,0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 50%,
+      rgba(218,166,42,0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #FFF9E7 0%,
+      #FBE9B5 48%,
+      #F6D982 100%
+    ) !important;
+
+  color: #5A3208 !important;
+  border-top: 1px solid rgba(168,112,8,0.18) !important;
+  border-bottom: 1px solid rgba(168,112,8,0.18) !important;
+}
+
+/* CTA inner container */
+html:not(.dark) .ask-public-page > section:last-of-type > div {
+  color: #5A3208;
+}
+
+/* CTA cards / rounded container */
+html:not(.dark) .ask-public-page > section:last-of-type [class*="rounded-"] {
+  background:
+    linear-gradient(
+      135deg,
+      #FFF0A8 0%,
+      #F7D55F 48%,
+      #EFC13B 100%
+    ) !important;
+
+  border-color: rgba(157,104,5,0.38) !important;
+
+  color: #5A3208 !important;
+
+  box-shadow:
+    0 12px 32px rgba(130,86,5,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.58);
+}
+
+/* CTA heading */
+html:not(.dark) .ask-public-page > section:last-of-type h2,
+html:not(.dark) .ask-public-page > section:last-of-type h3 {
+  color: #542D05 !important;
+}
+
+/* CTA description */
+html:not(.dark) .ask-public-page > section:last-of-type p {
+  color: #704A12 !important;
+}
+
+/* CTA small label */
+html:not(.dark) .ask-public-page > section:last-of-type span {
+  color: #805000;
+}
+
+/* =========================================================
+   CTA BUTTONS
+   ========================================================= */
+
+html:not(.dark) .ask-public-page > section:last-of-type a {
+  background:
+    linear-gradient(
+      135deg,
+      #C68A08 0%,
+      #E2B12E 32%,
+      #F5D15C 65%,
+      #DDAA20 100%
+    ) !important;
+
+  color: #4B2800 !important;
+
+  border: 1px solid #B77B05 !important;
+
+  box-shadow:
+    0 8px 22px rgba(135,88,3,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.62);
+}
+
+/* CTA button hover */
+html:not(.dark) .ask-public-page > section:last-of-type a:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #D49A0C,
+      #EAC044,
+      #FFD96A,
+      #E5B52B
+    ) !important;
+
+  color: #472600 !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(135,88,3,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   CTA GOLD DECORATION
+   ========================================================= */
+
+html:not(.dark) .ask-public-page > section:last-of-type::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(255,255,255,0.30),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(255,239,164,0.20),
+      transparent 28%
+    );
+}
+
+/* Keep CTA content above decoration */
+html:not(.dark) .ask-public-page > section:last-of-type > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   ASK PUBLIC PAGES
+   FULL WIDTH HERITAGE BACKGROUND
+   FIX DARK SIDE STRIPS / CENTER COLOR MISMATCH
+   ========================================================= */
+
+/* The complete browser viewport */
+html:not(.dark) body {
+  background:
+    linear-gradient(
+      135deg,
+      #FFF9E7 0%,
+      #FFF0C7 45%,
+      #F7DEA0 100%
+    ) !important;
+}
+
+/* Public page must always occupy complete width */
+html:not(.dark) main.ask-public-page {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(243,205,92,0.16),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 92% 30%,
+      rgba(218,166,42,0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #FFF9E7 0%,
+      #FFF0C7 42%,
+      #F7DEA0 70%,
+      #FFF2D0 100%
+    ) !important;
+}
+
+/* Every direct page section spans the complete viewport */
+html:not(.dark) main.ask-public-page > section {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* =========================================================
+   REMOVE OLD RED / MAROON PAGE BACKGROUNDS
+   ========================================================= */
+
+/* Common old heritage red backgrounds */
+html:not(.dark) main.ask-public-page [class*="bg-[#430000"],
+html:not(.dark) main.ask-public-page [class*="bg-[#43000"],
+html:not(.dark) main.ask-public-page [class*="bg-[#520000"],
+html:not(.dark) main.ask-public-page [class*="bg-[#5b0714"],
+html:not(.dark) main.ask-public-page [class*="bg-[#650000"],
+html:not(.dark) main.ask-public-page [class*="bg-[#700000"],
+html:not(.dark) main.ask-public-page [class*="bg-[#820000"],
+html:not(.dark) main.ask-public-page [class*="bg-[#8A0000"],
+html:not(.dark) main.ask-public-page [class*="bg-[#A30505"],
+html:not(.dark) main.ask-public-page [class*="bg-red-950"],
+html:not(.dark) main.ask-public-page [class*="bg-red-900"],
+html:not(.dark) main.ask-public-page [class*="bg-red-800"],
+html:not(.dark) main.ask-public-page [class*="bg-red-700"] {
+  background:
+    linear-gradient(
+      135deg,
+      #FFF9E7 0%,
+      #FFF0C7 45%,
+      #F6DC9B 100%
+    ) !important;
+
+  color: #5A3208 !important;
+}
+
+/* =========================================================
+   EVENTS / ACTIVITIES / NEWS / GALLERY MAIN AREAS
+   ========================================================= */
+
+html:not(.dark) main.ask-public-page > section {
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(243,205,92,0.13),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 75%,
+      rgba(218,166,42,0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #FFF9E7 0%,
+      #FFF1CE 48%,
+      #F5DFA7 100%
+    ) !important;
+
+  color: #5A3208 !important;
+}
+
+/* =========================================================
+   EVENT CARD
+   ========================================================= */
+
+html:not(.dark) main.ask-public-page article {
+  background:
+    linear-gradient(
+      145deg,
+      #FFF2A8 0%,
+      #F8D766 45%,
+      #EFC13A 100%
+    ) !important;
+
+  border: 1px solid rgba(157,104,5,0.38) !important;
+
+  color: #5A3208 !important;
+
+  box-shadow:
+    0 10px 30px rgba(130,86,5,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.62);
+}
+
+/* Event card headings */
+html:not(.dark) main.ask-public-page article h1,
+html:not(.dark) main.ask-public-page article h2,
+html:not(.dark) main.ask-public-page article h3,
+html:not(.dark) main.ask-public-page article h4 {
+  color: #5A3208 !important;
+}
+
+/* Event card text */
+html:not(.dark) main.ask-public-page article p,
+html:not(.dark) main.ask-public-page article span {
+  color: #704A12 !important;
+}
+
+/* Event card icons */
+html:not(.dark) main.ask-public-page article svg {
+  color: #805000 !important;
+}
+
+/* =========================================================
+   EVENT IMAGE / TOP AREA
+   ========================================================= */
+
+html:not(.dark) main.ask-public-page article [class*="bg-red-"],
+html:not(.dark) main.ask-public-page article [class*="bg-[#"] {
+  background:
+    linear-gradient(
+      145deg,
+      #F9DA68,
+      #E9B52E
+    ) !important;
+
+  color: #5A3208 !important;
+}
+
+/* =========================================================
+   EVENT BADGES
+   ========================================================= */
+
+html:not(.dark) main.ask-public-page article [class*="rounded-full"] {
+  background:
+    linear-gradient(
+      135deg,
+      #D79A0B,
+      #F0C84D
+    ) !important;
+
+  color: #4B2800 !important;
+
+  border-color: rgba(143,94,3,0.30) !important;
+}
+
+/* =========================================================
+   PAGE CONTAINERS
+   ========================================================= */
+
+/*
+   Prevent a max-width colored container from producing
+   dark strips at both sides.
+*/
+html:not(.dark) main.ask-public-page > div,
+html:not(.dark) main.ask-public-page > section > div {
+  position: relative;
+}
+
+/* Keep inner max-width containers transparent */
+html:not(.dark) main.ask-public-page > section > .max-w-7xl,
+html:not(.dark) main.ask-public-page > section > .max-w-6xl,
+html:not(.dark) main.ask-public-page > section > .max-w-5xl,
+html:not(.dark) main.ask-public-page > section > .max-w-4xl {
+  background: transparent !important;
+}
+
+/* =========================================================
+   GOLDEN SECTION DIVIDER
+   ========================================================= */
+
+html:not(.dark) main.ask-public-page > section + section {
+  border-top: 1px solid rgba(170,116,12,0.14);
+}
+
+/* =========================================================
+   DARK MODE
+   DO NOT CHANGE THE RED HERITAGE DESIGN
+   ========================================================= */
+
+.dark main.ask-public-page {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+/* Dark mode full-width sections */
+.dark main.ask-public-page > section {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  html:not(.dark) main.ask-public-page,
+  html:not(.dark) main.ask-public-page > section {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+/* =========================================================
+   ADMIN LIGHT THEME TEXT CONTRAST
+   Dark theme is intentionally NOT affected.
+   ========================================================= */
+
+html:not(.dark) [class*="admin"] h1,
+html:not(.dark) [class*="admin"] h2,
+html:not(.dark) [class*="admin"] h3 {
+  color: #5A3208 !important;
+}
+
+/* Admin header title */
+html:not(.dark) header h1 {
+  color: #FFFFFF !important;
+}
+
+/* Admin header subtitle */
+html:not(.dark) header p {
+  color: #F7C948 !important;
+}
+
+/* Admin header branding text */
+html:not(.dark) header .text-white {
+  color: #FFFFFF !important;
+}
+
+/* Admin dashboard page heading */
+html:not(.dark) main h1 {
+  color: #7A1F12 !important;
+}
+
+/* Light-theme dashboard/card text */
+html:not(.dark) main [class*="rounded"] h2,
+html:not(.dark) main [class*="rounded"] h3,
+html:not(.dark) main [class*="rounded"] p {
+  color: #5A3208 !important;
+}
+
+/* Sidebar text in light theme */
+html:not(.dark) aside a,
+html:not(.dark) aside span {
+  color: #5A3208 !important;
+}
+
+/* Keep active sidebar text readable */
+html:not(.dark) aside a[class*="bg"] {
+  color: #5A3208 !important;
+}
+
+
+/* Admin header subtitle - LIGHT THEME ONLY */
+html:not(.dark) .admin-header-subtitle {
+  color: #FFD84D !important;
+}
+
+/* =========================================================
+   ADMINISTRATION PANEL - LIGHT THEME ONLY
+   Higher specificity overrides the existing header p rules.
+   ========================================================= */
+
+html:not(.dark) header p.admin-header-subtitle {
+  color: #FFD84D !important;
+  -webkit-text-fill-color: #FFD84D !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   ADMINISTRATION PANEL ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â LIGHT THEME ONLY
+   Higher specificity overrides the existing header p rules.
+   ========================================================= */
+
+html:not(.dark) header p.admin-header-subtitle {
+  color: #FFD84D !important;
+  -webkit-text-fill-color: #FFD84D !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   ADMIN LIGHT THEME - SOFT GOLDEN YELLOW
+   DARK THEME IS NOT MODIFIED
+   ========================================================= */
+
+/* Sidebar menu buttons */
+html:not(.dark) aside a {
+  background: linear-gradient(
+    135deg,
+    #FFF0A8 0%,
+    #FFE58A 50%,
+    #F8D765 100%
+  ) !important;
+
+  color: #4A2905 !important;
+
+  border-color: rgba(155, 105, 0, 0.28) !important;
+
+  box-shadow:
+    0 4px 12px rgba(126, 82, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Sidebar icons */
+html:not(.dark) aside a svg {
+  color: #5A3208 !important;
+}
+
+/* Sidebar active item */
+html:not(.dark) aside a[class*="bg-red"],
+html:not(.dark) aside a[class*="bg-[#"] {
+  color: #3F2203 !important;
+}
+
+/* Sidebar hover */
+html:not(.dark) aside a:hover {
+  background: linear-gradient(
+    135deg,
+    #FFF4BC 0%,
+    #FFE99A 50%,
+    #F9DC72 100%
+  ) !important;
+
+  color: #3D2102 !important;
+
+  box-shadow:
+    0 6px 16px rgba(126, 82, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45) !important;
+}
+
+/* =========================================================
+   MASTER DATA CARDS
+   ========================================================= */
+
+html:not(.dark) main a[href*="/admin/master-data/"] {
+  background: linear-gradient(
+    135deg,
+    #FFF3B0 0%,
+    #FFE899 52%,
+    #F9D96A 100%
+  ) !important;
+
+  color: #4A2905 !important;
+
+  border-color: rgba(164, 111, 0, 0.30) !important;
+
+  box-shadow:
+    0 8px 22px rgba(126, 82, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.40) !important;
+}
+
+/* Master Data card title */
+html:not(.dark) main a[href*="/admin/master-data/"] h2 {
+  color: #4A2905 !important;
+}
+
+/* Master Data card description */
+html:not(.dark) main a[href*="/admin/master-data/"] p {
+  color: #69400A !important;
+}
+
+/* Master Data card arrow */
+html:not(.dark) main a[href*="/admin/master-data/"] span {
+  color: #704500 !important;
+}
+
+/* Master Data card icon */
+html:not(.dark) main a[href*="/admin/master-data/"] div[class*="rounded-xl"] {
+  color: #4A2905 !important;
+  border-color: rgba(164, 111, 0, 0.32) !important;
+}
+
+/* Master Data card hover */
+html:not(.dark) main a[href*="/admin/master-data/"]:hover {
+  background: linear-gradient(
+    135deg,
+    #FFF6C5 0%,
+    #FFEDA7 50%,
+    #FBE080 100%
+  ) !important;
+
+  border-color: rgba(155, 105, 0, 0.42) !important;
+
+  box-shadow:
+    0 12px 28px rgba(126, 82, 0, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.50) !important;
+}
+
+/* Master Data page heading */
+html:not(.dark) main h1 {
+  color: #5A3208 !important;
+}
+
+/* Master Data page subtitle */
+html:not(.dark) main h1 + p {
+  color: #704A12 !important;
+}
+
+
+/* =========================================================
+   SIDEBAR BRAND AREA ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â LIGHT THEME FIX
+   Keep brand/header maroon; only navigation buttons are gold.
+   ========================================================= */
+
+html:not(.dark) aside > div:first-child {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* If the brand itself is a link, do not apply gold navigation styling */
+html:not(.dark) aside > div:first-child a {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  color: #FFFFFF !important;
+}
+
+/* Brand title */
+html:not(.dark) aside > div:first-child a span,
+html:not(.dark) aside > div:first-child span {
+  color: #FFFFFF !important;
+}
+
+/* Brand subtitle */
+html:not(.dark) aside > div:first-child p {
+  color: #FFD84D !important;
+}
+
+/* Keep brand icon/logo area transparent */
+html:not(.dark) aside > div:first-child svg {
+  color: #FFFFFF !important;
+}
+
+/* Navigation buttons remain soft gold */
+html:not(.dark) aside > nav a,
+html:not(.dark) aside > div:not(:first-child) a {
+  background: linear-gradient(
+    135deg,
+    #FFF0A8 0%,
+    #FFE58A 50%,
+    #F8D765 100%
+  ) !important;
+
+  color: #4A2905 !important;
+}
+
+
+/* =========================================================
+   LOGGED-IN MEMBER PORTAL BRAND
+   LIGHT THEME ONLY
+   ========================================================= */
+
+html:not(.dark) body:has(a[href*="/member/"]) aside > div:first-child {
+  background: transparent !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+}
+
+/* Member Portal brand title */
+html:not(.dark) body:has(a[href*="/member/"]) aside > div:first-child h1,
+html:not(.dark) body:has(a[href*="/member/"]) aside > div:first-child h2,
+html:not(.dark) body:has(a[href*="/member/"]) aside > div:first-child a,
+html:not(.dark) body:has(a[href*="/member/"]) aside > div:first-child span {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* Member Portal subtitle */
+html:not(.dark) body:has(a[href*="/member/"]) aside > div:first-child p {
+  color: #FFD84D !important;
+  -webkit-text-fill-color: #FFD84D !important;
+  opacity: 1 !important;
+}
+
+/* Member brand icons/logo */
+html:not(.dark) body:has(a[href*="/member/"]) aside > div:first-child svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+/* Keep member sidebar navigation light gold */
+html:not(.dark) body:has(a[href*="/member/"]) aside a {
+  color: #4A2905 !important;
+}
+
+/* Member sidebar navigation icons */
+html:not(.dark) body:has(a[href*="/member/"]) aside a svg {
+  color: #5A3208 !important;
+}
+
+
+/* =========================================================
+   LIGHT THEME ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â SOFT HERITAGE GOLD
+   Lighter gold for member/admin cards and sidebar buttons.
+   Dark theme is untouched.
+   ========================================================= */
+
+/* Sidebar navigation */
+html:not(.dark) aside a {
+  background: linear-gradient(
+    135deg,
+    #FFF8D6 0%,
+    #FFF2B8 50%,
+    #FFE99A 100%
+  ) !important;
+
+  color: #4A2905 !important;
+  border-color: rgba(164, 111, 0, 0.22) !important;
+
+  box-shadow:
+    0 3px 10px rgba(126, 82, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Sidebar hover */
+html:not(.dark) aside a:hover {
+  background: linear-gradient(
+    135deg,
+    #FFFBE8 0%,
+    #FFF5CA 50%,
+    #FFEDAE 100%
+  ) !important;
+
+  color: #3F2203 !important;
+}
+
+/* Sidebar icons */
+html:not(.dark) aside a svg {
+  color: #5A3208 !important;
+}
+
+/* =========================================================
+   MEMBER / ADMIN CONTENT CARDS
+   ========================================================= */
+
+html:not(.dark) main section,
+html:not(.dark) main article {
+  /* preserve existing backgrounds unless explicitly styled */
+}
+
+/* Gold cards and panels */
+html:not(.dark) main [class*="bg-[#F"],
+html:not(.dark) main [class*="bg-yellow"],
+html:not(.dark) main [class*="bg-amber"] {
+  color: #4A2905;
+}
+
+/* Member profile / form cards */
+html:not(.dark) main .rounded-2xl {
+  /* no forced background here */
+}
+
+/* =========================================================
+   COMMON GOLD BACKGROUND OVERRIDE
+   ========================================================= */
+
+html:not(.dark) .bg-yellow-300,
+html:not(.dark) .bg-yellow-400,
+html:not(.dark) .bg-amber-300,
+html:not(.dark) .bg-amber-400 {
+  background: linear-gradient(
+    135deg,
+    #FFF8D6 0%,
+    #FFF1B5 50%,
+    #FFE99A 100%
+  ) !important;
+
+  color: #4A2905 !important;
+}
+
+/* Gold inputs / controls */
+html:not(.dark) input[class*="bg-yellow"],
+html:not(.dark) input[class*="bg-amber"],
+html:not(.dark) select[class*="bg-yellow"],
+html:not(.dark) select[class*="bg-amber"],
+html:not(.dark) textarea[class*="bg-yellow"],
+html:not(.dark) textarea[class*="bg-amber"] {
+  background: #FFF3C4 !important;
+  color: #4A2905 !important;
+}
+
+/* Member profile cards with common yellow/gold inline backgrounds */
+html:not(.dark) [style*="yellow"],
+html:not(.dark) [style*="gold"] {
+  color: #4A2905 !important;
+}
+
+/* Keep form labels and card headings dark */
+html:not(.dark) main h1,
+html:not(.dark) main h2,
+html:not(.dark) main h3,
+html:not(.dark) main label {
+  color: #4A2905;
+}
+
+/* =========================================================
+   GOLD BUTTONS
+   ========================================================= */
+
+html:not(.dark) main button[class*="bg-yellow"],
+html:not(.dark) main button[class*="bg-amber"] {
+  background: linear-gradient(
+    135deg,
+    #FFF2B8,
+    #FFE99A
+  ) !important;
+
+  color: #4A2905 !important;
+  border-color: rgba(164, 111, 0, 0.25) !important;
+}
+
+
+/* =========================================================
+   LIGHT THEME - SOFT HERITAGE GOLD
+   Lighter gold for member/admin cards and sidebar buttons.
+   Dark theme is untouched.
+   ========================================================= */
+
+/* Sidebar navigation */
+html:not(.dark) aside a {
+  background: linear-gradient(
+    135deg,
+    #FFF8D6 0%,
+    #FFF2B8 50%,
+    #FFE99A 100%
+  ) !important;
+
+  color: #4A2905 !important;
+  border-color: rgba(164, 111, 0, 0.22) !important;
+
+  box-shadow:
+    0 3px 10px rgba(126, 82, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Sidebar hover */
+html:not(.dark) aside a:hover {
+  background: linear-gradient(
+    135deg,
+    #FFFBE8 0%,
+    #FFF5CA 50%,
+    #FFEDAE 100%
+  ) !important;
+
+  color: #3F2203 !important;
+}
+
+/* Sidebar icons */
+html:not(.dark) aside a svg {
+  color: #5A3208 !important;
+}
+
+/* =========================================================
+   MEMBER / ADMIN CONTENT CARDS
+   ========================================================= */
+
+html:not(.dark) main section,
+html:not(.dark) main article {
+  /* preserve existing backgrounds unless explicitly styled */
+}
+
+/* Gold cards and panels */
+html:not(.dark) main [class*="bg-[#F"],
+html:not(.dark) main [class*="bg-yellow"],
+html:not(.dark) main [class*="bg-amber"] {
+  color: #4A2905;
+}
+
+/* Member profile / form cards */
+html:not(.dark) main .rounded-2xl {
+  /* no forced background here */
+}
+
+/* =========================================================
+   COMMON GOLD BACKGROUND OVERRIDE
+   ========================================================= */
+
+html:not(.dark) .bg-yellow-300,
+html:not(.dark) .bg-yellow-400,
+html:not(.dark) .bg-amber-300,
+html:not(.dark) .bg-amber-400 {
+  background: linear-gradient(
+    135deg,
+    #FFF8D6 0%,
+    #FFF1B5 50%,
+    #FFE99A 100%
+  ) !important;
+
+  color: #4A2905 !important;
+}
+
+/* Gold inputs / controls */
+html:not(.dark) input[class*="bg-yellow"],
+html:not(.dark) input[class*="bg-amber"],
+html:not(.dark) select[class*="bg-yellow"],
+html:not(.dark) select[class*="bg-amber"],
+html:not(.dark) textarea[class*="bg-yellow"],
+html:not(.dark) textarea[class*="bg-amber"] {
+  background: #FFF3C4 !important;
+  color: #4A2905 !important;
+}
+
+/* Member profile cards with common yellow/gold inline backgrounds */
+html:not(.dark) [style*="yellow"],
+html:not(.dark) [style*="gold"] {
+  color: #4A2905 !important;
+}
+
+/* Keep form labels and card headings dark */
+html:not(.dark) main h1,
+html:not(.dark) main h2,
+html:not(.dark) main h3,
+html:not(.dark) main label {
+  color: #4A2905;
+}
+
+/* =========================================================
+   GOLD BUTTONS
+   ========================================================= */
+
+html:not(.dark) main button[class*="bg-yellow"],
+html:not(.dark) main button[class*="bg-amber"] {
+  background: linear-gradient(
+    135deg,
+    #FFF2B8,
+    #FFE99A
+  ) !important;
+
+  color: #4A2905 !important;
+  border-color: rgba(164, 111, 0, 0.25) !important;
+}
+
+
+/* =========================================================
+   LIGHT THEME ONLY ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â VERY LIGHT HERITAGE GOLD
+   Dark theme is intentionally untouched.
+   ========================================================= */
+
+/* Sidebar buttons */
+html:not(.dark) aside a {
+  background: linear-gradient(
+    135deg,
+    #FFFDF0 0%,
+    #FFF9D9 50%,
+    #FFF3BE 100%
+  ) !important;
+
+  color: #3A1F00 !important;
+
+  border-color: rgba(139, 91, 0, 0.18) !important;
+
+  box-shadow:
+    0 2px 8px rgba(92, 58, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Sidebar hover */
+html:not(.dark) aside a:hover {
+  background: linear-gradient(
+    135deg,
+    #FFFFF5 0%,
+    #FFFBE8 50%,
+    #FFF6D0 100%
+  ) !important;
+
+  color: #2E1700 !important;
+}
+
+/* Sidebar text */
+html:not(.dark) aside a,
+html:not(.dark) aside a span {
+  color: #3A1F00 !important;
+}
+
+/* Sidebar icons */
+html:not(.dark) aside a svg {
+  color: #4A2800 !important;
+}
+
+/* =========================================================
+   LIGHT GOLD BACKGROUNDS
+   ========================================================= */
+
+html:not(.dark) .bg-yellow-300,
+html:not(.dark) .bg-yellow-400,
+html:not(.dark) .bg-yellow-500,
+html:not(.dark) .bg-amber-300,
+html:not(.dark) .bg-amber-400,
+html:not(.dark) .bg-amber-500 {
+  background: linear-gradient(
+    135deg,
+    #FFFDF0 0%,
+    #FFF9D9 50%,
+    #FFF3BE 100%
+  ) !important;
+
+  color: #3A1F00 !important;
+}
+
+/* Gradient classes commonly used by member/admin cards */
+html:not(.dark) main [class*="from-yellow"],
+html:not(.dark) main [class*="via-yellow"],
+html:not(.dark) main [class*="to-yellow"],
+html:not(.dark) main [class*="from-amber"],
+html:not(.dark) main [class*="via-amber"],
+html:not(.dark) main [class*="to-amber"] {
+  background: linear-gradient(
+    135deg,
+    #FFFDF0 0%,
+    #FFF9D9 50%,
+    #FFF3BE 100%
+  ) !important;
+
+  color: #3A1F00 !important;
+}
+
+/* =========================================================
+   MEMBER / ADMIN GOLD CARDS
+   ========================================================= */
+
+html:not(.dark) main section[class*="rounded"],
+html:not(.dark) main article[class*="rounded"] {
+  color: #3A1F00;
+}
+
+/* Headings inside light-theme cards */
+html:not(.dark) main section h1,
+html:not(.dark) main section h2,
+html:not(.dark) main section h3,
+html:not(.dark) main article h1,
+html:not(.dark) main article h2,
+html:not(.dark) main article h3 {
+  color: #351B00 !important;
+}
+
+/* Labels */
+html:not(.dark) main label {
+  color: #4A2800 !important;
+}
+
+/* Descriptive text */
+html:not(.dark) main section p,
+html:not(.dark) main article p {
+  color: #5A3508;
+}
+
+/* =========================================================
+   LIGHT GOLD INPUTS
+   ========================================================= */
+
+html:not(.dark) main input[class*="bg-yellow"],
+html:not(.dark) main input[class*="bg-amber"],
+html:not(.dark) main select[class*="bg-yellow"],
+html:not(.dark) main select[class*="bg-amber"],
+html:not(.dark) main textarea[class*="bg-yellow"],
+html:not(.dark) main textarea[class*="bg-amber"] {
+  background: #FFFBE8 !important;
+  color: #321900 !important;
+  border-color: rgba(139, 91, 0, 0.22) !important;
+}
+
+/* Input text */
+html:not(.dark) main input,
+html:not(.dark) main select,
+html:not(.dark) main textarea {
+  color: #321900;
+}
+
+/* =========================================================
+   LIGHT GOLD BUTTONS
+   ========================================================= */
+
+html:not(.dark) main button[class*="bg-yellow"],
+html:not(.dark) main button[class*="bg-amber"] {
+  background: linear-gradient(
+    135deg,
+    #FFFBE8 0%,
+    #FFF7D0 50%,
+    #FFF0B5 100%
+  ) !important;
+
+  color: #351B00 !important;
+
+  border-color: rgba(139, 91, 0, 0.22) !important;
+}
+
+/* =========================================================
+   LIGHT THEME GOLD TEXT
+   ========================================================= */
+
+html:not(.dark) main .text-yellow-600,
+html:not(.dark) main .text-yellow-700,
+html:not(.dark) main .text-amber-600,
+html:not(.dark) main .text-amber-700 {
+  color: #5A3000 !important;
+}
+
+/* =========================================================
+   PROFILE / MEMBERSHIP BADGES
+   ========================================================= */
+
+html:not(.dark) main [class*="border-yellow"],
+html:not(.dark) main [class*="border-amber"] {
+  border-color: rgba(139, 91, 0, 0.20) !important;
+}
+
+/* =========================================================
+   LIGHT THEME PLACEHOLDER
+   ========================================================= */
+
+html:not(.dark) main input::placeholder,
+html:not(.dark) main textarea::placeholder {
+  color: #7A5A2A !important;
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   LIGHT THEME ONLY ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â VERY LIGHT HERITAGE GOLD
+   Dark theme is intentionally untouched.
+   ========================================================= */
+
+/* Sidebar buttons */
+html:not(.dark) aside a {
+  background: linear-gradient(
+    135deg,
+    #FFFDF0 0%,
+    #FFF9D9 50%,
+    #FFF3BE 100%
+  ) !important;
+
+  color: #3A1F00 !important;
+
+  border-color: rgba(139, 91, 0, 0.18) !important;
+
+  box-shadow:
+    0 2px 8px rgba(92, 58, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Sidebar hover */
+html:not(.dark) aside a:hover {
+  background: linear-gradient(
+    135deg,
+    #FFFFF5 0%,
+    #FFFBE8 50%,
+    #FFF6D0 100%
+  ) !important;
+
+  color: #2E1700 !important;
+}
+
+/* Sidebar text */
+html:not(.dark) aside a,
+html:not(.dark) aside a span {
+  color: #3A1F00 !important;
+}
+
+/* Sidebar icons */
+html:not(.dark) aside a svg {
+  color: #4A2800 !important;
+}
+
+/* =========================================================
+   LIGHT GOLD BACKGROUNDS
+   ========================================================= */
+
+html:not(.dark) .bg-yellow-300,
+html:not(.dark) .bg-yellow-400,
+html:not(.dark) .bg-yellow-500,
+html:not(.dark) .bg-amber-300,
+html:not(.dark) .bg-amber-400,
+html:not(.dark) .bg-amber-500 {
+  background: linear-gradient(
+    135deg,
+    #FFFDF0 0%,
+    #FFF9D9 50%,
+    #FFF3BE 100%
+  ) !important;
+
+  color: #3A1F00 !important;
+}
+
+/* Gradient classes commonly used by member/admin cards */
+html:not(.dark) main [class*="from-yellow"],
+html:not(.dark) main [class*="via-yellow"],
+html:not(.dark) main [class*="to-yellow"],
+html:not(.dark) main [class*="from-amber"],
+html:not(.dark) main [class*="via-amber"],
+html:not(.dark) main [class*="to-amber"] {
+  background: linear-gradient(
+    135deg,
+    #FFFDF0 0%,
+    #FFF9D9 50%,
+    #FFF3BE 100%
+  ) !important;
+
+  color: #3A1F00 !important;
+}
+
+/* =========================================================
+   MEMBER / ADMIN GOLD CARDS
+   ========================================================= */
+
+html:not(.dark) main section[class*="rounded"],
+html:not(.dark) main article[class*="rounded"] {
+  color: #3A1F00;
+}
+
+/* Headings inside light-theme cards */
+html:not(.dark) main section h1,
+html:not(.dark) main section h2,
+html:not(.dark) main section h3,
+html:not(.dark) main article h1,
+html:not(.dark) main article h2,
+html:not(.dark) main article h3 {
+  color: #351B00 !important;
+}
+
+/* Labels */
+html:not(.dark) main label {
+  color: #4A2800 !important;
+}
+
+/* Descriptive text */
+html:not(.dark) main section p,
+html:not(.dark) main article p {
+  color: #5A3508;
+}
+
+/* =========================================================
+   LIGHT GOLD INPUTS
+   ========================================================= */
+
+html:not(.dark) main input[class*="bg-yellow"],
+html:not(.dark) main input[class*="bg-amber"],
+html:not(.dark) main select[class*="bg-yellow"],
+html:not(.dark) main select[class*="bg-amber"],
+html:not(.dark) main textarea[class*="bg-yellow"],
+html:not(.dark) main textarea[class*="bg-amber"] {
+  background: #FFFBE8 !important;
+  color: #321900 !important;
+  border-color: rgba(139, 91, 0, 0.22) !important;
+}
+
+/* Input text */
+html:not(.dark) main input,
+html:not(.dark) main select,
+html:not(.dark) main textarea {
+  color: #321900;
+}
+
+/* =========================================================
+   LIGHT GOLD BUTTONS
+   ========================================================= */
+
+html:not(.dark) main button[class*="bg-yellow"],
+html:not(.dark) main button[class*="bg-amber"] {
+  background: linear-gradient(
+    135deg,
+    #FFFBE8 0%,
+    #FFF7D0 50%,
+    #FFF0B5 100%
+  ) !important;
+
+  color: #351B00 !important;
+
+  border-color: rgba(139, 91, 0, 0.22) !important;
+}
+
+/* =========================================================
+   LIGHT THEME GOLD TEXT
+   ========================================================= */
+
+html:not(.dark) main .text-yellow-600,
+html:not(.dark) main .text-yellow-700,
+html:not(.dark) main .text-amber-600,
+html:not(.dark) main .text-amber-700 {
+  color: #5A3000 !important;
+}
+
+/* =========================================================
+   PROFILE / MEMBERSHIP BADGES
+   ========================================================= */
+
+html:not(.dark) main [class*="border-yellow"],
+html:not(.dark) main [class*="border-amber"] {
+  border-color: rgba(139, 91, 0, 0.20) !important;
+}
+
+/* =========================================================
+   LIGHT THEME PLACEHOLDER
+   ========================================================= */
+
+html:not(.dark) main input::placeholder,
+html:not(.dark) main textarea::placeholder {
+  color: #7A5A2A !important;
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   MEMBER PORTAL - LIGHT THEME GOLDEN HERITAGE PALETTE
+   Very light gold cards + dark brown text.
+   DARK THEME IS NOT TOUCHED.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   SIDEBAR
+   --------------------------------------------------------- */
+
+html:not(.dark) aside a {
+  background: linear-gradient(
+    135deg,
+    #FFFDF2 0%,
+    #FFF8D8 48%,
+    #FFF0B8 100%
+  ) !important;
+
+  color: #351A00 !important;
+
+  border-color: rgba(139, 91, 0, 0.16) !important;
+
+  box-shadow:
+    0 2px 7px rgba(92, 58, 0, 0.045),
+    inset 0 1px 0 rgba(255,255,255,0.9) !important;
+}
+
+html:not(.dark) aside a:hover {
+  background: linear-gradient(
+    135deg,
+    #FFFFF8 0%,
+    #FFFBEA 50%,
+    #FFF4CA 100%
+  ) !important;
+
+  color: #281300 !important;
+}
+
+html:not(.dark) aside a span,
+html:not(.dark) aside a svg {
+  color: #351A00 !important;
+}
+
+
+/* ---------------------------------------------------------
+   MEMBER DASHBOARD - LIGHT GOLD CARDS
+   These replace the existing pink/red gradients.
+   --------------------------------------------------------- */
+
+/* Main dashboard/stat cards */
+html:not(.dark) main [class*="from-[#ffe3e8]"],
+html:not(.dark) main [class*="from-[#ffdfe5]"],
+html:not(.dark) main [class*="from-[#fff0f2]"],
+html:not(.dark) main [class*="from-[#ffd6dd]"] {
+  background-image: linear-gradient(
+    135deg,
+    #FFFDF2 0%,
+    #FFF8D8 50%,
+    #FFF0B8 100%
+  ) !important;
+
+  color: #351A00 !important;
+
+  border-color: rgba(139, 91, 0, 0.18) !important;
+}
+
+
+/* Quick action / inner cards */
+html:not(.dark) main [class*="from-[#fff0f2]"],
+html:not(.dark) main [class*="from-[#ffe0e5]"],
+html:not(.dark) main [class*="from-[#ffd1d9]"],
+html:not(.dark) main [class*="from-[#ffd6dd]"] {
+  background-image: linear-gradient(
+    135deg,
+    #FFFFF5 0%,
+    #FFF9DE 50%,
+    #FFF1C4 100%
+  ) !important;
+
+  color: #351A00 !important;
+}
+
+
+/* Other existing light pink member cards */
+html:not(.dark) main [class*="from-[#ffdce3]"],
+html:not(.dark) main [class*="from-[#ffdfe5]"],
+html:not(.dark) main [class*="from-[#ffd3db]"],
+html:not(.dark) main [class*="from-[#ffc5cf]"] {
+  background-image: linear-gradient(
+    135deg,
+    #FFFDF2 0%,
+    #FFF8D8 50%,
+    #FFF0B8 100%
+  ) !important;
+
+  color: #351A00 !important;
+}
+
+
+/* ---------------------------------------------------------
+   DARKER TEXT FOR LIGHT THEME
+   --------------------------------------------------------- */
+
+html:not(.dark) main h1,
+html:not(.dark) main h2,
+html:not(.dark) main h3,
+html:not(.dark) main h4 {
+  color: #321700 !important;
+}
+
+html:not(.dark) main p {
+  color: #553000 !important;
+}
+
+html:not(.dark) main label {
+  color: #402000 !important;
+}
+
+
+/* Dashboard card text */
+html:not(.dark) main [class*="from-[#ffe3e8]"] *,
+html:not(.dark) main [class*="from-[#ffdfe5]"] *,
+html:not(.dark) main [class*="from-[#fff0f2]"] *,
+html:not(.dark) main [class*="from-[#ffd6dd]"] * {
+  color: #351A00;
+}
+
+
+/* ---------------------------------------------------------
+   LIGHT GOLD BORDERS
+   --------------------------------------------------------- */
+
+html:not(.dark) main [class*="border-red-300"],
+html:not(.dark) main [class*="border-red-400"] {
+  border-color: rgba(139, 91, 0, 0.20) !important;
+}
+
+
+/* ---------------------------------------------------------
+   LIGHT GOLD INPUTS
+   --------------------------------------------------------- */
+
+html:not(.dark) main input,
+html:not(.dark) main select,
+html:not(.dark) main textarea {
+  color: #321700 !important;
+}
+
+html:not(.dark) main input::placeholder,
+html:not(.dark) main textarea::placeholder {
+  color: #795A28 !important;
+}
+
+
+/* ---------------------------------------------------------
+   GOLD BUTTONS
+   --------------------------------------------------------- */
+
+html:not(.dark) main button[class*="bg-yellow"],
+html:not(.dark) main button[class*="bg-amber"] {
+  background: linear-gradient(
+    135deg,
+    #FFFBEA 0%,
+    #FFF6CE 50%,
+    #FFEFB5 100%
+  ) !important;
+
+  color: #321700 !important;
+
+  border-color: rgba(139, 91, 0, 0.20) !important;
+}
+
+
+/* ---------------------------------------------------------
+   MEMBER PORTAL MAIN BACKGROUND
+   Keep the soft pink heritage background.
+   --------------------------------------------------------- */
+
+html:not(.dark) main {
+  color: #351A00;
+}
+
+
+/* ---------------------------------------------------------
+   DO NOT CHANGE DARK MODE
+   --------------------------------------------------------- */
+
+
+
+/* MEMBER LIGHT GOLD PALETTE - FINAL */
+
+/*
+   LIGHT THEME ONLY
+   Sidebar remains deep maroon.
+   Only the yellow/gold menu buttons are softened.
+*/
+html:not(.dark) .member-sidebar a {
+  background: linear-gradient(
+    135deg,
+    #FFFDF7 0%,
+    #FFF8E8 48%,
+    #FFF0C9 100%
+  ) !important;
+
+  color: #321B05 !important;
+  border-color: rgba(164, 111, 0, 0.18) !important;
+
+  box-shadow:
+    0 2px 7px rgba(112, 75, 10, 0.08) !important;
+}
+
+html:not(.dark) .member-sidebar a:hover {
+  background: linear-gradient(
+    135deg,
+    #FFFFFB 0%,
+    #FFF9E9 50%,
+    #FFEEC0 100%
+  ) !important;
+
+  color: #241300 !important;
+}
+
+html:not(.dark) .member-sidebar a svg {
+  color: #684205 !important;
+}
+
+html:not(.dark) .member-sidebar a:hover svg {
+  color: #3A2105 !important;
+}
+
+
+/* ============================================================
+   MEMBER DASHBOARD CARDS
+   ============================================================ */
+
+html:not(.dark) main .bg-gradient-to-br.from-\[\#FFFEF8\],
+html:not(.dark) main .bg-gradient-to-br.from-\[\#FFFDF2\],
+html:not(.dark) main .bg-gradient-to-br.from-\[\#FFFFF5\],
+html:not(.dark) main .bg-gradient-to-br.from-\[\#FFFBEA\] {
+  background: linear-gradient(
+    135deg,
+    #FFFFFC 0%,
+    #FFFBEF 50%,
+    #FFF3D1 100%
+  ) !important;
+
+  color: #321B05 !important;
+}
+
+
+/* Dashboard headings and numbers */
+html:not(.dark) main h1,
+html:not(.dark) main h2,
+html:not(.dark) main h3 {
+  color: #321B05 !important;
+}
+
+
+/* Text inside light gold cards */
+html:not(.dark) main .bg-gradient-to-br p,
+html:not(.dark) main .bg-gradient-to-br span {
+  color: #4A2A08 !important;
+}
+
+
+/* Strong values such as Approved / 0 */
+html:not(.dark) main .bg-gradient-to-br .text-3xl,
+html:not(.dark) main .bg-gradient-to-br .text-2xl,
+html:not(.dark) main .bg-gradient-to-br .text-xl {
+  color: #2B1703 !important;
+}
+
+
+/* Quick Action cards */
+html:not(.dark) main .bg-gradient-to-br {
+  border-color: rgba(164, 111, 0, 0.20) !important;
+}
+
+
+
+
+/* Account information fields */
+html:not(.dark) main .bg-\[\#FFFDF2\],
+html:not(.dark) main .bg-\[\#FFFFF5\] {
+  background-color: #FFFDF5 !important;
+  color: #321B05 !important;
+}
+
+
+/* Softer gold borders */
+html:not(.dark) main [class*="border-[#D4A72C]"] {
+  border-color: rgba(164, 111, 0, 0.22) !important;
+}
+
+
+/* Light-theme dashboard divider */
+html:not(.dark) main .bg-red-300\/70 {
+  background-color: rgba(164, 111, 0, 0.28) !important;
+}
+
+
+/* ============================================================
+   KEEP SIDEBAR MAROON
+   ============================================================ */
+
+html:not(.dark) .member-sidebar {
+  background: linear-gradient(
+    to bottom,
+    #991B1B 0%,
+    #8B1515 50%,
+    #991B1B 100%
+  ) !important;
+
+  color: #FFFFFF !important;
+}
+
+html:not(.dark) .member-sidebar > div:first-child {
+  color: #FFFFFF !important;
+}
+
+
+/* MEMBER SIDEBAR LIGHT BUTTONS - DIRECT */
+
+/* Keep sidebar itself deep maroon */
+html:not(.dark) .member-sidebar {
+  background: linear-gradient(
+    to bottom,
+    #991B1B 0%,
+    #8B1515 50%,
+    #991B1B 100%
+  ) !important;
+}
+
+/* Make ONLY sidebar menu buttons lighter */
+html:not(.dark) .member-sidebar a {
+  background: linear-gradient(
+    135deg,
+    #FFFFFC 0%,
+    #FFF9E8 55%,
+    #FFF0C8 100%
+  ) !important;
+
+  color: #321B05 !important;
+  border-color: rgba(139, 94, 20, 0.22) !important;
+}
+
+/* Sidebar button hover */
+html:not(.dark) .member-sidebar a:hover {
+  background: linear-gradient(
+    135deg,
+    #FFFFFE 0%,
+    #FFFBEF 55%,
+    #FFF3D2 100%
+  ) !important;
+
+  color: #241300 !important;
+}
+
+/* Sidebar icons */
+html:not(.dark) .member-sidebar a svg {
+  color: #684205 !important;
+}
+
+/* Active sidebar item */
+html:not(.dark) .member-sidebar a.bg-red-500 {
+  background: linear-gradient(
+    135deg,
+    #FFF9DC 0%,
+    #FFEFC0 100%
+  ) !important;
+
+  color: #2B1703 !important;
+}
+
+/* Member dashboard text */
+html:not(.dark) .member-sidebar a span {
+  color: #321B05 !important;
+}
+
+
+/* MEMBER EVENTS RED HEADER - FINAL */
+
+/*
+   Events card red header:
+   - Compact height
+   - White title
+   - White subtitle
+   - White icons
+   - Preserve maroon/red heritage color
+*/
+
+html:not(.dark) .member-event-image {
+  height: 105px !important;
+  min-height: 105px !important;
+  max-height: 105px !important;
+
+  padding: 12px 18px !important;
+
+  overflow: hidden !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+
+/* Everything inside the red header becomes WHITE */
+html:not(.dark) .member-event-image,
+html:not(.dark) .member-event-image *,
+html:not(.dark) .member-event-image h1,
+html:not(.dark) .member-event-image h2,
+html:not(.dark) .member-event-image h3,
+html:not(.dark) .member-event-image h4,
+html:not(.dark) .member-event-image p,
+html:not(.dark) .member-event-image span {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+
+/* Icons */
+html:not(.dark) .member-event-image svg,
+html:not(.dark) .member-event-image svg * {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+
+/* Event title */
+html:not(.dark) .member-event-image h1,
+html:not(.dark) .member-event-image h2,
+html:not(.dark) .member-event-image h3,
+html:not(.dark) .member-event-image h4 {
+  font-weight: 700 !important;
+}
+
+
+/* Event subtitle */
+html:not(.dark) .member-event-image p {
+  font-weight: 500 !important;
+}
+
+
+/* Prevent large internal spacing */
+html:not(.dark) .member-event-image > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+/* Mobile */
+@media (max-width: 640px) {
+
+  html:not(.dark) .member-event-image {
+    height: 95px !important;
+    min-height: 95px !important;
+    max-height: 95px !important;
+    padding: 10px 14px !important;
+  }
+
+}
+
+
+
+/*
+   Applies ONLY to the Member Events red header.
+   Light theme only.
+*/
+
+html:not(.dark) .member-event-image {
+  height: 105px !important;
+  min-height: 105px !important;
+  max-height: 105px !important;
+
+  padding: 10px 18px !important;
+
+  overflow: hidden !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  color: #FFFFFF !important;
+}
+
+
+/* FORCE EVERYTHING INSIDE RED HEADER WHITE */
+html:not(.dark) .member-event-image * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+
+/* Icon */
+html:not(.dark) .member-event-image svg,
+html:not(.dark) .member-event-image svg * {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+
+/* Title */
+html:not(.dark) .member-event-image h1,
+html:not(.dark) .member-event-image h2,
+html:not(.dark) .member-event-image h3,
+html:not(.dark) .member-event-image h4 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+
+/* Subtitle */
+html:not(.dark) .member-event-image p,
+html:not(.dark) .member-event-image span {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+
+/* Remove excessive vertical spacing */
+html:not(.dark) .member-event-image > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
+/* Mobile */
+@media (max-width: 640px) {
+  html:not(.dark) .member-event-image {
+    height: 95px !important;
+    min-height: 95px !important;
+    max-height: 95px !important;
+  }
+}
+
+
+/* ============================================================
+   MEMBER EVENTS HEADER - LIGHT THEME
+   ============================================================ */
+
+html:not(.dark) .member-event-image {
+  height: 105px !important;
+  min-height: 105px !important;
+  max-height: 105px !important;
+
+  padding: 10px 18px !important;
+
+  overflow: hidden !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Everything inside the red header */
+html:not(.dark) .member-event-image * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* Icons */
+html:not(.dark) .member-event-image svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+html:not(.dark) .member-event-image svg * {
+  stroke: #ffffff !important;
+}
+
+
+/* Heading */
+html:not(.dark) .member-event-image h1,
+html:not(.dark) .member-event-image h2,
+html:not(.dark) .member-event-image h3,
+html:not(.dark) .member-event-image h4 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+
+/* Subtitle / paragraph / spans */
+html:not(.dark) .member-event-image p,
+html:not(.dark) .member-event-image span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* Remove excessive vertical spacing */
+html:not(.dark) .member-event-image > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
+/* Mobile */
+@media (max-width: 640px) {
+
+  html:not(.dark) .member-event-image {
+    height: 95px !important;
+    min-height: 95px !important;
+    max-height: 95px !important;
+  }
+
+}
+
+
+/* ============================================================
+   MEMBER MEMBERSHIP CARD TEXT FIX
+   Light theme only
+   ============================================================ */
+
+html:not(.dark) .member-membership-card {
+  color: #FFFFFF !important;
+}
+
+
+/* ALL TEXT INSIDE THE MAROON MEMBERSHIP CARD */
+html:not(.dark) .member-membership-card,
+html:not(.dark) .member-membership-card *,
+html:not(.dark) .member-membership-card h1,
+html:not(.dark) .member-membership-card h2,
+html:not(.dark) .member-membership-card h3,
+html:not(.dark) .member-membership-card h4,
+html:not(.dark) .member-membership-card p,
+html:not(.dark) .member-membership-card span,
+html:not(.dark) .member-membership-card div {
+  color: #FFFFFF !important;
+}
+
+
+/* Prevent inherited Tailwind text colors */
+html:not(.dark) .member-membership-card [class*="text-"] {
+  color: #FFFFFF !important;
+}
+
+
+/* Member name */
+html:not(.dark) .member-membership-card .font-semibold,
+html:not(.dark) .member-membership-card .font-bold {
+  color: #FFFFFF !important;
+}
+
+
+/* Small labels */
+html:not(.dark) .member-membership-card .uppercase {
+  color: #FFF4CC !important;
+}
+
+
+/* QR verification text */
+html:not(.dark) .member-membership-card img + div,
+html:not(.dark) .member-membership-card .text-\[10px\],
+html:not(.dark) .member-membership-card .text-xs {
+  color: #FFFFFF !important;
+}
+
+
+/* Keep the initials box readable */
+html:not(.dark) .member-membership-card .bg-white {
+  color: #3A2105 !important;
+}
+
+
+/* Keep ASK circular badge readable */
+html:not(.dark) .member-membership-card .rounded-full {
+  color: #3A2105 !important;
+}
+
+
+/* Divider */
+html:not(.dark) .member-membership-card hr {
+  border-color: rgba(255,255,255,0.28) !important;
+}
+
+
+/* QR code remains white */
+html:not(.dark) .member-membership-card img {
+  background: #FFFFFF !important;
+}
+
+
+/* ============================================================
+   MEMBERSHIP CARD LIGHT-THEME CONTAINER
+   ============================================================ */
+
+html:not(.dark) .member-membership-card {
+  background: linear-gradient(
+    135deg,
+    #991B2F 0%,
+    #7F1726 52%,
+    #5B0B18 100%
+  ) !important;
+
+  border-color: rgba(255,255,255,0.16) !important;
+}
+
+
+/* Mobile */
+@media (max-width: 640px) {
+
+  html:not(.dark) .member-membership-card {
+    color: #FFFFFF !important;
+  }
+
+}
+
+
+/* ============================================================
+   MEMBER MEMBERSHIP CARD TEXT FIX
+   LIGHT THEME ONLY
+   ============================================================ */
+
+html:not(.dark) .member-membership-card {
+  background: linear-gradient(
+    135deg,
+    #991B2F 0%,
+    #7F1726 52%,
+    #5B0B18 100%
+  ) !important;
+
+  color: #FFFFFF !important;
+  border-color: rgba(255,255,255,0.18) !important;
+}
+
+
+/* ------------------------------------------------------------
+   ALL MEMBERSHIP CARD TEXT
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card,
+html:not(.dark) .member-membership-card * {
+  color: #FFFFFF !important;
+}
+
+
+/* ------------------------------------------------------------
+   MAIN TITLE
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card h1,
+html:not(.dark) .member-membership-card h2,
+html:not(.dark) .member-membership-card h3,
+html:not(.dark) .member-membership-card h4 {
+  color: #FFFFFF !important;
+}
+
+
+/* ------------------------------------------------------------
+   SMALL LABELS
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card .uppercase {
+  color: #FFF4CC !important;
+}
+
+
+/* ------------------------------------------------------------
+   MEMBER NAME / MEMBER ID / STATUS / DATE
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card .font-semibold,
+html:not(.dark) .member-membership-card .font-bold {
+  color: #FFFFFF !important;
+}
+
+
+/* ------------------------------------------------------------
+   QR VERIFICATION TEXT
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card .text-xs,
+html:not(.dark) .member-membership-card .text-\[10px\] {
+  color: #FFFFFF !important;
+}
+
+
+/* ------------------------------------------------------------
+   INITIALS BOX
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card .bg-white {
+  background: #FFFFFF !important;
+  color: #3A2105 !important;
+}
+
+
+/* ------------------------------------------------------------
+   ASK CIRCLE
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card .rounded-full {
+  color: #3A2105 !important;
+}
+
+
+/* ------------------------------------------------------------
+   DIVIDER
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card hr {
+  border-color: rgba(255,255,255,0.28) !important;
+}
+
+
+/* ------------------------------------------------------------
+   QR CODE
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card img {
+  background: #FFFFFF !important;
+}
+
+
+/* ------------------------------------------------------------
+   QR AREA
+   ------------------------------------------------------------ */
+
+html:not(.dark) .member-membership-card img + div {
+  color: #FFFFFF !important;
+}
+
+
+/* ------------------------------------------------------------
+   MOBILE
+   ------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+
+  html:not(.dark) .member-membership-card {
+    color: #FFFFFF !important;
+  }
+
+  html:not(.dark) .member-membership-card * {
+    color: #FFFFFF !important;
+  }
+
+  html:not(.dark) .member-membership-card .uppercase {
+    color: #FFF4CC !important;
+  }
+
+}
+
+
+/* ============================================================
+   MEMBERSHIP CARD FORCE WHITE TEXT 2026
+   LIGHT THEME ONLY
+   ============================================================ */
+
+/*
+   Target the actual maroon membership card directly.
+   This uses the real Tailwind gradient class:
+   from-[#991b2f]
+*/
+
+html:not(.dark) div[class*="from-[#991b2f]"] {
+  color: #FFFFFF !important;
+}
+
+
+/* ALL CHILDREN INSIDE THE MAROON CARD */
+html:not(.dark) div[class*="from-[#991b2f]"] * {
+  color: #FFFFFF !important;
+}
+
+
+/* Headings */
+html:not(.dark) div[class*="from-[#991b2f]"] h1,
+html:not(.dark) div[class*="from-[#991b2f]"] h2,
+html:not(.dark) div[class*="from-[#991b2f]"] h3,
+html:not(.dark) div[class*="from-[#991b2f]"] h4 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+
+/* Paragraphs */
+html:not(.dark) div[class*="from-[#991b2f]"] p {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+
+/* Spans */
+html:not(.dark) div[class*="from-[#991b2f]"] span {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+
+/* Any Tailwind text color class inside card */
+html:not(.dark) div[class*="from-[#991b2f]"] [class*="text-"] {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+
+/* Small labels */
+html:not(.dark) div[class*="from-[#991b2f]"] .uppercase {
+  color: #FFF3C4 !important;
+  -webkit-text-fill-color: #FFF3C4 !important;
+}
+
+
+/* ASK badge */
+html:not(.dark) div[class*="from-[#991b2f]"] .rounded-full {
+  color: #3A2105 !important;
+}
+
+
+/* Initials box */
+html:not(.dark) div[class*="from-[#991b2f]"] .bg-white {
+  color: #3A2105 !important;
+}
+
+
+/* QR code */
+html:not(.dark) div[class*="from-[#991b2f]"] img {
+  background: #FFFFFF !important;
+}
+
+
+/* QR verification label */
+html:not(.dark) div[class*="from-[#991b2f]"] img + div {
+  color: #FFFFFF !important;
+}
+
+
+/* Divider */
+html:not(.dark) div[class*="from-[#991b2f]"] hr {
+  border-color: rgba(255,255,255,0.30) !important;
+}

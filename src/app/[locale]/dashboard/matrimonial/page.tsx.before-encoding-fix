@@ -1,0 +1,341 @@
+import { auth } from "@/auth";
+import { prisma } from "@/lib/prisma";
+import { redirect } from "next/navigation";
+import Link from "next/link";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export const dynamic = "force-dynamic";
+
+const translations = {
+  en: {
+    title: "My Matrimonial Profile",
+    subtitle: "Create and manage your matrimonial profile.",
+    create: "Create Matrimonial Profile",
+    edit: "Edit Profile",
+    preview: "Preview Profile",
+    status: "Profile Status",
+    visibility: "Profile Visibility",
+    contact: "Contact Preference",
+    pending: "Pending Approval",
+    approved: "Approved",
+    rejected: "Rejected",
+    blocked: "Blocked",
+    public: "Public",
+    membersOnly: "Members Only",
+    private: "Private",
+    adminOnly: "Admin Only",
+    noProfile: "You have not created a matrimonial profile yet.",
+    createText:
+      "Create your matrimonial profile to participate in the ASK Community matrimonial section.",
+    approvalText:
+      "Your profile will become visible according to your privacy settings after admin approval.",
+    adminOnlyText:
+      "Contact requests are handled through ASK Community administration.",
+    membersOnlyText:
+      "Contact information is available only to approved ASK Community members.",
+    privateText:
+      "Your profile is not visible in the public matrimonial directory.",
+    back: "Back to Dashboard",
+  },
+
+  hi: {
+    title: "à¤®à¥‡à¤°à¥€ à¤µà¥ˆà¤µà¤¾à¤¹à¤¿à¤• à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤²",
+    subtitle: "à¤…à¤ªà¤¨à¥€ à¤µà¥ˆà¤µà¤¾à¤¹à¤¿à¤• à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¬à¤¨à¤¾à¤à¤ à¤”à¤° à¤ªà¥à¤°à¤¬à¤‚à¤§à¤¿à¤¤ à¤•à¤°à¥‡à¤‚à¥¤",
+    create: "à¤µà¥ˆà¤µà¤¾à¤¹à¤¿à¤• à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¬à¤¨à¤¾à¤à¤",
+    edit: "à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¸à¤‚à¤ªà¤¾à¤¦à¤¿à¤¤ à¤•à¤°à¥‡à¤‚",
+    preview: "à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¦à¥‡à¤–à¥‡à¤‚",
+    status: "à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¸à¥à¤¥à¤¿à¤¤à¤¿",
+    visibility: "à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¦à¥ƒà¤¶à¥à¤¯à¤¤à¤¾",
+    contact: "à¤¸à¤‚à¤ªà¤°à¥à¤• à¤ªà¥à¤°à¤¾à¤¥à¤®à¤¿à¤•à¤¤à¤¾",
+    pending: "à¤¸à¥à¤µà¥€à¤•à¥ƒà¤¤à¤¿ à¤²à¤‚à¤¬à¤¿à¤¤",
+    approved: "à¤¸à¥à¤µà¥€à¤•à¥ƒà¤¤",
+    rejected: "à¤…à¤¸à¥à¤µà¥€à¤•à¥ƒà¤¤",
+    blocked: "à¤¬à¥à¤²à¥‰à¤• à¤•à¤¿à¤¯à¤¾ à¤—à¤¯à¤¾",
+    public: "à¤¸à¤¾à¤°à¥à¤µà¤œà¤¨à¤¿à¤•",
+    membersOnly: "à¤•à¥‡à¤µà¤² à¤¸à¤¦à¤¸à¥à¤¯",
+    private: "à¤¨à¤¿à¤œà¥€",
+    adminOnly: "à¤•à¥‡à¤µà¤² à¤ªà¥à¤°à¤¶à¤¾à¤¸à¤¨",
+    noProfile: "à¤†à¤ªà¤¨à¥‡ à¤…à¤­à¥€ à¤¤à¤• à¤µà¥ˆà¤µà¤¾à¤¹à¤¿à¤• à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¨à¤¹à¥€à¤‚ à¤¬à¤¨à¤¾à¤ˆ à¤¹à¥ˆà¥¤",
+    createText:
+      "ASK Community à¤µà¥ˆà¤µà¤¾à¤¹à¤¿à¤• à¤…à¤¨à¥à¤­à¤¾à¤— à¤®à¥‡à¤‚ à¤­à¤¾à¤— à¤²à¥‡à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ à¤…à¤ªà¤¨à¥€ à¤µà¥ˆà¤µà¤¾à¤¹à¤¿à¤• à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¬à¤¨à¤¾à¤à¤à¥¤",
+    approvalText:
+      "à¤ªà¥à¤°à¤¶à¤¾à¤¸à¤¨ à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤¸à¥à¤µà¥€à¤•à¥ƒà¤¤à¤¿ à¤•à¥‡ à¤¬à¤¾à¤¦ à¤†à¤ªà¤•à¥€ à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤†à¤ªà¤•à¥€ à¤—à¥‹à¤ªà¤¨à¥€à¤¯à¤¤à¤¾ à¤¸à¥‡à¤Ÿà¤¿à¤‚à¤— à¤•à¥‡ à¤…à¤¨à¥à¤¸à¤¾à¤° à¤¦à¤¿à¤–à¤¾à¤ˆ à¤¦à¥‡à¤—à¥€à¥¤",
+    adminOnlyText:
+      "à¤¸à¤‚à¤ªà¤°à¥à¤• à¤…à¤¨à¥à¤°à¥‹à¤§ ASK Community à¤ªà¥à¤°à¤¶à¤¾à¤¸à¤¨ à¤•à¥‡ à¤®à¤¾à¤§à¥à¤¯à¤® à¤¸à¥‡ à¤¸à¤‚à¤­à¤¾à¤²à¥‡ à¤œà¤¾à¤¤à¥‡ à¤¹à¥ˆà¤‚à¥¤",
+    membersOnlyText:
+      "à¤¸à¤‚à¤ªà¤°à¥à¤• à¤œà¤¾à¤¨à¤•à¤¾à¤°à¥€ à¤•à¥‡à¤µà¤² à¤¸à¥à¤µà¥€à¤•à¥ƒà¤¤ ASK Community à¤¸à¤¦à¤¸à¥à¤¯à¥‹à¤‚ à¤•à¥‡ à¤²à¤¿à¤ à¤‰à¤ªà¤²à¤¬à¥à¤§ à¤¹à¥ˆà¥¤",
+    privateText:
+      "à¤†à¤ªà¤•à¥€ à¤ªà¥à¤°à¥‹à¤«à¤¼à¤¾à¤‡à¤² à¤¸à¤¾à¤°à¥à¤µà¤œà¤¨à¤¿à¤• à¤µà¥ˆà¤µà¤¾à¤¹à¤¿à¤• à¤¨à¤¿à¤°à¥à¤¦à¥‡à¤¶à¤¿à¤•à¤¾ à¤®à¥‡à¤‚ à¤¦à¤¿à¤–à¤¾à¤ˆ à¤¨à¤¹à¥€à¤‚ à¤¦à¥‡à¤¤à¥€ à¤¹à¥ˆà¥¤",
+    back: "à¤¡à¥ˆà¤¶à¤¬à¥‹à¤°à¥à¤¡ à¤ªà¤° à¤µà¤¾à¤ªà¤¸ à¤œà¤¾à¤à¤",
+  },
+
+  gu: {
+    title: "\u0aae\u0abe\u0ab0\u0ac0 \u0ab5\u0abf\u0ab5\u0abe\u0ab9 \u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2",
+    subtitle: "\u0aa4\u0aae\u0abe\u0ab0\u0ac0 \u0ab5\u0abf\u0ab5\u0abe\u0ab9 \u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0aac\u0aa8\u0abe\u0ab5\u0acb \u0a85\u0aa8\u0ac7 \u0ab5\u0acd\u0aaf\u0ab5\u0ab8\u0acd\u0aa5\u0abf\u0aa4 \u0a95\u0ab0\u0acb.",
+    create: "\u0ab5\u0abf\u0ab5\u0abe\u0ab9 \u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0aac\u0aa8\u0abe\u0ab5\u0acb",
+    edit: "\u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb",
+    preview: "\u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0a9c\u0ac1\u0a93",
+    status: "\u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0ab8\u0acd\u0aa5\u0abf\u0aa4\u0abf",
+    visibility: "\u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0aa6\u0ac3\u0ab6\u0acd\u0aaf\u0aa4\u0abe",
+    contact: "\u0ab8\u0a82\u0aaa\u0ab0\u0acd\u0a95 \u0aaa\u0acd\u0acd\u0ab0\u0abe\u0aa5\u0aae\u0abf\u0a95\u0aa4\u0abe",
+    pending: "\u0aae\u0a82\u0a9c\u0ac2\u0ab0\u0ac0 \u0aae\u0abe\u0a9f\u0ac7 \u0aac\u0be4\u0a95\u0ac0",
+    approved: "\u0aae\u0a82\u0a9c\u0ac2\u0ab0",
+    rejected: "\u0a85\u0ab8\u0acd\u0ab5\u0ac0\u0a95\u0abe\u0ab0",
+    blocked: "\u0aac\u0acd\u0ab2\u0acb\u0a95 \u0a95\u0ab0\u0ac7\u0ab2",
+    public: "\u0a9c\u0abe\u0ab9\u0ac7\u0ab0",
+    membersOnly: "\u0aae\u0abe\u0aa4\u0acd\u0ab0 \u0ab8\u0aad\u0acd\u0aaf\u0acb \u0aae\u0abe\u0a9f\u0ac7",
+    private: "\u0a96\u0abe\u0aa8\u0a97\u0ac0",
+    adminOnly: "\u0aae\u0abe\u0aa4\u0acd\u0ab0 \u0ab5\u0acd\u0aaf\u0ab5\u0ab8\u0acd\u0aa5\u0abe\u0aaa\u0aa8",
+    noProfile: "\u0aa4\u0aae\u0ac7 \u0ab9\u0a9c\u0ac1 \u0ab8\u0ac1\u0aa7\u0ac0 \u0ab5\u0abf\u0ab5\u0abe\u0ab9 \u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0aac\u0aa8\u0abe\u0ab5\u0ac0 \u0aa8\u0aa5\u0ac0.",
+    createText:
+      "\u0a8f\u0ab8\u0a95\u0ac7 \u0ab8\u0aae\u0ac1\u0aa6\u0abe\u0aaf\u0aa8\u0abe \u0ab5\u0abf\u0ab5\u0abe\u0ab9 \u0ab5\u0abf\u0aad\u0abe\u0a97\u0aae\u0abe\u0a82 \u0aad\u0abe\u0a97 \u0ab2\u0ac7\u0ab5\u0abe \u0aae\u0abe\u0a9f\u0ac7 \u0aa4\u0aae\u0abe\u0ab0\u0ac0 \u0ab5\u0abf\u0ab5\u0abe\u0ab9 \u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0aac\u0aa8\u0abe\u0ab5\u0acb.",
+    approvalText:
+      "\u0ab5\u0acd\u0aaf\u0ab5\u0ab8\u0acd\u0aa5\u0abe\u0aaa\u0aa8\u0aa8\u0ac0 \u0aae\u0a82\u0a9c\u0ac2\u0ab0\u0ac0 \u0aaa\u0a9b\u0ac0 \u0aa4\u0aae\u0abe\u0ab0\u0ac0 \u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0aa4\u0aae\u0abe\u0ab0\u0ac0 \u0a97\u0acb\u0aaa\u0aa8\u0ac0\u0aaf\u0aa4\u0abe \u0ab8\u0ac7\u0a9f\u0abf\u0a82\u0a97 \u0aae\u0ac1\u0a9c\u0aac \u0aa6\u0ac7\u0a96\u0abe\u0ab6\u0ac7.",
+    adminOnlyText:
+      "\u0ab8\u0a82\u0aaa\u0ab0\u0acd\u0a95 \u0ab5\u0abf\u0aa8\u0a82\u0aa4\u0ac0 \u0a8f\u0ab8\u0a95\u0ac7 \u0ab8\u0aae\u0ac1\u0aa6\u0abe\u0aaf \u0ab5\u0acd\u0aaf\u0ab5\u0ab8\u0acd\u0aa5\u0abe\u0aaa\u0aa8 \u0aa6\u0acd\u0ab5\u0abe\u0ab0\u0abe \u0ab8\u0a82\u0aad\u0abe\u0ab3\u0ab5\u0abe\u0aae\u0abe\u0a82 \u0a86\u0ab5\u0ab6\u0ac7.",
+    membersOnlyText:
+      "\u0ab8\u0a82\u0aaa\u0ab0\u0acd\u0a95 \u0aae\u0abe\u0ab9\u0abf\u0aa4\u0ac0 \u0aae\u0abe\u0aa4\u0acd\u0ab0 \u0aae\u0a82\u0a9c\u0ac2\u0ab0 \u0a8f\u0ab8\u0a95\u0ac7 \u0ab8\u0aae\u0ac1\u0aa6\u0abe\u0aaf \u0ab8\u0aad\u0acd\u0aaf\u0acb \u0aae\u0abe\u0a9f\u0ac7 \u0a89\u0aaa\u0ab2\u0aac\u0acd\u0aa7 \u0a9b\u0ac7.",
+    privateText:
+      "\u0aa4\u0aae\u0abe\u0ab0\u0ac0 \u0aaa\u0acd\u0ab0\u0acb\u0aab\u0abe\u0a87\u0ab2 \u0a9c\u0abe\u0ab9\u0ac7\u0ab0 \u0ab5\u0abf\u0ab5\u0abe\u0ab9 \u0aa1\u0abe\u0aaf\u0ab0\u0ac7\u0a95\u0acd\u0a9f\u0ab0\u0ac0\u0aae\u0abe\u0a82 \u0aa6\u0ac7\u0a96\u0abe\u0aa4\u0ac0 \u0aa8\u0aa5\u0ac0.",
+    back: "\u0aa1\u0ac7\u0ab6\u0aac\u0acb\u0ab0\u0acd\u0aa1 \u0aaa\u0ab0 \u0aaa\u0abe\u0a9b\u0abe \u0a9c\u0abe\u0ab5",
+  },
+} as const;
+
+function statusLabel(
+  status: string,
+  t: {
+    pending: string;
+    approved: string;
+    rejected: string;
+    blocked: string;
+  }
+) {
+  if (status === "PENDING") return t.pending;
+  if (status === "APPROVED") return t.approved;
+  if (status === "REJECTED") return t.rejected;
+  if (status === "BLOCKED") return t.blocked;
+  return status;
+}
+
+function visibilityLabel(
+  visibility: string,
+  t: {
+    public: string;
+    membersOnly: string;
+    private: string;
+  }
+) {
+  if (visibility === "PUBLIC") return t.public;
+  if (visibility === "MEMBERS_ONLY") return t.membersOnly;
+  if (visibility === "PRIVATE") return t.private;
+  return visibility;
+}
+
+export default async function MyMatrimonialPage({
+  params,
+}: Props) {
+  const { locale: rawLocale } = await params;
+
+  const locale =
+    rawLocale === "hi" || rawLocale === "gu"
+      ? rawLocale
+      : "en";
+
+  const t = translations[locale];
+
+  const session = await auth();
+
+  if (!session?.user?.email) {
+    redirect(`/${locale}/login`);
+  }
+
+  const user = await prisma.user.findUnique({
+    where: {
+      email: session.user.email,
+    },
+    select: {
+      id: true,
+      role: true,
+      status: true,
+      matrimonialProfile: true,
+    },
+  });
+
+  if (
+    !user ||
+    user.role !== "MEMBER" ||
+    user.status !== "APPROVED"
+  ) {
+    redirect(`/${locale}/unauthorized`);
+  }
+
+  const profile = user.matrimonialProfile;
+
+  return (
+    <main className="min-h-screen bg-slate-50 px-4 py-8 dark:bg-slate-950 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl">
+
+        <div className="mb-8">
+          <Link
+            href={`/${locale}/dashboard`}
+            className="text-sm font-medium text-red-600 hover:text-red-700 dark:text-red-400"
+          >
+            â† {t.back}
+          </Link>
+
+          <h1 className="mt-4 text-3xl font-bold text-slate-900 dark:text-white">
+            {t.title}
+          </h1>
+
+          <p className="mt-2 text-slate-500 dark:text-slate-400">
+            {t.subtitle}
+          </p>
+        </div>
+
+        {!profile ? (
+          <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+              {t.noProfile}
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
+              {t.createText}
+            </p>
+
+            <Link
+              href={`/${locale}/dashboard/matrimonial/new`}
+              className="mt-6 inline-flex rounded-xl bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-700"
+            >
+              {t.create}
+            </Link>
+          </div>
+        ) : (
+          <div className="space-y-6">
+
+            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+
+              <div className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between">
+
+                <div className="flex items-center gap-5">
+                  <div className="h-24 w-24 overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800">
+                    {profile.profileImage ? (
+                      <img
+                        src={profile.profileImage}
+                        alt={`${profile.firstName} ${profile.lastName || ""}`}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center text-3xl font-bold text-slate-300 dark:text-slate-600">
+                        {profile.firstName
+                          .charAt(0)
+                          .toUpperCase()}
+                      </div>
+                    )}
+                  </div>
+
+                  <div>
+                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                      {profile.firstName}{" "}
+                      {profile.lastName || ""}
+                    </h2>
+
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                      {profile.city || ""}
+                      {profile.city && profile.state
+                        ? ", "
+                        : ""}
+                      {profile.state || ""}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href={`/${locale}/dashboard/matrimonial/edit`}
+                    className="rounded-xl bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-700"
+                  >
+                    {t.edit}
+                  </Link>
+
+                  {profile.status === "APPROVED" &&
+                    profile.profileVisibility !==
+                      "PRIVATE" && (
+                      <Link
+                        href={`/${locale}/matrimonial/${profile.id}`}
+                        className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+                      >
+                        {t.preview}
+                      </Link>
+                    )}
+                </div>
+
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                  {t.status}
+                </p>
+
+                <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
+                  {statusLabel(
+                    profile.status,
+                    t
+                  )}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                  {t.visibility}
+                </p>
+
+                <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
+                  {visibilityLabel(
+                    profile.profileVisibility,
+                    t
+                  )}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                  {t.contact}
+                </p>
+
+                <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
+                  {profile.contactPreference ===
+                  "MEMBERS_ONLY"
+                    ? t.membersOnly
+                    : t.adminOnly}
+                </p>
+              </div>
+
+            </div>
+
+            <div className="rounded-2xl border border-red-100 bg-red-50 p-6 dark:border-red-950 dark:bg-red-950/30">
+              <p className="text-sm leading-6 text-slate-700 dark:text-slate-300">
+                {profile.status === "PENDING"
+                  ? t.approvalText
+                  : profile.profileVisibility ===
+                    "PRIVATE"
+                  ? t.privateText
+                  : profile.contactPreference ===
+                    "MEMBERS_ONLY"
+                  ? t.membersOnlyText
+                  : t.adminOnlyText}
+              </p>
+            </div>
+
+          </div>
+        )}
+
+      </div>
+    </main>
+  );
+}

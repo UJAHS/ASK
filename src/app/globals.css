@@ -1,26 +1,784 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================================
+   ASK COMMUNITY PORTAL — GLOBAL THEME
+   ========================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Richer light theme */
+  --background: #e8aab5;
+  --foreground: #4a0710;
+
+  --card: #f4c2ca;
+  --card-foreground: #4a0710;
+
+  --border: #c97887;
+
+  --muted: #dda0ab;
+  --muted-foreground: #6d3039;
+
+  --primary: #b40018;
+  --primary-foreground: #fff8e7;
+
+  --secondary: #8f0014;
+  --secondary-foreground: #fff8e7;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  /* ASK deep premium dark burgundy theme */
+  --background: #170107;
+  --foreground: #fff8e7;
+
+  --card: #2a030b;
+  --card-foreground: #fff8e7;
+
+  --border: #6f1524;
+
+  --muted: #210209;
+  --muted-foreground: #e7b6bf;
+
+  --primary: #ef001d;
+  --primary-foreground: #fff8e7;
+
+  --secondary: #8f0014;
+  --secondary-foreground: #fff8e7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   BASE DOCUMENT
+   ========================================================= */
+
+html,
+body {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  background: #e8aab5;
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(255, 248, 231, 0.42),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 20%,
+      rgba(180, 0, 24, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(190, 35, 55, 0.13),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #f4c2ca 0%,
+      #e8aab5 42%,
+      #d9919f 72%,
+      #cc7f8f 100%
+    );
+
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Dark document background */
+
+html.dark {
+  background:
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(154, 0, 27, 0.24),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #0d0104 0%,
+      #170107 42%,
+      #24020a 72%,
+      #0b0103 100%
+    );
+}
+
+.dark body {
+  background:
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(164, 0, 28, 0.24),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 18% 42%,
+      rgba(106, 0, 20, 0.18),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 62% 92%,
+      rgba(92, 0, 18, 0.20),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #0d0104 0%,
+      #170107 24%,
+      #2a030b 50%,
+      #3a040e 72%,
+      #110105 100%
+    );
+
+  background-attachment: fixed;
+
+  color: #fff8e7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================================
+   ASK LIGHT THEME SURFACES
+   ========================================================= */
+
+.ask-light-section {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 248, 231, 0.38),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #edb5bf 0%,
+      #e2a0ac 50%,
+      #d48b99 100%
+    );
+}
+
+.ask-light-card {
+  background:
+    linear-gradient(
+      135deg,
+      #f8d1d7 0%,
+      #edb8c2 50%,
+      #dfa0ac 100%
+    );
+  border-color: #c97887;
+  color: #4a0710;
+}
+
+.ask-dark-section {
+  background:
+    radial-gradient(
+      circle at 82% 10%,
+      rgba(168, 0, 29, 0.20),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 14% 78%,
+      rgba(102, 0, 18, 0.16),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #120105 0%,
+      #210208 34%,
+      #31030c 64%,
+      #100104 100%
+    );
+}
+
+.ask-dark-card {
+  background:
+    radial-gradient(
+      circle at 88% 8%,
+      rgba(177, 0, 30, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #3b040e 0%,
+      #2a030b 48%,
+      #190107 100%
+    );
+  border-color: rgba(239, 0, 29, 0.24);
+  color: #fff8e7;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+/* =========================================================
+   GLOBAL ASK GRADIENT HELPERS
+   ========================================================= */
+
+.ask-page-gradient {
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(255, 248, 231, 0.38),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 30%,
+      rgba(180, 0, 24, 0.15),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f4c2ca,
+      #e8aab5 48%,
+      #d9919f
+    );
+}
+
+.dark .ask-page-gradient {
+  background:
+    radial-gradient(
+      circle at 80% 12%,
+      rgba(164, 0, 28, 0.22),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 16% 68%,
+      rgba(104, 0, 19, 0.16),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #0d0104 0%,
+      #1a0208 30%,
+      #31030d 60%,
+      #170107 82%,
+      #0b0103 100%
+    );
+}
+
+/* =========================================================
+   GLOBAL SCROLLBAR
+   ========================================================= */
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #8b4351 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #8b4351;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #6f2635;
+}
+
+.dark * {
+  scrollbar-color: #7f2637 #170107;
+}
+
+.dark *::-webkit-scrollbar-track {
+  background: #170107;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background: #7f2637;
+  border-color: #170107;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: #b83a50;
+}
+
+/* =========================================================
+   BUILDER SCROLL AREA
+   ========================================================= */
+
+.builder-scroll-area {
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: auto;
+  scrollbar-gutter: stable;
+  scrollbar-color: #8b4351 transparent;
+
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.builder-scroll-area::-webkit-scrollbar {
+  width: 10px;
+}
+
+.builder-scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.builder-scroll-area::-webkit-scrollbar-thumb {
+  background: #8b4351;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.builder-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: #6f2635;
+}
+
+.dark .builder-scroll-area {
+  scrollbar-color: #7f2637 #170107;
+}
+
+.dark .builder-scroll-area::-webkit-scrollbar-track {
+  background: #170107;
+}
+
+.dark .builder-scroll-area::-webkit-scrollbar-thumb {
+  background: #7f2637;
+  border-color: #170107;
+}
+
+.dark .builder-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: #b83a50;
+}
+
+.builder-scroll-content {
+  width: 100%;
+  min-width: 0;
+  padding-bottom: 32px;
+}
+
+/* =========================================================
+   BUILDER PANELS
+   ========================================================= */
+
+.builder-panel,
+.builder-sidebar,
+.builder-canvas,
+.builder-preview {
+  min-height: 0;
+}
+
+.builder-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff0f2 0%,
+      #f5cbd2 100%
+    );
+
+  color: #4a0710;
+  border-color: #c97887;
+}
+
+.dark .builder-sidebar {
+  background:
+    linear-gradient(
+      180deg,
+      #32030d 0%,
+      #210208 48%,
+      #100104 100%
+    );
+
+  color: #fff8e7;
+  border-color: #6f1524;
+}
+
+.builder-canvas {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  height: 100%;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4c2ca 0%,
+      #e8aab5 50%,
+      #d9919f 100%
+    );
+
+  color: #4a0710;
+}
+
+.dark .builder-canvas {
+  background:
+    radial-gradient(
+      circle at 76% 14%,
+      rgba(153, 0, 27, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #0d0104 0%,
+      #1b0208 36%,
+      #30030d 66%,
+      #100104 100%
+    );
+
+  color: #fff8e7;
+}
+
+.builder-preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1bac4 0%,
+      #e1a1ad 100%
+    );
+
+  color: #4a0710;
+}
+
+.dark .builder-preview {
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(142, 0, 25, 0.16),
+      transparent 36%
+    ),
+    linear-gradient(
+      135deg,
+      #130106 0%,
+      #26020a 55%,
+      #0d0104 100%
+    );
+
+  color: #fff8e7;
+}
+
+/* =========================================================
+   LIGHT MODE OVERRIDES
+   ========================================================= */
+
+/*
+  Do not globally turn text-white into dark text.
+  The ASK public navbar intentionally uses ivory-white text.
+*/
+
+/* =========================================================
+   ASK TEXT UTILITIES
+   ========================================================= */
+
+.ask-heading {
+  color: #4a0710;
+}
+
+.ask-subheading {
+  color: #780d1b;
+}
+
+.ask-body-text {
+  color: #5c2730;
+}
+
+.dark .ask-heading,
+.dark .ask-subheading,
+.dark .ask-body-text {
+  color: #fff8e7;
+}
+
+/* =========================================================
+   ASK BUTTONS
+   ========================================================= */
+
+.ask-primary-button {
+  background:
+    linear-gradient(
+      135deg,
+      #8f0014 0%,
+      #c90018 52%,
+      #ef001d 100%
+    );
+
+  color: #fff8e7;
+
+  box-shadow:
+    0 8px 22px rgba(143, 0, 20, 0.22);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ask-primary-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(143, 0, 20, 0.30);
+}
+
+.ask-secondary-button {
+  background: rgba(255, 248, 231, 0.45);
+  border: 1px solid rgba(143, 0, 20, 0.35);
+  color: #780d1b;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ask-secondary-button:hover {
+  background: rgba(255, 248, 231, 0.72);
+  border-color: rgba(143, 0, 20, 0.60);
+  transform: translateY(-1px);
+}
+
+.dark .ask-secondary-button {
+  background: rgba(255, 248, 231, 0.08);
+  border-color: rgba(255, 248, 231, 0.25);
+  color: #fff8e7;
+}
+
+.dark .ask-secondary-button:hover {
+  background: rgba(255, 248, 231, 0.14);
+  border-color: rgba(255, 248, 231, 0.45);
+}
+
+/* =========================================================
+   BUILDER SIDEBAR — SCROLL OVERRIDE
+   ========================================================= */
+
+.builder-sidebar {
+  min-height: 0;
+  height: 100%;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+
+  scrollbar-width: auto;
+  scrollbar-gutter: stable;
+  scrollbar-color: #8b4351 transparent;
+}
+
+.builder-sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.builder-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.builder-sidebar::-webkit-scrollbar-thumb {
+  background: #8b4351;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.builder-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #6f2635;
+}
+
+.dark .builder-sidebar {
+  scrollbar-color: #7f2637 #170107;
+}
+
+.dark .builder-sidebar::-webkit-scrollbar-track {
+  background: #170107;
+}
+
+.dark .builder-sidebar::-webkit-scrollbar-thumb {
+  background: #7f2637;
+  border-color: #170107;
+}
+
+.dark .builder-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #b83a50;
+}
+
+/* =========================================================
+   BUILDER LAYOUT FINAL OVERRIDES
+   ========================================================= */
+
+.builder-sidebar {
+  min-height: 0 !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+}
+
+@media (min-width: 1024px) {
+  .builder-canvas > .builder-scroll-area:first-child {
+    flex: 1 1 0% !important;
+    width: auto !important;
+    min-width: 420px !important;
+  }
+
+  .builder-canvas > .builder-scroll-area:last-child {
+    flex: 0 0 450px !important;
+    width: 450px !important;
+    min-width: 450px !important;
+    max-width: 450px !important;
+  }
+}
+
+/* =========================================================
+   BUILDER SCROLLBARS — ROBUST FINAL RULES
+   ========================================================= */
+
+.builder-sidebar,
+.builder-canvas .builder-scroll-area {
+  scrollbar-gutter: stable both-edges !important;
+
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+
+  scrollbar-width: auto !important;
+  scrollbar-color: #8b4351 #ead1d6 !important;
+}
+
+.builder-sidebar::-webkit-scrollbar,
+.builder-canvas .builder-scroll-area::-webkit-scrollbar {
+  display: block !important;
+  width: 12px !important;
+}
+
+.builder-sidebar::-webkit-scrollbar-track,
+.builder-canvas .builder-scroll-area::-webkit-scrollbar-track {
+  display: block !important;
+  background: #ead1d6 !important;
+  border-radius: 0 !important;
+}
+
+.builder-sidebar::-webkit-scrollbar-thumb,
+.builder-canvas .builder-scroll-area::-webkit-scrollbar-thumb {
+  display: block !important;
+  min-height: 48px !important;
+
+  background: #8b4351 !important;
+
+  border: 2px solid #ead1d6 !important;
+  border-radius: 9999px !important;
+
+  background-clip: padding-box !important;
+}
+
+.builder-sidebar::-webkit-scrollbar-thumb:hover,
+.builder-canvas .builder-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: #6f2635 !important;
+}
+
+.dark .builder-sidebar,
+.dark .builder-canvas .builder-scroll-area {
+  scrollbar-color: #7f2637 #170107 !important;
+}
+
+.dark .builder-sidebar::-webkit-scrollbar-track,
+.dark .builder-canvas .builder-scroll-area::-webkit-scrollbar-track {
+  background: #170107 !important;
+}
+
+.dark .builder-sidebar::-webkit-scrollbar-thumb,
+.dark .builder-canvas .builder-scroll-area::-webkit-scrollbar-thumb {
+  background: #7f2637 !important;
+  border-color: #170107 !important;
+}
+
+.dark .builder-sidebar::-webkit-scrollbar-thumb:hover,
+.dark .builder-canvas .builder-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: #b83a50 !important;
+}
+
+/* =========================================================
+   PREMIUM LIGHT THEME DECORATION
+   ========================================================= */
+
+.ask-glow {
+  box-shadow:
+    0 0 0 1px rgba(143, 0, 20, 0.08),
+    0 20px 50px rgba(143, 0, 20, 0.14);
+}
+
+.dark .ask-glow {
+  box-shadow:
+    0 0 0 1px rgba(255, 150, 165, 0.10),
+    0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+/* =========================================================
+   GRID BACKGROUND FOR HERO
+   ========================================================= */
+
+.ask-grid-background {
+  background-image:
+    linear-gradient(
+      rgba(143, 0, 20, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(143, 0, 20, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+}
+
+.dark .ask-grid-background {
+  background-color: #120105;
+
+  background-image:
+    linear-gradient(
+      rgba(239, 0, 29, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(239, 0, 29, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
 }

@@ -1,0 +1,1001 @@
+﻿============================================================
+ ASK COMMUNITY PORTAL - MASTER DATA CODE AUDIT
+============================================================
+
+############################################################
+MODULE: activity
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\activity\page.tsx
+LINES: 9
+--- FETCH / API REFERENCES ---
+--- LOCALE / TRANSLATION REFERENCES ---
+--- CRUD REFERENCES ---
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\activities\route.ts
+LINES: 228
+--- HTTP HANDLERS ---
+export async function GET() {
+export async function POST(
+--- PRISMA REFERENCES ---
+const user = await prisma.user.findUnique({
+await prisma.activity.findMany({
+createdAt: "desc",
+// CREATE ACTIVITY
+await prisma.activity.findUnique({
+await prisma.activity.create({
+"CREATE ACTIVITY ERROR:",
+"Unable to create activity",
+--- TRANSLATION REFERENCES ---
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\activities\[id]\route.ts
+LINES: 314
+--- HTTP HANDLERS ---
+export async function GET(
+export async function PATCH(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+const user = await prisma.user.findUnique({
+await prisma.activity.findUnique({
+// UPDATE ACTIVITY
+await prisma.activity.update({
+"UPDATE ACTIVITY ERROR:",
+"Unable to update activity",
+// DELETE ACTIVITY
+export async function DELETE(
+await prisma.activity.delete({
+"DELETE ACTIVITY ERROR:",
+"Unable to delete activity",
+--- TRANSLATION REFERENCES ---
+
+############################################################
+MODULE: blood-group
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\blood-group\page.tsx
+LINES: 18
+--- FETCH / API REFERENCES ---
+endpoint="/api/admin/blood-groups"
+--- LOCALE / TRANSLATION REFERENCES ---
+params: Promise<{ locale: string }>;
+const { locale } = await params;
+locale={locale}
+--- CRUD REFERENCES ---
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\blood-groups\route.ts
+LINES: 86
+--- HTTP HANDLERS ---
+export async function GET() {
+export async function POST(req: Request) {
+--- PRISMA REFERENCES ---
+const items = await prisma.bloodGroup.findMany({
+const existing = await prisma.bloodGroup.findUnique({
+const item = await prisma.bloodGroup.create({
+{ error: "Failed to create blood group." },
+--- TRANSLATION REFERENCES ---
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\blood-groups\[id]\route.ts
+LINES: 91
+--- HTTP HANDLERS ---
+export async function PUT(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+const existing = await prisma.bloodGroup.findFirst({
+const item = await prisma.bloodGroup.update({
+{ error: "Failed to update blood group." },
+export async function DELETE(
+await prisma.bloodGroup.delete({
+console.error("Blood Group DELETE error:", error);
+{ error: "Failed to delete blood group." },
+--- TRANSLATION REFERENCES ---
+
+############################################################
+MODULE: business-category
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\business-category\page.tsx
+LINES: 18
+--- FETCH / API REFERENCES ---
+endpoint="/api/admin/business-categories"
+--- LOCALE / TRANSLATION REFERENCES ---
+params: Promise<{ locale: string }>;
+const { locale } = await params;
+locale={locale}
+--- CRUD REFERENCES ---
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\business-categories\route.ts
+LINES: 86
+--- HTTP HANDLERS ---
+export async function GET() {
+export async function POST(req: Request) {
+--- PRISMA REFERENCES ---
+const items = await prisma.businessCategory.findMany({
+const existing = await prisma.businessCategory.findUnique({
+const item = await prisma.businessCategory.create({
+{ error: "Failed to create business category." },
+--- TRANSLATION REFERENCES ---
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\business-categories\[id]\route.ts
+LINES: 91
+--- HTTP HANDLERS ---
+export async function PUT(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+const existing = await prisma.businessCategory.findFirst({
+const item = await prisma.businessCategory.update({
+{ error: "Failed to update business category." },
+export async function DELETE(
+await prisma.businessCategory.delete({
+console.error("Business Category DELETE error:", error);
+{ error: "Failed to delete business category." },
+--- TRANSLATION REFERENCES ---
+
+############################################################
+MODULE: city
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\city\page.tsx
+LINES: 19
+--- FETCH / API REFERENCES ---
+endpoint="/api/admin/cities"
+--- LOCALE / TRANSLATION REFERENCES ---
+params: Promise<{ locale: string }>;
+const { locale } = await params;
+locale={locale}
+--- CRUD REFERENCES ---
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\cities\route.ts
+LINES: 128
+--- HTTP HANDLERS ---
+export async function GET() {
+export async function POST(req: Request) {
+--- PRISMA REFERENCES ---
+const items = await prisma.city.findMany({
+const state = await prisma.state.findUnique({
+const existing = await prisma.city.findFirst({
+const item = await prisma.city.create({
+{ error: "Failed to create city." },
+--- TRANSLATION REFERENCES ---
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\cities\[id]\route.ts
+LINES: 131
+--- HTTP HANDLERS ---
+export async function PUT(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+const state = await prisma.state.findUnique({
+const existing = await prisma.city.findFirst({
+const item = await prisma.city.update({
+{ error: "Failed to update city." },
+export async function DELETE(
+await prisma.city.delete({
+console.error("City DELETE error:", error);
+{ error: "Failed to delete city." },
+--- TRANSLATION REFERENCES ---
+
+############################################################
+MODULE: country
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\country\page.tsx
+LINES: 806
+--- FETCH / API REFERENCES ---
+const response = await fetch(
+`/api/admin/countries?locale=${currentLocale}`,
+? `/api/admin/countries/${editingCountry.id}`
+: "/api/admin/countries";
+const response = await fetch(url, {
+`/api/admin/countries/${country.id}`,
+--- LOCALE / TRANSLATION REFERENCES ---
+import { useParams } from "next/navigation";
+type Locale = "en" | "hi" | "gu";
+type Translation = {
+locale: Locale;
+translations: Translation[];
+const LOCALES: Locale[] = ["en", "hi", "gu"];
+Locale,
+function getTranslation(
+locale: Locale
+country.translations.find(
+(translation) =>
+translation.locale === locale
+translation.locale === "en"
+const params = useParams();
+params?.locale || "en"
+const currentLocale: Locale =
+LOCALES.includes(localeParam as Locale)
+? (localeParam as Locale)
+Record<Locale, string>
+`/api/admin/countries?locale=${currentLocale}`,
+country.translations.some(
+translation.name
+en: getTranslation(country, "en"),
+translation.locale === "hi"
+translation.locale === "gu"
+const translations = {
+name: translations.en,
+translations,
+`Delete "${getTranslation(
+{getTranslation(
+{country.translations.find(
+translation.locale ===
+--- CRUD REFERENCES ---
+? "PUT"
+: "POST";
+method: "PUT",
+async function deleteCountry(
+`Delete "${getTranslation(
+method: "DELETE",
+"Failed to delete country"
+: "Failed to delete country"
+<input
+deleteCountry(
+title="Delete"
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\countries\route.ts
+LINES: 190
+--- HTTP HANDLERS ---
+export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
+--- PRISMA REFERENCES ---
+const countries = await prisma.country.findMany({
+createdAt: "desc",
+createdAt: country.createdAt,
+updatedAt: country.updatedAt,
+await prisma.countryTranslation.findFirst({
+const country = await prisma.country.create({
+create: Object.entries({
+{ error: "Failed to create country" },
+--- TRANSLATION REFERENCES ---
+const VALID_LOCALES = ["en", "hi", "gu"] as const;
+type Locale = (typeof VALID_LOCALES)[number];
+function getLocale(request: NextRequest): Locale {
+const value = request.nextUrl.searchParams.get("locale") || "en";
+return VALID_LOCALES.includes(value as Locale)
+? (value as Locale)
+const locale = getLocale(request);
+translations: {
+locale: "asc",
+const selectedTranslation =
+country.translations.find(
+(translation) => translation.locale === locale
+(translation) => translation.locale === "en"
+name: selectedTranslation?.name || country.name || "",
+translations: country.translations.map((translation) => ({
+id: translation.id,
+locale: translation.locale,
+name: translation.name,
+const inputTranslations =
+body.translations &&
+typeof body.translations === "object"
+? body.translations
+const translations: Record<string, string> = {};
+for (const locale of VALID_LOCALES) {
+typeof inputTranslations[locale] === "string"
+? inputTranslations[locale].trim()
+translations[locale] = value;
+const englishName = translations.en || legacyName;
+await prisma.countryTranslation.findFirst({
+locale: "en",
+...translations,
+}).map(([locale, name]) => ({
+locale,
+translations: true,
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\countries\[id]\route.ts
+LINES: 254
+--- HTTP HANDLERS ---
+export async function PUT(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+const existing = await prisma.country.findUnique({
+await prisma.countryTranslation.findFirst({
+const updated = await prisma.$transaction(
+const country = await tx.country.update({
+await tx.countryTranslation.upsert({
+update: {
+create: {
+return tx.country.findUnique({
+return NextResponse.json(updated);
+{ error: "Failed to update country" },
+export async function DELETE(
+await prisma.country.delete({
+message: "Country deleted successfully",
+"DELETE /api/admin/countries/[id] error:",
+{ error: "Failed to delete country" },
+--- TRANSLATION REFERENCES ---
+const VALID_LOCALES = ["en", "hi", "gu"] as const;
+translations: true,
+const inputTranslations =
+body.translations &&
+typeof body.translations === "object"
+? body.translations
+const translations: Record<string, string> = {};
+for (const locale of VALID_LOCALES) {
+typeof inputTranslations[locale] ===
+inputTranslations[locale].trim();
+translations[locale] = value;
+translations.en ||
+existing.translations.find(
+(translation) =>
+translation.locale === "en"
+await prisma.countryTranslation.findFirst({
+locale: "en",
+translations,
+locale
+await tx.countryTranslation.upsert({
+countryId_locale: {
+locale,
+name: translations[locale],
+
+############################################################
+MODULE: education
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\education\page.tsx
+LINES: 877
+--- FETCH / API REFERENCES ---
+const response = await fetch(
+`/api/admin/education?locale=${currentLocale}`,
+? `/api/admin/education/${editingEducation.id}`
+: "/api/admin/education";
+`/api/admin/education/${education.id}`,
+--- LOCALE / TRANSLATION REFERENCES ---
+import { useParams } from "next/navigation";
+type Locale = "en" | "hi" | "gu";
+type Translation = {
+locale: Locale;
+translations: Translation[];
+const LOCALES: Locale[] = ["en", "hi", "gu"];
+Locale,
+function getTranslation(
+locale: Locale
+education.translations.find(
+(translation) =>
+translation.locale === locale
+translation.locale === "en"
+const params = useParams();
+params?.locale || "en"
+const currentLocale: Locale =
+LOCALES.includes(localeParam as Locale)
+? (localeParam as Locale)
+Record<Locale, string>
+`/api/admin/education?locale=${currentLocale}`,
+education.translations.some(
+translation.name
+en: getTranslation(
+translation.locale === "hi"
+translation.locale === "gu"
+const translations = {
+name: translations.en,
+translations,
+`Delete "${getTranslation(
+{getTranslation(
+{education.translations.find(
+translation
+translation.locale ===
+--- CRUD REFERENCES ---
+? "PUT"
+: "POST";
+method: "PUT",
+async function deleteEducation(
+`Delete "${getTranslation(
+method: "DELETE",
+"Failed to delete education record"
+: "Failed to delete education record"
+<input
+deleteEducation(
+title="Delete"
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\education\route.ts
+LINES: 224
+--- HTTP HANDLERS ---
+export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
+--- PRISMA REFERENCES ---
+await prisma.education.findMany({
+createdAt: "desc",
+createdAt: education.createdAt,
+updatedAt: education.updatedAt,
+await prisma.educationTranslation.findFirst(
+await prisma.education.create({
+create: Object.entries({
+{ error: "Failed to create education record" },
+--- TRANSLATION REFERENCES ---
+const VALID_LOCALES = ["en", "hi", "gu"] as const;
+type Locale = (typeof VALID_LOCALES)[number];
+function getLocale(request: NextRequest): Locale {
+const value = request.nextUrl.searchParams.get("locale") || "en";
+return VALID_LOCALES.includes(value as Locale)
+? (value as Locale)
+const locale = getLocale(request);
+translations: {
+locale: "asc",
+const selectedTranslation =
+education.translations.find(
+(translation) =>
+translation.locale === locale
+translation.locale === "en"
+selectedTranslation?.name ||
+translations:
+education.translations.map(
+(translation) => ({
+id: translation.id,
+locale: translation.locale,
+name: translation.name,
+const inputTranslations =
+body.translations &&
+typeof body.translations === "object"
+? body.translations
+const translations: Record<string, string> =
+for (const locale of VALID_LOCALES) {
+typeof inputTranslations[locale] ===
+? inputTranslations[locale].trim()
+translations[locale] = value;
+translations.en || legacyName;
+await prisma.educationTranslation.findFirst(
+locale: "en",
+...translations,
+}).map(([locale, name]) => ({
+locale,
+translations: true,
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\education\[id]\route.ts
+LINES: 264
+--- HTTP HANDLERS ---
+export async function PUT(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+await prisma.education.findUnique({
+await prisma.educationTranslation.findFirst(
+const updated =
+await prisma.$transaction(
+await tx.education.update({
+await tx.educationTranslation.upsert(
+update: {
+create: {
+return tx.education.findUnique({
+return NextResponse.json(updated);
+"Failed to update education record",
+export async function DELETE(
+await prisma.education.delete({
+"Education record deleted successfully",
+"DELETE /api/admin/education/[id] error:",
+"Failed to delete education record",
+--- TRANSLATION REFERENCES ---
+const VALID_LOCALES = ["en", "hi", "gu"] as const;
+translations: true,
+const inputTranslations =
+body.translations &&
+typeof body.translations === "object"
+? body.translations
+const translations: Record<string, string> =
+for (const locale of VALID_LOCALES) {
+typeof inputTranslations[locale] ===
+inputTranslations[locale].trim();
+translations[locale] = value;
+translations.en ||
+existing.translations.find(
+(translation) =>
+translation.locale === "en"
+await prisma.educationTranslation.findFirst(
+locale: "en",
+translations,
+locale
+await tx.educationTranslation.upsert(
+educationId_locale: {
+locale,
+name: translations[locale],
+
+############################################################
+MODULE: gotra
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\gotra\page.tsx
+LINES: 828
+--- FETCH / API REFERENCES ---
+const response = await fetch(
+`/api/admin/gotra?locale=${locale}`,
+? `/api/admin/gotra/${editing.id}`
+: "/api/admin/gotra",
+`/api/admin/gotra/${deleting.id}`,
+--- LOCALE / TRANSLATION REFERENCES ---
+type Locale = "en" | "hi" | "gu";
+type GotraTranslation = {
+locale: Locale;
+translations: GotraTranslation[];
+const translations = {
+translations: "Translations",
+translations: "à¤…à¤¨à¥à¤µà¤¾à¤¦",
+translations: "àª­àª¾àª·àª¾àª‚àª¤àª°",
+function getLocaleFromPath(): Locale {
+const [locale, setLocale] = useState<Locale>("en");
+const t = translations[locale];
+`/api/admin/gotra?locale=${locale}`,
+}, [locale]);
+...gotra.translations.map(
+(translation) => translation.name
+function getTranslation(
+targetLocale: Locale
+gotra.translations.find(
+(translation) => translation.locale === targetLocale
+getTranslation(gotra, "en") ||
+setHindiName(getTranslation(gotra, "hi"));
+setGujaratiName(getTranslation(gotra, "gu"));
+translations: {
+{getTranslation(gotra, "en") ||
+{getTranslation(gotra, "hi") || "â€”"}
+{getTranslation(gotra, "gu") || "â€”"}
+{getTranslation(deleting, "en") ||
+--- CRUD REFERENCES ---
+delete: "Delete",
+confirmDelete: "Delete Gotra?",
+deleteDescription:
+"Are you sure you want to delete this Gotra? This action cannot be undone.",
+confirm: "Yes, Delete",
+failedDelete: "Failed to delete Gotra.",
+successDeleted: "Gotra deleted successfully.",
+delete: "à¤¹à¤Ÿà¤¾à¤à¤‚",
+confirmDelete: "à¤—à¥‹à¤¤à¥à¤° à¤¹à¤Ÿà¤¾à¤à¤‚?",
+failedDelete: "à¤—à¥‹à¤¤à¥à¤° à¤¹à¤Ÿà¤¾à¤¯à¤¾ à¤¨à¤¹à¥€à¤‚ à¤œà¤¾ à¤¸à¤•à¤¾à¥¤",
+successDeleted: "à¤—à¥‹à¤¤à¥à¤° à¤¸à¤«à¤²à¤¤à¤¾à¤ªà¥‚à¤°à¥à¤µà¤• à¤¹à¤Ÿà¤¾à¤¯à¤¾ à¤—à¤¯à¤¾à¥¤",
+delete: "àª•àª¾àª¢à«€ àª¨àª¾àª–à«‹",
+confirmDelete: "àª—à«‹àª¤à«àª° àª•àª¾àª¢à«€ àª¨àª¾àª–àªµà«àª‚ àª›à«‡?",
+failedDelete: "àª—à«‹àª¤à«àª° àª•àª¾àª¢à«€ àª¶àª•àª¾àª¯à«àª‚ àª¨àª¥à«€.",
+successDeleted: "àª—à«‹àª¤à«àª° àª¸àª«àª³àª¤àª¾àªªà«‚àª°à«àªµàª• àª•àª¾àª¢à«€ àª¨àª¾àª–àªµàª¾àª®àª¾àª‚ àª†àªµà«àª¯à«àª‚.",
+const [deleteOpen, setDeleteOpen] = useState(false);
+function openDeleteModal(gotra: Gotra) {
+setDeleteOpen(true);
+function closeDeleteModal() {
+setDeleteOpen(false);
+async function handleSubmit(
+method: editing ? "PUT" : "POST",
+async function handleDelete() {
+method: "DELETE",
+throw new Error(data.error || t.failedDelete);
+setSuccess(t.successDeleted);
+closeDeleteModal();
+err instanceof Error ? err.message : t.failedDelete
+{error && !modalOpen && !deleteOpen && (
+{success && !modalOpen && !deleteOpen && (
+<input
+onClick={() => openDeleteModal(gotra)}
+title={t.delete}
+<form onSubmit={handleSubmit}>
+{deleteOpen && deleting && (
+{t.confirmDelete}
+{t.deleteDescription}
+onClick={closeDeleteModal}
+onClick={handleDelete}
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\gotra\route.ts
+LINES: 178
+--- HTTP HANDLERS ---
+export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
+--- PRISMA REFERENCES ---
+const gotras = await prisma.gotra.findMany({
+createdAt: "desc",
+createdAt: gotra.createdAt,
+updatedAt: gotra.updatedAt,
+const duplicate = await prisma.gotraTranslation.findFirst({
+const gotra = await prisma.gotra.create({
+create: Object.entries({
+{ error: "Failed to create Gotra" },
+--- TRANSLATION REFERENCES ---
+const VALID_LOCALES = ["en", "hi", "gu"] as const;
+type Locale = (typeof VALID_LOCALES)[number];
+function getLocale(request: NextRequest): Locale {
+const value = request.nextUrl.searchParams.get("locale") || "en";
+return VALID_LOCALES.includes(value as Locale)
+? (value as Locale)
+const locale = getLocale(request);
+translations: {
+locale: "asc",
+const selectedTranslation =
+gotra.translations.find(
+(translation) => translation.locale === locale
+(translation) => translation.locale === "en"
+name: selectedTranslation?.name || gotra.name || "",
+translations: gotra.translations.map((translation) => ({
+id: translation.id,
+locale: translation.locale,
+name: translation.name,
+const inputTranslations =
+body.translations && typeof body.translations === "object"
+? body.translations
+const translations: Record<string, string> = {};
+for (const locale of VALID_LOCALES) {
+typeof inputTranslations[locale] === "string"
+? inputTranslations[locale].trim()
+translations[locale] = value;
+const englishName = translations.en || legacyName;
+const duplicate = await prisma.gotraTranslation.findFirst({
+locale: "en",
+...translations,
+}).map(([locale, name]) => ({
+locale,
+translations: true,
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\gotra\[id]\route.ts
+LINES: 195
+--- HTTP HANDLERS ---
+export async function PUT(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+const existing = await prisma.gotra.findUnique({
+const duplicate = await prisma.gotraTranslation.findFirst({
+const updated = await prisma.$transaction(async (tx) => {
+const gotra = await tx.gotra.update({
+await tx.gotraTranslation.upsert({
+update: {
+create: {
+return tx.gotra.findUnique({
+return NextResponse.json(updated);
+{ error: "Failed to update Gotra" },
+export async function DELETE(
+await prisma.gotra.delete({
+message: "Gotra deleted successfully",
+console.error("DELETE /api/admin/gotra/[id] error:", error);
+{ error: "Failed to delete Gotra" },
+--- TRANSLATION REFERENCES ---
+const VALID_LOCALES = ["en", "hi", "gu"] as const;
+translations: true,
+const inputTranslations =
+body.translations && typeof body.translations === "object"
+? body.translations
+const translations: Record<string, string> = {};
+for (const locale of VALID_LOCALES) {
+if (typeof inputTranslations[locale] === "string") {
+const value = inputTranslations[locale].trim();
+translations[locale] = value;
+translations.en ||
+existing.translations.find(
+(translation) => translation.locale === "en"
+const duplicate = await prisma.gotraTranslation.findFirst({
+locale: "en",
+if (!Object.prototype.hasOwnProperty.call(translations, locale)) {
+await tx.gotraTranslation.upsert({
+gotraId_locale: {
+locale,
+name: translations[locale],
+
+############################################################
+MODULE: profession
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\profession\page.tsx
+LINES: 18
+--- FETCH / API REFERENCES ---
+endpoint="/api/admin/professions"
+--- LOCALE / TRANSLATION REFERENCES ---
+params: Promise<{ locale: string }>;
+const { locale } = await params;
+locale={locale}
+--- CRUD REFERENCES ---
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\professions\route.ts
+LINES: 86
+--- HTTP HANDLERS ---
+export async function GET() {
+export async function POST(req: Request) {
+--- PRISMA REFERENCES ---
+const items = await prisma.profession.findMany({
+const existing = await prisma.profession.findUnique({
+const item = await prisma.profession.create({
+{ error: "Failed to create profession." },
+--- TRANSLATION REFERENCES ---
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\professions\[id]\route.ts
+LINES: 91
+--- HTTP HANDLERS ---
+export async function PUT(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+const existing = await prisma.profession.findFirst({
+const item = await prisma.profession.update({
+{ error: "Failed to update profession." },
+export async function DELETE(
+await prisma.profession.delete({
+console.error("Profession DELETE error:", error);
+{ error: "Failed to delete profession." },
+--- TRANSLATION REFERENCES ---
+
+############################################################
+MODULE: state
+############################################################
+ 
+================ PAGE FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\[locale]\admin\(protected)\master-data\state\page.tsx
+LINES: 959
+--- FETCH / API REFERENCES ---
+const response = await fetch("/api/admin/states", {
+const response = await fetch(
+"/api/admin/countries",
+? `/api/admin/states/${editingState.id}`
+: "/api/admin/states";
+const response = await fetch(url, {
+`/api/admin/states/${deleteTarget.id}`,
+`/api/admin/states/${state.id}`,
+--- LOCALE / TRANSLATION REFERENCES ---
+import { useParams } from "next/navigation";
+type Locale = "en" | "hi" | "gu";
+const translations = {
+const params = useParams();
+const localeParam = String(params?.locale || "en");
+const locale: Locale =
+const t = translations[locale];
+--- CRUD REFERENCES ---
+delete: "Delete",
+deleted: "State deleted successfully.",
+confirmDelete: "Are you sure you want to delete this state?",
+deleteTitle: "Delete State",
+delete: "à¤¹à¤Ÿà¤¾à¤à¤‚",
+deleted: "à¤°à¤¾à¤œà¥à¤¯ à¤¸à¤«à¤²à¤¤à¤¾à¤ªà¥‚à¤°à¥à¤µà¤• à¤¹à¤Ÿà¤¾à¤¯à¤¾ à¤—à¤¯à¤¾à¥¤",
+confirmDelete: "à¤•à¥à¤¯à¤¾ à¤†à¤ª à¤µà¤¾à¤•à¤ˆ à¤‡à¤¸ à¤°à¤¾à¤œà¥à¤¯ à¤•à¥‹ à¤¹à¤Ÿà¤¾à¤¨à¤¾ à¤šà¤¾à¤¹à¤¤à¥‡ à¤¹à¥ˆà¤‚?",
+deleteTitle: "à¤°à¤¾à¤œà¥à¤¯ à¤¹à¤Ÿà¤¾à¤à¤‚",
+delete: "àª•àª¾àª¢à«€ àª¨àª¾àª–à«‹",
+deleted: "àª°àª¾àªœà«àª¯ àª¸àª«àª³àª¤àª¾àªªà«‚àª°à«àªµàª• àª•àª¾àª¢à«€ àª¨àª¾àª–àª¾àª¯à«àª‚.",
+confirmDelete: "àª¶à«àª‚ àª¤àª®à«‡ àª–àª°à«‡àª–àª° àª† àª°àª¾àªœà«àª¯ àª•àª¾àª¢à«€ àª¨àª¾àª–àªµàª¾ àª®àª¾àª‚àª—à«‹ àª›à«‹?",
+deleteTitle: "àª°àª¾àªœà«àª¯ àª•àª¾àª¢à«€ àª¨àª¾àª–à«‹",
+const [deleteTarget, setDeleteTarget] =
+async function handleSubmit(
+method: editingState ? "PUT" : "POST",
+async function handleDelete() {
+if (!deleteTarget) return;
+`/api/admin/states/${deleteTarget.id}`,
+method: "DELETE",
+data.error || "Failed to delete state"
+setDeleteTarget(null);
+setSuccess(t.deleted);
+: "Failed to delete state"
+method: "PUT",
+<input
+setDeleteTarget(state)
+title={t.delete}
+onSubmit={handleSubmit}
+{/* Delete Modal */}
+{deleteTarget && (
+{t.deleteTitle}
+{t.confirmDelete}
+{deleteTarget.name}
+{deleteTarget.country?.name ||
+setDeleteTarget(null)
+onClick={handleDelete}
+{t.delete}
+
+================ API FILES ================
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\states\route.ts
+LINES: 161
+--- HTTP HANDLERS ---
+export async function GET() {
+export async function POST(req: Request) {
+--- PRISMA REFERENCES ---
+const states = await prisma.state.findMany({
+const country = await prisma.country.findUnique({
+const duplicate = await prisma.state.findFirst({
+const state = await prisma.state.create({
+{ error: "Failed to create state" },
+--- TRANSLATION REFERENCES ---
+
+FILE: D:\ASK\ask-community-portal\src\app\api\admin\states\[id]\route.ts
+LINES: 218
+--- HTTP HANDLERS ---
+export async function PUT(
+export async function DELETE(
+--- PRISMA REFERENCES ---
+const existingState = await prisma.state.findUnique({
+const country = await prisma.country.findUnique({
+const duplicate = await prisma.state.findFirst({
+const updated = await prisma.state.update({
+return NextResponse.json(updated);
+{ error: "Failed to update state" },
+export async function DELETE(
+const state = await prisma.state.findUnique({
+"This state cannot be deleted because cities are linked to it. Deactivate it instead.",
+await prisma.state.delete({
+message: "State deleted successfully",
+console.error("DELETE /api/admin/states/[id] error:", error);
+{ error: "Failed to delete state" },
+--- TRANSLATION REFERENCES ---
+
+============================================================
+ PRISMA MASTER DATA MODEL DEFINITIONS
+============================================================
+
+---------------- MODEL: Gotra ----------------
+model Gotra {
+  id           String              @id @default(cuid())
+  name         String?             @unique
+  isActive     Boolean             @default(true)
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+  translations GotraTranslation[]
+}
+
+---------------- MODEL: GotraTranslation ----------------
+model GotraTranslation {
+  id      String @id @default(cuid())
+  gotraId String
+  locale  String
+  name    String
+
+  gotra Gotra @relation(fields: [gotraId], references: [id], onDelete: Cascade)
+
+  @@unique([gotraId, locale])
+  @@index([locale])
+}
+
+---------------- MODEL: Country ----------------
+model Country {
+  id           String                @id @default(cuid())
+  name         String?               @unique
+  isActive     Boolean               @default(true)
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+  states       State[]
+  translations CountryTranslation[]
+}
+
+---------------- MODEL: CountryTranslation ----------------
+model CountryTranslation {
+  id        String  @id @default(cuid())
+  countryId String
+  locale    String
+  name      String
+
+  country Country @relation(fields: [countryId], references: [id], onDelete: Cascade)
+
+  @@unique([countryId, locale])
+  @@index([locale])
+}
+
+---------------- MODEL: State ----------------
+model State {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  countryId String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  cities    City[]
+  country   Country? @relation(fields: [countryId], references: [id])
+
+  @@index([countryId])
+}
+
+---------------- MODEL: City ----------------
+model City {
+  id        String   @id @default(cuid())
+  name      String
+  stateId   String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  state     State?   @relation(fields: [stateId], references: [id])
+
+  @@unique([stateId, name])
+  @@index([stateId])
+}
+
+---------------- MODEL: Education ----------------
+model Education {
+  id           String                 @id @default(cuid())
+  name         String?                @unique
+  isActive     Boolean                @default(true)
+  createdAt    DateTime               @default(now())
+  updatedAt    DateTime               @updatedAt
+  translations EducationTranslation[]
+}
+
+---------------- MODEL: EducationTranslation ----------------
+model EducationTranslation {
+  id          String    @id @default(cuid())
+  educationId String
+  locale      String
+  name        String
+
+  education Education @relation(fields: [educationId], references: [id], onDelete: Cascade)
+
+  @@unique([educationId, locale])
+  @@index([locale])
+}
+
+---------------- MODEL: Occupation ----------------
+model Occupation {
+  id           String                  @id @default(cuid())
+  name         String?                 @unique
+  isActive     Boolean                 @default(true)
+  createdAt    DateTime                @default(now())
+  updatedAt    DateTime                @updatedAt
+  translations OccupationTranslation[]
+}
+
+---------------- MODEL: OccupationTranslation ----------------
+model OccupationTranslation {
+  id           String     @id @default(cuid())
+  occupationId String
+  locale       String
+  name         String
+
+  occupation Occupation @relation(fields: [occupationId], references: [id], onDelete: Cascade)
+
+  @@unique([occupationId, locale])
+  @@index([locale])
+}
+
+---------------- MODEL: Profession ----------------
+model Profession {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+---------------- MODEL: BloodGroup ----------------
+model BloodGroup {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+---------------- MODEL: BusinessCategory ----------------
+model BusinessCategory {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+---------------- MODEL: Activity ----------------
+model Activity {
+  id           String         @id @default(cuid())
+  title        String
+  slug         String         @unique
+  description  String?
+  category     String?
+  location     String?
+  activityDate DateTime?
+  image        String?
+  status       ActivityStatus @default(PUBLISHED)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}

@@ -1,0 +1,518 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model User {
+  id                         String              @id @default(cuid())
+  email                      String              @unique
+  password                   String
+  role                       UserRole            @default(MEMBER)
+  status                     UserStatus          @default(PENDING)
+  createdAt                  DateTime            @default(now())
+  emailVerified              DateTime?
+  image                      String?
+  updatedAt                  DateTime            @updatedAt
+  memberNumber               Int                 @unique @default(autoincrement())
+  memberProfileId            String?
+  accounts                   Account[]
+  receivedConnectionRequests ConnectionRequest[] @relation("ConnectionRequestsReceived")
+  sentConnectionRequests     ConnectionRequest[] @relation("ConnectionRequestsSent")
+  matrimonialProfile         MatrimonialProfile?
+  sessions                   Session[]
+  memberProfile              MemberProfile?      @relation(fields: [memberProfileId], references: [id])
+}
+
+model MemberProfile {
+  id           String    @id @default(cuid())
+  userId       String    @unique
+  firstName    String?
+  lastName     String?
+  phone        String?
+  gender       String?
+  dateOfBirth  DateTime?
+  address      String?
+  city         String?
+  state        String?
+  country      String?   @default("India")
+  pincode      String?
+  gotra        String?
+  education    String?
+  profession   String?
+  profileImage String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  occupation   String?
+  users        User[]
+}
+
+model Gotra {
+  id           String              @id @default(cuid())
+  name         String?             @unique
+  isActive     Boolean             @default(true)
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+  translations GotraTranslation[]
+}
+
+model GotraTranslation {
+  id      String @id @default(cuid())
+  gotraId String
+  locale  String
+  name    String
+
+  gotra Gotra @relation(fields: [gotraId], references: [id], onDelete: Cascade)
+
+  @@unique([gotraId, locale])
+  @@index([locale])
+}
+
+model Country {
+  id           String                @id @default(cuid())
+  name         String?               @unique
+  isActive     Boolean               @default(true)
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+  states       State[]
+  translations CountryTranslation[]
+}
+
+model CountryTranslation {
+  id        String  @id @default(cuid())
+  countryId String
+  locale    String
+  name      String
+
+  country Country @relation(fields: [countryId], references: [id], onDelete: Cascade)
+
+  @@unique([countryId, locale])
+  @@index([locale])
+}
+
+model State {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  countryId String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  cities    City[]
+  country   Country? @relation(fields: [countryId], references: [id])
+
+  @@index([countryId])
+}
+
+model City {
+  id        String   @id @default(cuid())
+  name      String
+  stateId   String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  state     State?   @relation(fields: [stateId], references: [id])
+
+  @@unique([stateId, name])
+  @@index([stateId])
+}
+
+model Education {
+  id           String                 @id @default(cuid())
+  name         String?                @unique
+  isActive     Boolean                @default(true)
+  createdAt    DateTime               @default(now())
+  updatedAt    DateTime               @updatedAt
+  translations EducationTranslation[]
+}
+
+model EducationTranslation {
+  id          String    @id @default(cuid())
+  educationId String
+  locale      String
+  name        String
+
+  education Education @relation(fields: [educationId], references: [id], onDelete: Cascade)
+
+  @@unique([educationId, locale])
+  @@index([locale])
+}
+
+model Occupation {
+  id           String                  @id @default(cuid())
+  name         String?                 @unique
+  isActive     Boolean                 @default(true)
+  createdAt    DateTime                @default(now())
+  updatedAt    DateTime                @updatedAt
+  translations OccupationTranslation[]
+}
+
+model OccupationTranslation {
+  id           String     @id @default(cuid())
+  occupationId String
+  locale       String
+  name         String
+
+  occupation Occupation @relation(fields: [occupationId], references: [id], onDelete: Cascade)
+
+  @@unique([occupationId, locale])
+  @@index([locale])
+}
+
+model Profession {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BloodGroup {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BusinessCategory {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Activity {
+  id           String         @id @default(cuid())
+  title        String
+  slug         String         @unique
+  description  String?
+  category     String?
+  location     String?
+  activityDate DateTime?
+  image        String?
+  status       ActivityStatus @default(PUBLISHED)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model News {
+  id           String            @id @default(cuid())
+  slug         String            @unique
+  image        String?
+  status       NewsStatus        @default(PUBLISHED)
+  publishedAt  DateTime?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  translations NewsTranslation[]
+}
+
+model NewsTranslation {
+  id        String   @id @default(cuid())
+  newsId    String
+  locale    String
+  title     String
+  excerpt   String?
+  content   String
+  location  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  news      News     @relation(fields: [newsId], references: [id], onDelete: Cascade)
+
+  @@unique([newsId, locale])
+  @@index([locale])
+}
+
+model Event {
+  id           String             @id @default(cuid())
+  slug         String             @unique
+  eventDate    DateTime
+  startTime    String?
+  endTime      String?
+  image        String?
+  status       EventStatus        @default(PUBLISHED)
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  translations EventTranslation[]
+  gallery      Gallery[]
+}
+
+model EventTranslation {
+  id          String   @id @default(cuid())
+  eventId     String
+  locale      String
+  title       String
+  description String?
+  location    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  event       Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@unique([eventId, locale])
+  @@index([locale])
+}
+
+model Gallery {
+  id           String               @id @default(cuid())
+  slug         String               @unique
+  coverImage   String?
+  category     String?
+  eventId      String?
+  status       GalleryStatus        @default(PUBLISHED)
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+  event        Event?               @relation(fields: [eventId], references: [id])
+  images       GalleryImage[]
+  translations GalleryTranslation[]
+}
+
+model GalleryTranslation {
+  id          String   @id @default(cuid())
+  galleryId   String
+  locale      String
+  title       String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  gallery     Gallery  @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+
+  @@unique([galleryId, locale])
+  @@index([locale])
+}
+
+model GalleryImage {
+  id           String                    @id @default(cuid())
+  galleryId    String
+  imageUrl     String
+  sortOrder    Int                       @default(0)
+  createdAt    DateTime                  @default(now())
+  updatedAt    DateTime                  @updatedAt
+  gallery      Gallery                   @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+  translations GalleryImageTranslation[]
+
+  @@index([galleryId])
+}
+
+model GalleryImageTranslation {
+  id             String       @id @default(cuid())
+  galleryImageId String
+  locale         String
+  caption        String?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  galleryImage   GalleryImage @relation(fields: [galleryImageId], references: [id], onDelete: Cascade)
+
+  @@unique([galleryImageId, locale])
+  @@index([locale])
+}
+
+model Donation {
+  id              String                @id @default(cuid())
+  donorName       String
+  email           String?
+  phone           String?
+  amount          Decimal               @db.Decimal(12, 2)
+  currency        String                @default("INR")
+  donationDate    DateTime              @default(now())
+  paymentMethod   DonationPaymentMethod @default(OTHER)
+  referenceNumber String?
+  status          DonationStatus        @default(PENDING)
+  notes           String?
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime              @updatedAt
+
+  @@index([donorName])
+  @@index([email])
+  @@index([phone])
+  @@index([status])
+  @@index([donationDate])
+}
+
+model MatrimonialProfile {
+  id                 String            @id @default(cuid())
+  userId             String            @unique
+  firstName          String
+  lastName           String?
+  gender             MatrimonialGender
+  dateOfBirth        DateTime?
+  height             String?
+  maritalStatus      MaritalStatus     @default(NEVER_MARRIED)
+  education          String?
+  profession         String?
+  occupation         String?
+  company            String?
+  city               String?
+  state              String?
+  country            String?           @default("India")
+  pincode            String?
+  religion           String?
+  community          String?
+  subCommunity       String?
+  gotra              String?
+  familyDetails      String?
+  fatherName         String?
+  motherName         String?
+  siblings           String?
+  aboutMe            String?
+  partnerExpectation String?
+  profileImage       String?
+  contactPreference  ContactPreference @default(ADMIN_ONLY)
+  status             MatrimonialStatus @default(PENDING)
+  profileVisibility  ProfileVisibility @default(PRIVATE)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([gender])
+  @@index([maritalStatus])
+  @@index([city])
+  @@index([state])
+  @@index([status])
+  @@index([profileVisibility])
+}
+
+model ConnectionRequest {
+  id         String                  @id @default(cuid())
+  senderId   String
+  receiverId String
+  status     ConnectionRequestStatus @default(PENDING)
+  message    String?
+  createdAt  DateTime                @default(now())
+  updatedAt  DateTime                @updatedAt
+  receiver   User                    @relation("ConnectionRequestsReceived", fields: [receiverId], references: [id], onDelete: Cascade)
+  sender     User                    @relation("ConnectionRequestsSent", fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@unique([senderId, receiverId])
+  @@index([senderId])
+  @@index([receiverId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum NewsStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ActivityStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum GalleryStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum UserStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  BLOCKED
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  ADMIN
+  MEMBER
+}
+
+enum DonationStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum DonationPaymentMethod {
+  CASH
+  UPI
+  BANK_TRANSFER
+  CARD
+  CHEQUE
+  OTHER
+}
+
+enum ConnectionRequestStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  CANCELLED
+}
+
+enum MatrimonialGender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum MaritalStatus {
+  NEVER_MARRIED
+  DIVORCED
+  WIDOWED
+  SEPARATED
+}
+
+enum MatrimonialStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  BLOCKED
+}
+
+enum ProfileVisibility {
+  PRIVATE
+  MEMBERS_ONLY
+  PUBLIC
+}
+
+enum ContactPreference {
+  ADMIN_ONLY
+  MEMBERS_ONLY
+}

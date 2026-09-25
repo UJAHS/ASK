@@ -1,0 +1,661 @@
+/* =========================================================
+   ASK COMMUNITY PORTAL
+   Traditional Indian Heritage Design System
+   ========================================================= */
+
+:root {
+  --ask-maroon-deep: #6F0000;
+  --ask-maroon: #A30505;
+  --ask-maroon-light: #C41414;
+  --ask-coral: #E02B2B;
+
+  --ask-gold-dark: #A87518;
+  --ask-gold: #D9AD55;
+  --ask-gold-light: #F3D47A;
+
+  --ask-ivory: #FFFDF7;
+  --ask-cream: #FFF8EA;
+  --ask-paper: #F9EEDB;
+  --ask-text: #4A1820;
+}
+
+.ask-heritage-gradient {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(243, 212, 122, 0.28),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(208, 74, 58, 0.30),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #6F0000 0%,
+      #A30505 35%,
+      #C41414 68%,
+      #E02B2B 100%
+    );
+}
+
+.ask-gold-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #A87518 0%,
+      #D9AD55 48%,
+      #F3D47A 100%
+    );
+}
+
+.ask-light-gradient {
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(217, 173, 85, 0.16),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(165, 28, 48, 0.10),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #FFFDF7 0%,
+      #FFF8EA 52%,
+      #F9EEDB 100%
+    );
+}
+
+.ask-dark-gradient {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(217, 173, 85, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(165, 28, 48, 0.20),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #180308 0%,
+      #2B0710 55%,
+      #430B17 100%
+    );
+}
+
+.ask-heritage-card {
+  border: 1px solid rgba(201, 150, 50, 0.35);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 253, 247, 0.98),
+      rgba(255, 248, 234, 0.96)
+    );
+  box-shadow:
+    0 12px 30px rgba(91, 7, 20, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.dark .ask-heritage-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(67, 11, 23, 0.95),
+      rgba(33, 6, 11, 0.98)
+    );
+  border-color: rgba(217, 173, 85, 0.30);
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.30);
+}
+
+.ask-gold-line {
+  height: 3px;
+  width: 90px;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      90deg,
+      #A87518,
+      #D9AD55,
+      #F3D47A,
+      #D9AD55,
+      #A87518
+    );
+}
+
+.ask-heritage-button {
+  background:
+    linear-gradient(
+      135deg,
+      #A87518,
+      #D9AD55 50%,
+      #F3D47A
+    );
+  color: #3D1808;
+  border: 1px solid rgba(168,117,24,0.65);
+  box-shadow:
+    0 8px 20px rgba(168,117,24,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.ask-heritage-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow:
+    0 12px 28px rgba(168,117,24,0.30),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+}
+
+.ask-heritage-frame {
+  position: relative;
+  border: 1px solid rgba(201,150,50,0.45);
+}
+
+.ask-heritage-frame::before,
+.ask-heritage-frame::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #C99632;
+  pointer-events: none;
+}
+
+.ask-heritage-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.ask-heritage-frame::after {
+  right: -1px;
+  bottom: -1px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.ask-heritage-glow {
+  box-shadow:
+    0 0 0 1px rgba(217,173,85,0.15),
+    0 15px 45px rgba(122,16,32,0.14);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.ask-heritage-glow:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(217,173,85,0.25),
+    0 20px 55px rgba(122,16,32,0.22);
+}
+/* =========================================================
+   STRONG ASK RED HERITAGE GRADIENT
+   ========================================================= */
+
+.ask-strong-red-gradient {
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0) 28%
+    ),
+    radial-gradient(
+      circle at 82% 25%,
+      rgba(255, 210, 100, 0.14) 0%,
+      rgba(255, 210, 100, 0) 30%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(229, 43, 43, 0.38) 0%,
+      rgba(229, 43, 43, 0) 42%
+    ),
+    linear-gradient(
+      135deg,
+      #650000 0%,
+      #850000 20%,
+      #A30505 45%,
+      #C91414 72%,
+      #E52B2B 100%
+    );
+}
+
+.ask-red-navbar-gradient {
+  background:
+    linear-gradient(
+      100deg,
+      #650000 0%,
+      #850000 25%,
+      #A30505 55%,
+      #B80D0D 78%,
+      #D21F1F 100%
+    );
+}
+
+.ask-red-glow {
+  box-shadow:
+    0 10px 35px rgba(163, 5, 5, 0.28),
+    0 0 60px rgba(163, 5, 5, 0.12);
+}
+
+.ask-gold-text {
+  background:
+    linear-gradient(
+      135deg,
+      #C99632,
+      #F3D47A 45%,
+      #FFF0AE 65%,
+      #D9AD55
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ASK PRIMARY BRAND GRADIENT */
+.ask-primary-gradient {
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(255,255,255,0.14),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 88% 20%,
+      rgba(255,220,120,0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      115deg,
+      #650000 0%,
+      #820000 20%,
+      #A30505 45%,
+      #C91414 72%,
+      #E52B2B 100%
+    );
+}
+
+.ask-primary-gradient-dark {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(217,173,85,0.10),
+      transparent 25%
+    ),
+    linear-gradient(
+      115deg,
+      #3B0000 0%,
+      #650000 30%,
+      #A30505 70%,
+      #8B0000 100%
+    );
+}
+
+/* =========================================================
+   ASK COMMUNITY PORTAL
+   DARK HERITAGE RED THEME
+   Primary: #A30505
+   ========================================================= */
+
+.ask-primary-gradient {
+  background:
+    radial-gradient(
+      circle at 12% 12%,
+      rgba(255,255,255,0.13),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 88% 20%,
+      rgba(255,215,120,0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(229,43,43,0.35),
+      transparent 45%
+    ),
+    linear-gradient(
+      120deg,
+      #650000 0%,
+      #820000 20%,
+      #A30505 46%,
+      #C91414 72%,
+      #E52B2B 100%
+    );
+}
+
+.ask-dark-heritage {
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255,215,120,0.10),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(229,43,43,0.20),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #430000 0%,
+      #650000 28%,
+      #8A0000 58%,
+      #A30505 100%
+    );
+}
+
+.ask-dark-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(229,43,43,0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(217,173,85,0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #430000 0%,
+      #650000 30%,
+      #8A0000 65%,
+      #A30505 100%
+    ) !important;
+  color: #FFF9EE;
+}
+
+.ask-dark-section:nth-of-type(even) {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(229,43,43,0.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(217,173,85,0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      115deg,
+      #520000 0%,
+      #790000 40%,
+      #A30505 100%
+    ) !important;
+}
+
+.dark .ask-public-home > section {
+  border-color: rgba(217,173,85,0.28);
+}
+
+.dark .ask-public-home > section:not(:first-child) {
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(229,43,43,0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(217,173,85,0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #430000 0%,
+      #650000 35%,
+      #8A0000 68%,
+      #A30505 100%
+    ) !important;
+  color: #FFF9EE;
+}
+
+.dark .ask-public-home h1,
+.dark .ask-public-home h2,
+.dark .ask-public-home h3 {
+  color: #FFF9EE !important;
+}
+
+.dark .ask-public-home p {
+  color: rgba(255,249,238,0.82) !important;
+}
+
+.dark .ask-public-home span {
+  color: inherit;
+}
+
+.dark .ask-public-home a:not(.ask-gold-button) {
+  color: #F3D47A;
+}
+
+.dark .ask-public-home .bg-white,
+.dark .ask-public-home .bg-white\/95,
+.dark .ask-public-home .bg-white\/90,
+.dark .ask-public-home .bg-white\/80 {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139,0,0,0.72),
+      rgba(67,0,0,0.88)
+    ) !important;
+}
+
+.dark .ask-public-home [class*="bg-[#fff"],
+.dark .ask-public-home [class*="bg-[#FFF"] {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139,0,0,0.72),
+      rgba(67,0,0,0.88)
+    ) !important;
+}
+
+.dark .ask-public-home [class*="border-red-"] {
+  border-color: rgba(217,173,85,0.30) !important;
+}
+
+.dark .ask-public-home [class*="text-[#3b0710"],
+.dark .ask-public-home [class*="text-[#4A1820"],
+.dark .ask-public-home [class*="text-[#6f2735"],
+.dark .ask-public-home [class*="text-[#7b3442"] {
+  color: rgba(255,249,238,0.88) !important;
+}
+
+.dark .ask-public-home [class*="text-red-"] {
+  color: #F3D47A !important;
+}
+
+.dark .ask-public-home [class*="bg-red-950"] {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139,0,0,0.65),
+      rgba(67,0,0,0.85)
+    ) !important;
+}
+
+.dark .ask-public-home [class*="bg-red-800"],
+.dark .ask-public-home [class*="bg-red-900"] {
+  background:
+    linear-gradient(
+      135deg,
+      #650000,
+      #A30505,
+      #C91414
+    ) !important;
+}
+
+.ask-gold-button {
+  background:
+    linear-gradient(
+      135deg,
+      #B27A16 0%,
+      #D9AD55 42%,
+      #F3D47A 72%,
+      #FFE8A3 100%
+    );
+  color: #4A1700 !important;
+  border: 1px solid rgba(255,224,139,0.65);
+  box-shadow:
+    0 8px 25px rgba(217,173,85,0.24),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+}
+
+.ask-gold-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #C68B20 0%,
+      #E4BF63 45%,
+      #FFE59A 100%
+    );
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 32px rgba(217,173,85,0.32),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+}
+
+.ask-gold-border {
+  border: 1px solid rgba(217,173,85,0.48) !important;
+}
+
+.ask-gold-divider {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #A87518,
+      #F3D47A,
+      #A87518,
+      transparent
+    );
+}
+
+.ask-red-glow {
+  box-shadow:
+    0 0 0 1px rgba(217,173,85,0.12),
+    0 18px 50px rgba(163,5,5,0.28),
+    0 0 70px rgba(163,5,5,0.12);
+}
+
+/* Navbar */
+.ask-public-navbar {
+  background:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(255,255,255,0.08),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 88% 50%,
+      rgba(243,212,122,0.10),
+      transparent 28%
+    ),
+    linear-gradient(
+      105deg,
+      #650000 0%,
+      #820000 24%,
+      #A30505 52%,
+      #C91414 78%,
+      #E02A2A 100%
+    ) !important;
+  border-bottom-color: rgba(243,212,122,0.35) !important;
+  box-shadow:
+    0 8px 30px rgba(65,0,0,0.38),
+    inset 0 -1px 0 rgba(243,212,122,0.18);
+}
+
+.dark .ask-public-navbar {
+  background:
+    radial-gradient(
+      circle at 15% 40%,
+      rgba(255,255,255,0.08),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 85% 60%,
+      rgba(243,212,122,0.10),
+      transparent 30%
+    ),
+    linear-gradient(
+      105deg,
+      #430000 0%,
+      #650000 28%,
+      #A30505 58%,
+      #C91414 100%
+    ) !important;
+}
+
+/* Traditional card */
+.ask-heritage-card-dark {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(163,5,5,0.70),
+      rgba(67,0,0,0.92)
+    );
+  border: 1px solid rgba(217,173,85,0.32);
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Decorative traditional frame */
+.ask-heritage-frame-dark {
+  position: relative;
+  border: 1px solid rgba(217,173,85,0.38);
+}
+
+.ask-heritage-frame-dark::before,
+.ask-heritage-frame-dark::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: #D9AD55;
+  pointer-events: none;
+}
+
+.ask-heritage-frame-dark::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.ask-heritage-frame-dark::after {
+  right: 0;
+  bottom: 0;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+/* Gold heading */
+.ask-gold-heading {
+  background:
+    linear-gradient(
+      135deg,
+      #C99632 0%,
+      #F3D47A 45%,
+      #FFE9A5 65%,
+      #D9AD55 100%
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}

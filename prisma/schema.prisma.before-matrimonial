@@ -1,0 +1,323 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model User {
+  id       String @id @default(cuid())
+  email    String @unique
+  password String
+
+  role   UserRole   @default(MEMBER)
+  status UserStatus @default(PENDING)
+
+  createdAt     DateTime  @default(now())
+  emailVerified DateTime?
+  image         String?
+  updatedAt     DateTime  @updatedAt
+
+  memberNumber Int @unique @default(autoincrement())
+
+  memberProfile MemberProfile? @relation(fields: [memberProfileId], references: [id])
+
+  accounts        Account[]
+  sessions        Session[]
+  memberProfileId String?
+}
+
+model MemberProfile {
+  id     String @id @default(cuid())
+  userId String @unique
+
+  firstName String?
+  lastName  String?
+
+  phone       String?
+  gender      String?
+  dateOfBirth DateTime?
+
+  address String?
+  city    String?
+  state   String?
+  country String? @default("India")
+  pincode String?
+
+  gotra      String?
+  education  String?
+  profession String?
+
+  profileImage String?
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  users      User[]
+  occupation String?
+}
+
+model Activity {
+  id String @id @default(cuid())
+
+  title        String
+  slug         String         @unique
+  description  String?
+  category     String?
+  location     String?
+  activityDate DateTime?
+  image        String?
+  status       ActivityStatus @default(PUBLISHED)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model News {
+  id          String     @id @default(cuid())
+  slug        String     @unique
+  image       String?
+  status      NewsStatus @default(PUBLISHED)
+  publishedAt DateTime?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  translations NewsTranslation[]
+}
+
+model NewsTranslation {
+  id     String @id @default(cuid())
+  newsId String
+  locale String
+
+  title    String
+  excerpt  String?
+  content  String
+  location String?
+
+  news News @relation(fields: [newsId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([newsId, locale])
+  @@index([locale])
+}
+
+model Event {
+  id   String @id @default(cuid())
+  slug String @unique
+
+  eventDate DateTime
+  startTime String?
+  endTime   String?
+
+  image  String?
+  status EventStatus @default(PUBLISHED)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  translations EventTranslation[]
+  gallery      Gallery[]
+}
+
+model EventTranslation {
+  id      String @id @default(cuid())
+  eventId String
+  locale  String
+
+  title       String
+  description String?
+  location    String?
+
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([eventId, locale])
+  @@index([locale])
+}
+
+model Gallery {
+  id   String @id @default(cuid())
+  slug String @unique
+
+  coverImage String?
+  category   String?
+
+  eventId String?
+
+  status GalleryStatus @default(PUBLISHED)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  translations GalleryTranslation[]
+  images       GalleryImage[]
+
+  event Event? @relation(fields: [eventId], references: [id], onDelete: SetNull)
+}
+
+model GalleryTranslation {
+  id        String @id @default(cuid())
+  galleryId String
+  locale    String
+
+  title       String
+  description String?
+
+  gallery Gallery @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([galleryId, locale])
+  @@index([locale])
+}
+
+model GalleryImage {
+  id        String @id @default(cuid())
+  galleryId String
+
+  imageUrl  String
+  sortOrder Int    @default(0)
+
+  gallery Gallery @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+
+  translations GalleryImageTranslation[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([galleryId])
+}
+
+model GalleryImageTranslation {
+  id             String @id @default(cuid())
+  galleryImageId String
+  locale         String
+
+  caption String?
+
+  galleryImage GalleryImage @relation(fields: [galleryImageId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([galleryImageId, locale])
+  @@index([locale])
+}
+
+enum NewsStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ActivityStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum GalleryStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum UserStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  BLOCKED
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  ADMIN
+  MEMBER
+}
+
+model Donation {
+  id              String                @id @default(cuid())
+  donorName       String
+  email           String?
+  phone           String?
+  amount          Decimal               @db.Decimal(12, 2)
+  currency        String                @default("INR")
+  donationDate    DateTime              @default(now())
+  paymentMethod   DonationPaymentMethod @default(OTHER)
+  referenceNumber String?
+  status          DonationStatus        @default(PENDING)
+  notes           String?
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime              @updatedAt
+
+  @@index([donorName])
+  @@index([email])
+  @@index([phone])
+  @@index([status])
+  @@index([donationDate])
+}
+
+enum DonationStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum DonationPaymentMethod {
+  CASH
+  UPI
+  BANK_TRANSFER
+  CARD
+  CHEQUE
+  OTHER
+}

@@ -1,18 +1,48 @@
 "use client";
 
 import { signOut } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
-export default function LogoutButton() {
+const translations = {
+  en: {
+    logout: "Logout",
+  },
+
+  hi: {
+    logout: "लॉग आउट",
+  },
+
+  gu: {
+    logout: "લોગ આઉટ",
+  },
+};
+
+export default function LogoutButton({
+  callbackUrl = "/login",
+}: {
+  callbackUrl?: string;
+}) {
+  const pathname = usePathname();
+
+  const firstSegment = pathname.split("/")[1];
+
+  const locale =
+    firstSegment === "hi" || firstSegment === "gu"
+      ? firstSegment
+      : "en";
+
+  const t = translations[locale];
+
   return (
     <button
       onClick={() =>
         signOut({
-          callbackUrl: "/api/auth/signin",
+          callbackUrl,
         })
       }
-      className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700"
+      className="rounded bg-red-600 px-6 py-2 text-white transition hover:bg-red-700"
     >
-      Logout
+      {t.logout}
     </button>
   );
 }
