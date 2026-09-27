@@ -9,9 +9,12 @@ export async function POST(request: Request) {
     const {
       firstName,
       lastName,
+      fatherFullName,
+      motherFullName,
       email,
       password,
       phone,
+      whatsappNumber,
       gender,
       dateOfBirth,
       address,
@@ -21,11 +24,31 @@ export async function POST(request: Request) {
       pincode,
     } = body;
 
-    if (!firstName || !lastName || !email || !password) {
+    const missingFields: string[] = [];
+
+    if (!firstName) missingFields.push("First Name");
+    if (!lastName) missingFields.push("Last Name");
+    if (!fatherFullName) missingFields.push("Father's Full Name");
+    if (!motherFullName) missingFields.push("Mother's Full Name");
+    if (!email) missingFields.push("Email");
+    if (!password) missingFields.push("Password");
+    if (!phone) missingFields.push("Phone Number");
+    if (!gender) missingFields.push("Gender");
+    if (!dateOfBirth) missingFields.push("Date of Birth");
+    if (!address) missingFields.push("Address");
+    if (!city) missingFields.push("City");
+    if (!state) missingFields.push("State");
+    if (!country) missingFields.push("Country");
+    if (!pincode) missingFields.push("Pincode");
+
+    if (missingFields.length > 0) {
+      console.log("REGISTRATION MISSING FIELDS:", missingFields);
+
       return NextResponse.json(
         {
           success: false,
-          message: "First name, last name, email and password are required.",
+          message: `Please complete: ${missingFields.join(", ")}`,
+          missingFields,
         },
         { status: 400 }
       );
@@ -75,14 +98,19 @@ export async function POST(request: Request) {
         userId: user.id,
         firstName: String(firstName).trim(),
         lastName: String(lastName).trim(),
-        phone: phone ? String(phone).trim() : null,
-        gender: gender ? String(gender).trim() : null,
-        dateOfBirth: dateOfBirth ? new Date(dateOfBirth) : null,
-        address: address ? String(address).trim() : null,
-        city: city ? String(city).trim() : null,
-        state: state ? String(state).trim() : null,
-        country: country ? String(country).trim() : "India",
-        pincode: pincode ? String(pincode).trim() : null,
+        fatherFullName: String(fatherFullName).trim(),
+        motherFullName: String(motherFullName).trim(),
+        phone: String(phone).trim(),
+        whatsappNumber: whatsappNumber
+          ? String(whatsappNumber).trim()
+          : null,
+        gender: String(gender).trim(),
+        dateOfBirth: new Date(dateOfBirth),
+        address: String(address).trim(),
+        city: String(city).trim(),
+        state: String(state).trim(),
+        country: String(country).trim(),
+        pincode: String(pincode).trim(),
       },
     });
 
