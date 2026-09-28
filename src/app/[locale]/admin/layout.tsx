@@ -82,24 +82,62 @@ export default async function AdminLayout({
             dark:to-[#2a0409]
           "
         >
-          {/* Header Title */}
-          <div className="min-w-0">
-            <h1
-  className="
-    truncate
-    text-2xl
-    font-bold
-    tracking-tight
-    !text-white
-  "
->
-  {t.title}
-</h1>
+          {/* Header Brand */}
+<div className="flex min-w-0 items-center gap-3">
+  {/* SAME SHIVA LOGO AS MEMBER PORTAL */}
+  <div
+    className="
+      relative
+      h-12
+      w-12
+      shrink-0
+      overflow-hidden
+      rounded-full
+      border-2
+      border-[#d9ad55]
+      bg-white
+      shadow-[0_0_14px_rgba(217,173,85,0.45)]
+    "
+  >
+    <img
+      src="/images/SHIVA_ORI_!.png"
+      alt="Ahhichatra Sanskar Kendra"
+      className="h-full w-full object-cover object-center"
+    />
+  </div>
 
-            <p className="admin-header-subtitle mt-1 text-sm">
-  {t.subtitle}
-</p>
-          </div>
+  {/* ORGANIZATION NAME */}
+  <div className="min-w-0">
+    <h1
+      className="
+        whitespace-nowrap
+        font-serif
+        text-xl
+        font-bold
+        leading-tight
+        tracking-wide
+        text-white
+        sm:text-2xl
+      "
+    >
+      {t.title}
+    </h1>
+
+    <p
+      className="
+        mt-0.5
+        whitespace-nowrap
+        text-xs
+        font-medium
+        tracking-wide
+        text-red-100
+        dark:text-red-200
+      "
+    >
+      {t.subtitle}
+    </p>
+  </div>
+</div>
 
           {/* Header Actions */}
           <div className="flex shrink-0 items-center gap-3">
