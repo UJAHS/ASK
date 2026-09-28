@@ -84,17 +84,17 @@ const content: Record<
 
     missionLabel: "OUR PURPOSE",
     missionTitle:
-      "Keeping our community connected in a changing world.",
+      "Keeping our community connected in a changing world",
     missionText:
       "ASK brings community members together through cultural activities, social participation, events and a shared digital space where everyone can stay connected.",
 
     activitiesLabel: "COMMUNITY LIFE",
-    activitiesTitle: "There is always something happening.",
+    activitiesTitle: "There is always something happening",
     activitiesText:
-      "Discover the latest activities published by the ASK community.",
+      "Discover the latest activities published by the ASK community",
 
     cultureLabel: "CULTURE & VALUES",
-    cultureTitle: "Traditions that connect generations.",
+    cultureTitle: "Traditions that connect generations",
     cultureText: "Our community values culture, relationships, respect and togetherness while creating opportunities that connect generations.",
     eventsLabel: "UPCOMING EVENTS",
     eventsTitle: "Meet. Celebrate. Participate.",
@@ -102,24 +102,24 @@ const content: Record<
       "Stay informed about community gatherings, cultural celebrations and activities happening around ASK.",
 
     newsLabel: "LATEST NEWS",
-    newsTitle: "What's happening in our community.",
+    newsTitle: "What's happening in our community",
     newsText:
-      "Read the latest announcements, updates and stories published by ASK.",
+      "Read the latest announcements, updates and stories published by ASK",
 
     galleryLabel: "COMMUNITY GALLERY",
-    galleryTitle: "Moments that bring us together.",
+    galleryTitle: "Moments that bring us together",
     galleryText:
-      "Explore the latest memories and photographs shared by the ASK community.",
+      "Explore the latest memories and photographs shared by the ASK community",
 
     membershipLabel: "BECOME PART OF ASK",
     membershipTitle:
-      "Your community is stronger when you participate.",
+      "Your community is stronger when you participate",
     membershipText:
       "Join ASK and create your community profile, discover activities, connect with members and stay informed about what is happening.",
 
-    ctaTitle: "Let's stay connected.",
+    ctaTitle: "Let's stay connected",
     ctaText:
-      "Join the ASK Community Portal and become part of a growing community built around connection, culture and participation.",
+      "Join the ASK Community Portal and become part of a growing community built around connection, culture and participation",
 
     join: "Join ASK",
     explore: "Explore Community",
@@ -548,7 +548,7 @@ export default async function PublicHomePage({
 
 
     {/* Mission / culture */}
-    <div className="mt-7 max-w-5xl sm:mt-9">
+    <div className="homepage-text-section mt-7 w-full min-w-0 max-w-5xl sm:mt-9">
       <h1
   className="
     mx-auto
@@ -563,12 +563,12 @@ export default async function PublicHomePage({
     text-[#fff8e8]
   "
 >
-  <span className="block whitespace-nowrap">
-    {t.missionTitle}
-  </span>
-  <span className="mt-1 block whitespace-nowrap text-[#e2b85d]">
-    {t.cultureTitle}
-  </span>
+  <span className="block w-full text-center whitespace-normal">
+  {t.missionTitle}
+</span>
+  <span className="mt-1 block w-full text-center whitespace-normal text-[#e2b85d]">
+  {t.cultureTitle}
+</span>
 </h1>
 
       <p
@@ -631,25 +631,25 @@ export default async function PublicHomePage({
 </section>
 
       {/* ABOUT */}
-      <section className="relative bg-[#fff7f8] py-20 dark:bg-[#24040a] sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <section className="relative w-full min-w-0 overflow-hidden bg-[#fff7f8] py-14 dark:bg-[#24040a] sm:py-20 lg:py-24">
+        <div className="mx-auto w-full max-w-7xl min-w-0 px-5 sm:px-8 lg:px-10">
+          <div className="grid min-w-0 items-center gap-8 lg:grid-cols-2 lg:gap-16">
             <div>
               <span className="text-xs font-bold tracking-[0.22em] text-red-700 dark:text-red-300">
                 {t.introLabel}
               </span>
 
-              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-4 max-w-xl min-w-0 break-words text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
                 {t.introTitle}
               </h2>
             </div>
 
             <div>
-              <p className="max-w-3xl text-lg leading-8 text-[#6f2735] dark:text-red-100/70">
+              <p className="w-full max-w-[620px] min-w-0 break-words text-base leading-7 sm:text-lg sm:leading-8 text-[#6f2735] dark:text-red-100/70">
                 {t.introText}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 flex w-full min-w-0 flex-wrap gap-2 sm:mt-8 sm:gap-3">
                 {[
                   t.community,
                   t.culture,
@@ -675,18 +675,18 @@ export default async function PublicHomePage({
         <div className="absolute -right-32 top-0 h-80 w-80 rounded-full bg-red-400/10 blur-3xl" />
         <div className="absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-pink-400/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="relative mx-auto w-full max-w-7xl min-w-0 px-5 sm:px-8 lg:px-10">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <span className="text-xs font-bold tracking-[0.22em] text-red-200">
                 {t.missionLabel}
               </span>
 
-              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-4 w-full max-w-[680px] min-w-0 break-words text-3xl font-black leading-[1.08] tracking-tight sm:text-4xl lg:text-[3.35rem] lg:leading-[1.08]">
                 {t.missionTitle}
               </h2>
 
-              <p className="mt-6 max-w-xl text-base leading-8 text-red-100/70 sm:text-lg">
+              <p className="mt-6 w-full max-w-[620px] text-base leading-7 text-red-100/70 sm:text-lg sm:leading-8">
                 {t.missionText}
               </p>
 
@@ -820,7 +820,7 @@ export default async function PublicHomePage({
 
       {/* LIVE ACTIVITIES */}
       <section className="bg-[#fff7f8] py-20 dark:bg-[#28040a] sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-full max-w-7xl min-w-0 px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <span className="text-xs font-bold tracking-[0.22em] text-red-700 dark:text-red-300">
@@ -914,7 +914,7 @@ export default async function PublicHomePage({
 
       {/* CULTURE */}
       <section className="bg-[#fff0f2] py-20 dark:bg-[#31050c] sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-full max-w-7xl min-w-0 px-5 sm:px-8 lg:px-10">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative min-h-[420px]">
               <div className="absolute left-0 top-0 h-[330px] w-[72%] overflow-hidden rounded-[28px] border-4 border-[#d4af37]/70 bg-[#3b0710] shadow-2xl">
@@ -1011,7 +1011,7 @@ export default async function PublicHomePage({
       </section>
       {/* LIVE EVENTS */}
       <section className="bg-[#fff7f8] py-20 dark:bg-[#24040a] sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-full max-w-7xl min-w-0 px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <span className="text-xs font-bold tracking-[0.22em] text-red-700 dark:text-red-300">
@@ -1096,7 +1096,7 @@ export default async function PublicHomePage({
 
       {/* LIVE NEWS */}
       <section className="bg-[#fff0f2] py-20 dark:bg-[#31050c] sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-full max-w-7xl min-w-0 px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <span className="text-xs font-bold tracking-[0.22em] text-red-700 dark:text-red-300">
@@ -1198,7 +1198,7 @@ export default async function PublicHomePage({
 
       {/* LIVE GALLERY */}
       <section className="bg-[#fff7f8] py-20 dark:bg-[#24040a] sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-full max-w-7xl min-w-0 px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <span className="text-xs font-bold tracking-[0.22em] text-red-700 dark:text-red-300">
@@ -1268,7 +1268,7 @@ export default async function PublicHomePage({
 
       {/* MEMBERSHIP */}
       <section className="bg-[#fff0f2] py-20 dark:bg-[#31050c] sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-full max-w-7xl min-w-0 px-5 sm:px-8 lg:px-10">
           <div className="overflow-hidden rounded-[32px] overflow-hidden transition-all duration-500 hover:-translate-y-2 border border-red-200 bg-gradient-to-br from-white via-[#fff1f3] to-[#ffdfe5] p-8 shadow-xl dark:border-red-400/15 dark:from-[#4a0812] dark:via-[#3b0710] dark:to-[#28040a] sm:p-12">
             <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.8fr]">
               <div>

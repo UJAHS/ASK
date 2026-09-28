@@ -82,17 +82,17 @@ const content: Record<
 
     missionLabel: "OUR PURPOSE",
     missionTitle:
-      "Keeping our community connected in a changing world.",
+      "Keeping our community connected in a changing world",
     missionText:
       "ASK brings community members together through cultural activities, social participation, events and a shared digital space where everyone can stay connected.",
 
     activitiesLabel: "COMMUNITY LIFE",
-    activitiesTitle: "There is always something happening.",
+    activitiesTitle: "There is always something happening",
     activitiesText:
-      "Discover the latest activities published by the ASK community.",
+      "Discover the latest activities published by the ASK community",
 
     cultureLabel: "CULTURE & VALUES",
-    cultureTitle: "Traditions that connect generations.",
+    cultureTitle: "Traditions that connect generations",
     cultureText: "Our community values culture, relationships, respect and togetherness while creating opportunities that connect generations.",
     eventsLabel: "UPCOMING EVENTS",
     eventsTitle: "Meet. Celebrate. Participate.",

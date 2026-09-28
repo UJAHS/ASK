@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { signOut } from "next-auth/react";
 import LanguageSwitcher from "@/components/i18n/LanguageSwitcher";
@@ -15,17 +15,17 @@ const translations = {
   },
 
   hi: {
-    portalTitle: "Ã Â¤â€¦Ã Â¤Â¹Ã Â¤Â¿Ã Â¤Å¡Ã Â¥ÂÃ Â¤â€ºÃ Â¤Â¤Ã Â¥ÂÃ Â¤Â° Ã Â¤Â¸Ã Â¤â€šÃ Â¤Â¸Ã Â¥ÂÃ Â¤â€¢Ã Â¤Â¾Ã Â¤Â° Ã Â¤â€¢Ã Â¥â€¡Ã Â¤â€šÃ Â¤Â¦Ã Â¥ÂÃ Â¤Â°",
-    portalSubtitle: "Ã Â¤Â¸Ã Â¤Â¾Ã Â¤Â®Ã Â¥ÂÃ Â¤Â¦Ã Â¤Â¾Ã Â¤Â¯Ã Â¤Â¿Ã Â¤â€¢ Ã Â¤Â¸Ã Â¤Â¦Ã Â¤Â¸Ã Â¥ÂÃ Â¤Â¯ Ã Â¤ÂªÃ Â¥â€¹Ã Â¤Â°Ã Â¥ÂÃ Â¤Å¸Ã Â¤Â²",
+    portalTitle: "\u0905\u0939\u093f\u091a\u094d\u091b\u0924\u094d\u0930 \u0938\u0902\u0938\u094d\u0915\u093e\u0930 \u0915\u0947\u0902\u0926\u094d\u0930",
+    portalSubtitle: "\u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0938\u0926\u0938\u094d\u092f \u092a\u094b\u0930\u094d\u091f\u0932",
     member: "\u0938\u0926\u0938\u094d\u092f",
     logout: "\u0932\u0949\u0917 \u0906\u0909\u091f",
   },
 
   gu: {
-    portalTitle: "Ã Âªâ€¦Ã ÂªÂ¹Ã ÂªÂ¿Ã ÂªÅ¡Ã Â«ÂÃ Âªâ€ºÃ ÂªÂ¤Ã Â«ÂÃ ÂªÂ° Ã ÂªÂ¸Ã Âªâ€šÃ ÂªÂ¸Ã Â«ÂÃ Âªâ€¢Ã ÂªÂ¾Ã ÂªÂ° Ã Âªâ€¢Ã Â«â€¡Ã ÂªÂ¨Ã Â«ÂÃ ÂªÂ¦Ã Â«ÂÃ ÂªÂ°",
-    portalSubtitle: "Ã ÂªÂ¸Ã ÂªÂ¾Ã ÂªÂ®Ã Â«ÂÃ ÂªÂ¦Ã ÂªÂ¾Ã ÂªÂ¯Ã ÂªÂ¿Ã Âªâ€¢ Ã ÂªÂ¸Ã ÂªÂ­Ã Â«ÂÃ ÂªÂ¯ Ã ÂªÂªÃ Â«â€¹Ã ÂªÂ°Ã Â«ÂÃ ÂªÅ¸Ã ÂªÂ²",
-    member: "\u0AB8\u0AAD\u0ACD\u0AAF",
-    logout: "\u0AB2\u0AC9\u0A97\u0A86\u0A89\u0A9F",
+    portalTitle: "\u0a85\u0ab9\u0abf\u0a9a\u0acd\u0a9b\u0aa4\u0acd\u0ab0 \u0ab8\u0a82\u0ab8\u0acd\u0a95\u0abe\u0ab0 \u0a95\u0ac7\u0aa8\u0acd\u0aa6\u0acd\u0ab0",
+    portalSubtitle: "\u0ab8\u0abe\u0aae\u0ac1\u0aa6\u0abe\u0aaf\u0abf\u0a95 \u0ab8\u0aad\u0acd\u0aaf \u0aaa\u0acb\u0ab0\u0acd\u0a9f\u0ab2",
+    member: "\u0ab8\u0aad\u0acd\u0aaf",
+    logout: "\u0ab2\u0acb\u0a97 \u0a86\u0a89\u0a9f",
   },
 } as const;
 

@@ -197,7 +197,7 @@ export default function Sidebar() {
             "
           >
             <img
-              src="/images/ask-shiva-logo.jpg"
+              src="/images/SHIVA_ORI_!.png"
               alt="Ahhichatra Sanskar Kendra"
               className="h-full w-full rounded-full object-contain"
             />

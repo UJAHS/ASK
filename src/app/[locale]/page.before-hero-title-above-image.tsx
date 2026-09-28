@@ -82,7 +82,7 @@ const content: Record<
 
     missionLabel: "OUR PURPOSE",
     missionTitle:
-      "Keeping our community connected in a changing world.",
+      "Keeping our community connected in a changing world",
     missionText:
       "ASK brings community members together through cultural activities, social participation, events and a shared digital space where everyone can stay connected.",
 
