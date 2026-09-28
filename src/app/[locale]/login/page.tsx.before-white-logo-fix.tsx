@@ -184,16 +184,16 @@ export default function LoginPage() {
     justify-center
     overflow-hidden
     rounded-full
-    border-0
+    border-[3px]
     border-[#d4af37]
-    bg-white
+    bg-[#fff8e7]
     shadow-[0_4px_18px_rgba(80,0,10,0.28)]
   "
 >
   <img
-    src="/images/SHIVA_ORI_!.png"
+    src="/images/ASK_Logo.jpg"
     alt="Ahhichatra Sanskar Kendra"
-    className="h-full w-full object-cover object-center"
+    className="h-full w-full object-contain p-1"
   />
 </div>
 <h1 className="mt-4 text-2xl font-bold sm:text-3xl" style={{ color: "#FFFFFF", WebkitTextFillColor: "#FFFFFF" }}>{t.title}</h1>

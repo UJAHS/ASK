@@ -8,22 +8,22 @@ type Locale = "en" | "hi" | "gu";
 
 const translations = {
   en: {
-    portalTitle: "Ahhichatra Sanskar Kendra",
-    portalSubtitle: "Community Member Portal",
+    portalTitle: {t.portalTitle},
+    portalSubtitle: {t.portalSubtitle},
     member: "Member",
     logout: "Logout",
   },
 
   hi: {
-    portalTitle: "Ã Â¤â€¦Ã Â¤Â¹Ã Â¤Â¿Ã Â¤Å¡Ã Â¥ÂÃ Â¤â€ºÃ Â¤Â¤Ã Â¥ÂÃ Â¤Â° Ã Â¤Â¸Ã Â¤â€šÃ Â¤Â¸Ã Â¥ÂÃ Â¤â€¢Ã Â¤Â¾Ã Â¤Â° Ã Â¤â€¢Ã Â¥â€¡Ã Â¤â€šÃ Â¤Â¦Ã Â¥ÂÃ Â¤Â°",
-    portalSubtitle: "Ã Â¤Â¸Ã Â¤Â¾Ã Â¤Â®Ã Â¥ÂÃ Â¤Â¦Ã Â¤Â¾Ã Â¤Â¯Ã Â¤Â¿Ã Â¤â€¢ Ã Â¤Â¸Ã Â¤Â¦Ã Â¤Â¸Ã Â¥ÂÃ Â¤Â¯ Ã Â¤ÂªÃ Â¥â€¹Ã Â¤Â°Ã Â¥ÂÃ Â¤Å¸Ã Â¤Â²",
+    portalTitle: "\u0905\u0939\u093f\u091a\u094d\u091b\u0924\u094d\u0930 \u0938\u0902\u0938\u094d\u0915\u093e\u0930 \u0915\u0947\u0902\u0926\u094d\u0930",
+    portalSubtitle: "\u0938\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0938\u0926\u0938\u094d\u092f \u092a\u094b\u0930\u094d\u091f\u0932",
     member: "\u0938\u0926\u0938\u094d\u092f",
     logout: "\u0932\u0949\u0917 \u0906\u0909\u091f",
   },
 
   gu: {
-    portalTitle: "Ã Âªâ€¦Ã ÂªÂ¹Ã ÂªÂ¿Ã ÂªÅ¡Ã Â«ÂÃ Âªâ€ºÃ ÂªÂ¤Ã Â«ÂÃ ÂªÂ° Ã ÂªÂ¸Ã Âªâ€šÃ ÂªÂ¸Ã Â«ÂÃ Âªâ€¢Ã ÂªÂ¾Ã ÂªÂ° Ã Âªâ€¢Ã Â«â€¡Ã ÂªÂ¨Ã Â«ÂÃ ÂªÂ¦Ã Â«ÂÃ ÂªÂ°",
-    portalSubtitle: "Ã ÂªÂ¸Ã ÂªÂ¾Ã ÂªÂ®Ã Â«ÂÃ ÂªÂ¦Ã ÂªÂ¾Ã ÂªÂ¯Ã ÂªÂ¿Ã Âªâ€¢ Ã ÂªÂ¸Ã ÂªÂ­Ã Â«ÂÃ ÂªÂ¯ Ã ÂªÂªÃ Â«â€¹Ã ÂªÂ°Ã Â«ÂÃ ÂªÅ¸Ã ÂªÂ²",
+    portalTitle: "\u0A85\u0AB9\u0ABF\u0A9A\u0ACD\u0A9B\u0AA4\u0ACD\u0AB0 \u0AB8\u0A82\u0AB8\u0ACD\u0A95\u0ABE\u0AB0 \u0A95\u0AC7\u0AA8\u0ACD\u0AA6\u0ACD\u0AB0",
+    portalSubtitle: "\u0AB8\u0AAE\u0AC1\u0AA6\u0ABE\u0AAF \u0AB8\u0AAD\u0ACD\u0AAF \u0AAA\u0ACB\u0AB0\u0ACD\u0A9F\u0AB2",
     member: "\u0AB8\u0AAD\u0ACD\u0AAF",
     logout: "\u0AB2\u0AC9\u0A97\u0A86\u0A89\u0A9F",
   },
@@ -123,7 +123,7 @@ export default function MemberHeader({
           "
         >
           <img
-            src="/images/SHIVA_ORI_!.png"
+            src="/images/ASK_Logo.jpg"
             alt="Ahhichatra Sanskar Kendra"
             className="h-full w-full rounded-full object-contain"
           />

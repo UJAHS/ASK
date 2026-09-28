@@ -443,11 +443,11 @@ export default async function PublicHomePage({
     text-2xl font-bold
     leading-tight tracking-tight
     text-[#EF4444]
-    drop- hover:
+    drop-shadow-[0_18px_55px_rgba(60,0,10,0.48)] hover:shadow-[0_0_8px_rgba(255,215,70,0.95),0_0_24px_rgba(255,215,70,0.80),0_20px_65px_rgba(60,0,10,0.55)]
     sm:text-3xl
-    md:text-3xl
+    md:text-4xl
     lg:text-[42px]
-   whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]"
+  "
 >
   {t.organizationName}
 </h2>
@@ -455,97 +455,39 @@ export default async function PublicHomePage({
       <span className="h-px w-10 bg-[#b88924] sm:w-14" />
     </div>
 
-    {/* Homepage Om Symbols */}
-    <div
-      className="
-        pointer-events-none
-        absolute
-        left-3 sm:left-4 lg:left-6
-        top-3 sm:top-4 lg:top-6
-        z-[50]
-        block
-        select-none
-        font-serif
-        text-[clamp(1.35rem,4vw,2.5rem)]
-        font-bold
-        leading-none
-        !text-red-700 dark:!text-white
-        drop-
-        sm:left-3 sm:left-4 lg:left-6
-        sm:top-3 sm:top-4 lg:top-6
-        sm:text-[clamp(1.35rem,4vw,2.5rem)]
-        lg:left-3 sm:left-4 lg:left-6
-        lg:top-3 sm:top-4 lg:top-6
-        lg:text-[clamp(1.35rem,4vw,2.5rem)]
-      "
-      aria-hidden="true"
-    >
-      {"\u0950"}
-    </div>
-
-    <div
-      className="
-        pointer-events-none
-        absolute
-        right-3 sm:right-4 lg:right-6
-        top-3 sm:top-4 lg:top-6
-        z-[50]
-        block
-        select-none
-        font-serif
-        text-[clamp(1.35rem,4vw,2.5rem)]
-        font-bold
-        leading-none
-        !text-red-700 dark:!text-white
-        drop-
-        sm:right-3 sm:right-4 lg:right-6
-        sm:top-3 sm:top-4 lg:top-6
-        sm:text-[clamp(1.35rem,4vw,2.5rem)]
-        lg:right-3 sm:right-4 lg:right-6
-        lg:top-3 sm:top-4 lg:top-6
-        lg:text-[clamp(1.35rem,4vw,2.5rem)]
-      "
-      aria-hidden="true"
-    >
-      {"\u0950"}
-    </div>
-
     {/* Shiva image */}
-<div className="flex justify-center">
-  <div className="homepage-shiva-logo-glow">
-
-    {/* Actual circular logo */}
     <div
       className="
         relative
-        aspect-square
-        w-[clamp(220px,65vw,428px)]
-        shrink-0
+        h-[285px] w-[225px]
         overflow-hidden
-        rounded-full
-        border-[3px]
-        border-[#d9ad55]
-        bg-white
+        rounded-[38%]
+        border border-[#d9ad55]
+        bg-[#fffdf7]
+        p-1
+        shadow-[0_18px_55px_rgba(60,0,10,0.48)] hover:shadow-[0_0_8px_rgba(255,215,70,0.95),0_0_24px_rgba(255,215,70,0.80),0_20px_65px_rgba(60,0,10,0.55)]
+        dark:bg-[#fff8e8]
+        dark:shadow-[0_18px_55px_rgba(60,0,10,0.48)] hover:shadow-[0_0_8px_rgba(255,215,70,0.95),0_0_24px_rgba(255,215,70,0.80),0_20px_65px_rgba(60,0,10,0.55)]
+        sm:h-[320px] sm:w-[245px]
+        lg:h-[350px] lg:w-[270px]
       "
     >
-      <img
-        src="/images/SHIVA_ORI_!.png"
-        alt={t.organizationName}
+      <div
         className="
-          absolute
-          inset-0
-          h-full
-          w-full
-          rounded-full
-          object-cover
-          object-center
+          h-full w-full
+          overflow-hidden
+          rounded-[38%]
+          border border-[#d9ad55]/70
+          bg-[#fffdf7]
         "
-      />
+      >
+        <img
+          src="/images/ASK_Logo.jpg"
+          alt={t.organizationName}
+          className="h-full w-full object-contain object-center"
+        />
+      </div>
     </div>
-
-  </div>
-</div>
-
 
     {/* Mission / culture */}
     <div className="mt-7 max-w-5xl sm:mt-9">
@@ -595,7 +537,8 @@ export default async function PublicHomePage({
             bg-[#8b0000]
             px-6 py-3
             text-sm font-semibold
-            text-white hover:
+            text-white
+            shadow-[0_18px_55px_rgba(60,0,10,0.48)] hover:shadow-[0_0_8px_rgba(255,215,70,0.95),0_0_24px_rgba(255,215,70,0.80),0_20px_65px_rgba(60,0,10,0.55)]
             transition
             hover:-translate-y-0.5
             hover:bg-[#6f0010]
@@ -614,7 +557,8 @@ export default async function PublicHomePage({
             bg-[#fffdf7]
             px-6 py-3
             text-sm font-semibold
-            text-[#7a0716] hover:
+            text-[#7a0716]
+            shadow-[0_18px_55px_rgba(60,0,10,0.48)] hover:shadow-[0_0_8px_rgba(255,215,70,0.95),0_0_24px_rgba(255,215,70,0.80),0_20px_65px_rgba(60,0,10,0.55)]
             transition
             hover:-translate-y-0.5
             dark:bg-transparent
@@ -639,7 +583,7 @@ export default async function PublicHomePage({
                 {t.introLabel}
               </span>
 
-              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-4xl lg:text-5xl">
                 {t.introTitle}
               </h2>
             </div>
@@ -682,7 +626,7 @@ export default async function PublicHomePage({
                 {t.missionLabel}
               </span>
 
-              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
                 {t.missionTitle}
               </h2>
 
@@ -741,7 +685,7 @@ export default async function PublicHomePage({
                       duration-500
                       hover:-translate-y-1
                       hover:border-[#f0c96b]
-                      hover: hover:
+                      hover:shadow-[0_18px_55px_rgba(60,0,10,0.48)] hover:shadow-[0_0_8px_rgba(255,215,70,0.95),0_0_24px_rgba(255,215,70,0.80),0_20px_65px_rgba(60,0,10,0.55)]
                     "
                   >
                     <img
@@ -827,7 +771,7 @@ export default async function PublicHomePage({
                 {t.activitiesLabel}
               </span>
 
-              <h2 className="hero-org-title mt-3 text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-3 text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-4xl">
                 {t.activitiesTitle}
               </h2>
 
@@ -960,7 +904,7 @@ export default async function PublicHomePage({
                 {t.cultureLabel}
               </span>
 
-              <h2 className="hero-org-title mt-4 text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-4 text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-4xl">
                 {t.cultureTitle}
               </h2>
 
@@ -1018,7 +962,7 @@ export default async function PublicHomePage({
                 {t.eventsLabel}
               </span>
 
-              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-4xl">
                 {t.eventsTitle}
               </h2>
 
@@ -1103,7 +1047,7 @@ export default async function PublicHomePage({
                 {t.newsLabel}
               </span>
 
-              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-4xl">
                 {t.newsTitle}
               </h2>
 
@@ -1205,7 +1149,7 @@ export default async function PublicHomePage({
                 {t.galleryLabel}
               </span>
 
-              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-4xl">
                 {t.galleryTitle}
               </h2>
 
@@ -1276,7 +1220,7 @@ export default async function PublicHomePage({
                   {t.membershipLabel}
                 </span>
 
-                <h2 className="hero-org-title mt-4 max-w-2xl text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+                <h2 className="hero-org-title mt-4 max-w-2xl text-3xl font-black text-[#3b0710] dark:text-white sm:text-4xl">
                   {t.membershipTitle}
                 </h2>
 
@@ -1344,7 +1288,7 @@ export default async function PublicHomePage({
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#8f0014] via-[#c90018] to-[#ef001d] py-20 text-white hover: dark:from-[#240209] dark:via-[#520914] dark:to-[#180107] sm:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#8f0014] via-[#c90018] to-[#ef001d] py-20 text-white shadow-[0_18px_55px_rgba(60,0,10,0.48)] hover:shadow-[0_0_8px_rgba(255,215,70,0.95),0_0_24px_rgba(255,215,70,0.80),0_20px_65px_rgba(60,0,10,0.55)] dark:from-[#240209] dark:via-[#520914] dark:to-[#180107] sm:py-24">
         <div className="pointer-events-none absolute -left-32 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-white/10 blur-3xl" />
 
         <div className="pointer-events-none absolute -right-32 -top-20 h-96 w-96 rounded-full bg-pink-300/15 blur-3xl" />
@@ -1354,7 +1298,7 @@ export default async function PublicHomePage({
             <Heart className="h-6 w-6 fill-current" />
           </div>
 
-          <h2 className="hero-org-title mt-7 text-3xl font-black tracking-tight sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+          <h2 className="hero-org-title mt-7 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
             {t.ctaTitle}
           </h2>
 

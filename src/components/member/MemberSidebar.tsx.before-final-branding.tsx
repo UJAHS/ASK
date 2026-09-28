@@ -281,7 +281,7 @@ export default function MemberSidebar() {
             "
           >
             <img
-              src="/images/SHIVA_ORI_!.png"
+              src="/images/ask-shiva-logo.jpg"
               alt="Ahhichatra Sanskar Kendra"
               className="h-full w-full rounded-full object-contain"
             />
@@ -291,14 +291,12 @@ export default function MemberSidebar() {
           <div className="min-w-0">
             <h1
               className="
-                max-w-[150px]
+                truncate
                 font-serif
-                text-[15px]
+                text-lg
                 font-bold
-                leading-tight
                 tracking-wide
                 !text-[#fff8e8]
-                sm:text-[16px]
               "
             >
               Ahhichatra Sanskar Kendra
@@ -307,12 +305,11 @@ export default function MemberSidebar() {
             <p
               className="
                 mt-0.5
-                text-[10px]
+                truncate
+                text-xs
                 font-medium
-                leading-tight
                 tracking-wide
                 !text-[#f0c96b]
-                sm:text-[11px]
               "
             >
               {t.portal}

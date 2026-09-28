@@ -447,7 +447,7 @@ export default async function PublicHomePage({
     sm:text-3xl
     md:text-3xl
     lg:text-[42px]
-   whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]"
+  "
 >
   {t.organizationName}
 </h2>
@@ -511,41 +511,27 @@ export default async function PublicHomePage({
     </div>
 
     {/* Shiva image */}
-<div className="flex justify-center">
-  <div className="homepage-shiva-logo-glow">
-
-    {/* Actual circular logo */}
-    <div
-      className="
-        relative
-        aspect-square
-        w-[clamp(220px,65vw,428px)]
-        shrink-0
-        overflow-hidden
-        rounded-full
-        border-[3px]
-        border-[#d9ad55]
-        bg-white
-      "
-    >
-      <img
-        src="/images/SHIVA_ORI_!.png"
-        alt={t.organizationName}
-        className="
-          absolute
-          inset-0
-          h-full
-          w-full
-          rounded-full
-          object-cover
-          object-center
-        "
-      />
-    </div>
-
+    <div className="flex justify-center">
+  <div
+    className="
+      relative
+      aspect-square
+      h-[clamp(240px,60vw,428px)] w-[clamp(240px,60vw,428px)] aspect-square
+      shrink-0
+      overflow-hidden
+      rounded-full
+      border-[3px]
+      border-[#d9ad55]
+      bg-white
+    "
+  >
+    <img
+      src="/images/SHIVA_ORI_!.png"
+      alt={t.organizationName}
+      className="absolute inset-0 h-full w-full rounded-full object-cover object-center homepage-shiva-image"
+    />
   </div>
 </div>
-
 
     {/* Mission / culture */}
     <div className="mt-7 max-w-5xl sm:mt-9">
@@ -639,7 +625,7 @@ export default async function PublicHomePage({
                 {t.introLabel}
               </span>
 
-              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl lg:text-5xl">
                 {t.introTitle}
               </h2>
             </div>
@@ -682,7 +668,7 @@ export default async function PublicHomePage({
                 {t.missionLabel}
               </span>
 
-              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-4 max-w-xl text-3xl font-black tracking-tight sm:text-3xl lg:text-5xl">
                 {t.missionTitle}
               </h2>
 
@@ -827,7 +813,7 @@ export default async function PublicHomePage({
                 {t.activitiesLabel}
               </span>
 
-              <h2 className="hero-org-title mt-3 text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-3 text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl">
                 {t.activitiesTitle}
               </h2>
 
@@ -960,7 +946,7 @@ export default async function PublicHomePage({
                 {t.cultureLabel}
               </span>
 
-              <h2 className="hero-org-title mt-4 text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-4 text-3xl font-black tracking-tight text-[#3b0710] dark:text-white sm:text-3xl">
                 {t.cultureTitle}
               </h2>
 
@@ -1018,7 +1004,7 @@ export default async function PublicHomePage({
                 {t.eventsLabel}
               </span>
 
-              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl">
                 {t.eventsTitle}
               </h2>
 
@@ -1103,7 +1089,7 @@ export default async function PublicHomePage({
                 {t.newsLabel}
               </span>
 
-              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl">
                 {t.newsTitle}
               </h2>
 
@@ -1205,7 +1191,7 @@ export default async function PublicHomePage({
                 {t.galleryLabel}
               </span>
 
-              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+              <h2 className="hero-org-title mt-3 text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl">
                 {t.galleryTitle}
               </h2>
 
@@ -1276,7 +1262,7 @@ export default async function PublicHomePage({
                   {t.membershipLabel}
                 </span>
 
-                <h2 className="hero-org-title mt-4 max-w-2xl text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+                <h2 className="hero-org-title mt-4 max-w-2xl text-3xl font-black text-[#3b0710] dark:text-white sm:text-3xl">
                   {t.membershipTitle}
                 </h2>
 
@@ -1354,7 +1340,7 @@ export default async function PublicHomePage({
             <Heart className="h-6 w-6 fill-current" />
           </div>
 
-          <h2 className="hero-org-title mt-7 text-3xl font-black tracking-tight sm:text-3xl lg:text-5xl whitespace-nowrap text-[clamp(1.15rem,4vw,2.5rem)]">
+          <h2 className="hero-org-title mt-7 text-3xl font-black tracking-tight sm:text-3xl lg:text-5xl">
             {t.ctaTitle}
           </h2>
 

@@ -191,9 +191,9 @@ export default function LoginPage() {
   "
 >
   <img
-    src="/images/SHIVA_ORI_!.png"
+    src="/images/ROUND_SHIVA_GOLD.png"
     alt="Ahhichatra Sanskar Kendra"
-    className="h-full w-full object-cover object-center"
+    className="h-full w-full object-contain p-1"
   />
 </div>
 <h1 className="mt-4 text-2xl font-bold sm:text-3xl" style={{ color: "#FFFFFF", WebkitTextFillColor: "#FFFFFF" }}>{t.title}</h1>
